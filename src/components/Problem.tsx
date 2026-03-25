@@ -21,7 +21,7 @@ const painPoints = [
 
 export function Problem() {
   return (
-    <section className="bg-navy py-24 md:py-32 px-6 md:px-12 lg:px-20">
+    <section className="bg-navy py-20 md:py-24 px-6 md:px-12 lg:px-20">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="section-label section-label-dark mb-8">
@@ -36,14 +36,14 @@ export function Problem() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="mt-6 text-lg font-light max-w-xl leading-relaxed" style={{ color: "rgba(250,249,246,0.45)" }}>
+          <p className="mt-6 text-lg font-light max-w-xl leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
             Trust starts before the first phone call. If customers can&apos;t
             find you online, they move on.
           </p>
         </ScrollReveal>
 
         {/* Pain Point Grid */}
-        <ScrollReveal className="mt-16">
+        <ScrollReveal className="mt-12">
           <div className="grid md:grid-cols-2 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(250,249,246,0.08)" }}>
             {painPoints.map((point, i) => (
               <div
@@ -58,7 +58,7 @@ export function Problem() {
                 <h3 className="text-base font-semibold text-cream">
                   {point.title}
                 </h3>
-                <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.45)" }}>
+                <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
                   {point.description}
                 </p>
               </div>

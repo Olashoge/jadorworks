@@ -12,7 +12,7 @@ export function Contact() {
   }
 
   return (
-    <section className="bg-navy py-24 md:py-32 px-6 md:px-12 lg:px-20" id="contact">
+    <section className="bg-navy py-20 md:py-24 px-6 md:px-12 lg:px-20" id="contact">
       <div className="max-w-2xl mx-auto text-center">
         <ScrollReveal>
           <p className="section-label section-label-dark justify-center mb-8">
@@ -27,7 +27,7 @@ export function Contact() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="mt-6 text-lg font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.45)" }}>
+          <p className="mt-6 text-lg font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
             Book a free 15-minute consultation. We&apos;ll talk through what your
             business needs and map out the right next step.
           </p>

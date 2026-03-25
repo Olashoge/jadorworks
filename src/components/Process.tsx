@@ -20,13 +20,12 @@ const steps = [
     number: "04",
     title: "Stay Supported",
     description: "We keep your site maintained, updated, and running smoothly after it goes live.",
-    highlight: true,
   },
 ];
 
 export function Process() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20" id="process" style={{ backgroundColor: "rgba(13,27,42,0.03)" }}>
+    <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20" id="process" style={{ backgroundColor: "rgba(13,27,42,0.03)" }}>
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="section-label mb-8">The Process</p>
@@ -39,32 +38,28 @@ export function Process() {
         </ScrollReveal>
 
         {/* Steps */}
-        <ScrollReveal className="mt-16">
+        <ScrollReveal className="mt-12">
           <div className="grid md:grid-cols-4 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(13,27,42,0.10)" }}>
             {steps.map((step, i) => (
               <div
                 key={step.number}
-                className={`p-8 ${step.highlight ? "bg-navy" : "bg-cream"}`}
+                className="p-8 bg-cream hover:bg-navy group transition-colors duration-300"
                 style={{
-                  borderRight: i < 3 ? `1px solid ${step.highlight ? "rgba(250,249,246,0.08)" : "rgba(13,27,42,0.10)"}` : "none",
+                  borderRight: i < 3 ? "1px solid rgba(13,27,42,0.10)" : "none",
                 }}
               >
                 <p
-                  className="text-xs font-medium tracking-[0.15em]"
-                  style={{ color: step.highlight ? "rgba(250,249,246,0.28)" : "rgba(13,27,42,0.45)" }}
+                  className="text-xs font-medium tracking-[0.15em] text-navy-42 group-hover:text-cream-28 transition-colors duration-300"
                 >
                   {step.number}
                 </p>
                 <h3
-                  className={`mt-4 text-base font-semibold ${
-                    step.highlight ? "text-cream" : "text-navy"
-                  }`}
+                  className="mt-4 text-base font-semibold text-navy group-hover:text-cream transition-colors duration-300"
                 >
                   {step.title}
                 </h3>
                 <p
-                  className="mt-2 text-sm font-light leading-relaxed"
-                  style={{ color: step.highlight ? "rgba(250,249,246,0.45)" : "rgba(13,27,42,0.45)" }}
+                  className="mt-2 text-sm font-light leading-relaxed text-navy-62 group-hover:text-cream-62 transition-colors duration-300"
                 >
                   {step.description}
                 </p>

@@ -26,7 +26,7 @@ const services = [
 
 export function Included() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20" id="included">
+    <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20" id="included">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="section-label mb-8">What&apos;s Included</p>
@@ -41,7 +41,7 @@ export function Included() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-sm font-light text-navy-45 md:text-right md:max-w-xs md:mt-4">
+            <p className="text-sm font-light text-navy-62 md:text-right md:max-w-xs md:mt-4">
               Starter packages · Growth packages · Custom quotes for larger
               businesses
             </p>
@@ -64,7 +64,7 @@ export function Included() {
                 <h3 className="mt-4 text-base font-semibold text-navy">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm font-light text-navy-45 leading-relaxed">
+                <p className="mt-2 text-sm font-light text-navy-62 leading-relaxed">
                   {service.description}
                 </p>
               </div>

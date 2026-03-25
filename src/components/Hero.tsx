@@ -48,7 +48,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p
-            className={`mt-8 text-lg md:text-xl font-light text-navy-45 max-w-xl leading-relaxed transition-all duration-700 delay-[1200ms] ${
+            className={`mt-8 text-lg md:text-xl font-light text-navy-62 max-w-xl leading-relaxed transition-all duration-700 delay-[1200ms] ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -77,23 +77,23 @@ export function Hero() {
             </Link>
           </div>
 
-          {/* Stats row */}
+          {/* Proof markers */}
           <div
-            className={`mt-16 flex flex-wrap gap-12 transition-all duration-700 delay-[1600ms] ${
+            className={`mt-16 flex flex-wrap gap-10 md:gap-14 transition-all duration-700 delay-[1600ms] ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
-            <div>
-              <p className="text-4xl md:text-5xl font-thin text-navy">14</p>
-              <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mt-1">
-                Days to Launch
-              </p>
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl md:text-3xl font-semibold text-navy">1–2 wk</span>
+              <span className="text-xs font-medium tracking-[0.12em] uppercase text-navy-42">Average Launch Time</span>
             </div>
-            <div>
-              <p className="text-4xl md:text-5xl font-thin text-navy">100</p>
-              <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mt-1">
-                % Mobile-Friendly
-              </p>
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl md:text-3xl font-semibold text-navy">Mobile</span>
+              <span className="text-xs font-medium tracking-[0.12em] uppercase text-navy-42">First Design</span>
+            </div>
+            <div className="flex items-baseline gap-3">
+              <span className="text-2xl md:text-3xl font-semibold text-navy">Local</span>
+              <span className="text-xs font-medium tracking-[0.12em] uppercase text-navy-42">SEO Ready</span>
             </div>
           </div>
         </div>
