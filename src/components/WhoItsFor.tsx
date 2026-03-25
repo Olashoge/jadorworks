@@ -44,33 +44,19 @@ export function WhoItsFor() {
 
         {/* Business Types Grid */}
         <ScrollReveal className="mt-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 rounded-xl overflow-hidden bg-cream" style={{ border: "1px solid rgba(13,27,42,0.10)" }}>
-            {businessTypes.map((biz, i) => {
-              // 2-col mobile: last row is items 6,7. 4-col desktop: last row is items 4-7.
-              const isLastRowMobile = i >= 6;
-              const isLastRowDesktop = i >= 4;
-              const isRightColMobile = i % 2 === 1;
-              const isRightColDesktop = (i + 1) % 4 === 0;
-
-              return (
-                <div
-                  key={biz.name}
-                  className={[
-                    "p-6 md:p-8",
-                    // Bottom border: show on mobile unless last row, show on desktop unless last row
-                    !isLastRowMobile ? "border-b border-b-[rgba(13,27,42,0.10)]" : "",
-                    isLastRowMobile && !isLastRowDesktop ? "md:border-b md:border-b-[rgba(13,27,42,0.10)]" : "",
-                    isLastRowDesktop && !isLastRowMobile ? "border-b-0 md:border-b-0" : "",
-                    // Right border: show on mobile unless right col, show on desktop unless right col
-                    !isRightColMobile ? "border-r border-r-[rgba(13,27,42,0.10)]" : "",
-                    isRightColMobile && !isRightColDesktop ? "border-r-0 md:border-r md:border-r-[rgba(13,27,42,0.10)]" : "",
-                  ].filter(Boolean).join(" ")}
-                >
-                  <biz.Icon className="w-6 h-6 text-navy-45 mb-3" />
-                  <p className="text-sm font-medium text-navy">{biz.name}</p>
-                </div>
-              );
-            })}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {businessTypes.map((biz) => (
+              <div
+                key={biz.name}
+                className="group p-6 md:p-8 rounded-xl bg-cream transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-navy cursor-default"
+                style={{ border: "1px solid rgba(13,27,42,0.10)" }}
+              >
+                <biz.Icon className="w-6 h-6 text-navy-45 group-hover:text-cream-62 transition-colors duration-300 mb-3" />
+                <p className="text-sm font-medium text-navy group-hover:text-cream transition-colors duration-300">
+                  {biz.name}
+                </p>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
       </div>
