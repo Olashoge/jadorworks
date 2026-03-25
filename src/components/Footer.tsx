@@ -5,11 +5,11 @@ export function Footer() {
   return (
     <footer className="bg-cream" style={{ borderTop: "1px solid rgba(13,27,42,0.10)" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-16">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
             <p className="text-base font-semibold text-navy">{brand.name}</p>
-            <p className="mt-4 text-sm font-light text-navy-45 leading-relaxed">
+            <p className="mt-5 text-sm font-light text-navy-45 leading-relaxed">
               Professional websites for local service businesses. We help local
               businesses get found online with professional websites, Google
               Business Profile support, and ongoing care.
@@ -18,10 +18,10 @@ export function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mb-4">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy mb-5">
               Navigation
             </p>
-            <div className="space-y-3">
+            <div className="space-y-4">
               {nav.links.map((link) => (
                 <Link
                   key={link.href}
@@ -36,10 +36,10 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mb-4">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy mb-5">
               Get in Touch
             </p>
-            <div className="space-y-3 text-sm font-light text-navy-45">
+            <div className="space-y-4 text-sm font-light text-navy-45">
               <p>{brand.email}</p>
               <p>{brand.phone}</p>
             </div>
@@ -47,10 +47,10 @@ export function Footer() {
 
           {/* Service Area */}
           <div>
-            <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mb-4">
+            <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy mb-5">
               Service Area
             </p>
-            <div className="space-y-3 text-sm font-light text-navy-45">
+            <div className="space-y-4 text-sm font-light text-navy-45">
               <p>Nationwide</p>
               <p>Local SEO</p>
             </div>
