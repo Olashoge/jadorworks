@@ -1,75 +1,103 @@
-import Link from "next/link";
-import { brand } from "@/lib/brand";
+"use client";
 
-const trustPoints = [
-  "Mobile-Friendly",
-  "Google Business Profile Support",
-  "Launch in 1–2 Weeks",
-  "Ongoing Support",
-];
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export function Hero() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <section className="pt-32 pb-20 md:pt-40 md:pb-28 px-6">
-      <div className="max-w-3xl mx-auto text-center">
-        {/* Eyebrow */}
-        <p className="text-sm font-medium text-gold tracking-widest uppercase mb-4">
-          {brand.serviceLine}
-        </p>
+    <>
+      {/* Page load overlay */}
+      <div className="fixed inset-0 bg-navy z-[100] pointer-events-none animate-overlay-out" />
 
-        {/* Headline */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-navy leading-tight">
-          Professional websites for local service businesses
-        </h1>
-
-        {/* Subheadline */}
-        <p className="mt-6 text-lg md:text-xl text-slate/80 max-w-2xl mx-auto leading-relaxed">
-          Launch a clean, mobile-friendly website with Google-ready setup and
-          ongoing support — built for businesses that need credibility,
-          visibility, and more customer inquiries.
-        </p>
-
-        {/* CTAs */}
-        <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/demos"
-            className="w-full sm:w-auto px-8 py-3.5 bg-navy text-white font-medium rounded-lg hover:bg-navy-light transition-colors text-center"
+      <section className="min-h-screen flex flex-col justify-center px-6 md:px-12 lg:px-20 pt-20">
+        <div className="max-w-6xl mx-auto w-full">
+          {/* Eyebrow */}
+          <p
+            className={`section-label mb-8 transition-all duration-700 delay-500 ${
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
           >
-            View Demo Sites
-          </Link>
-          <Link
-            href="/#contact"
-            className="w-full sm:w-auto px-8 py-3.5 border-2 border-navy text-navy font-medium rounded-lg hover:bg-navy hover:text-white transition-colors text-center"
-          >
-            Book a Free Consultation
-          </Link>
-        </div>
+            JadorWorks Web Studio
+          </p>
 
-        {/* Trust Row */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
-          {trustPoints.map((point, i) => (
-            <div key={point} className="flex items-center gap-2">
-              {i > 0 && (
-                <span className="hidden sm:inline text-gray-300 -ml-3 mr-1">·</span>
-              )}
-              <svg
-                className="w-4 h-4 text-gold flex-shrink-0"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="m4.5 12.75 6 6 9-13.5"
-                />
-              </svg>
-              <span className="text-sm text-slate/70">{point}</span>
+          {/* Headline — staggered line reveal */}
+          <h1 className="overflow-hidden">
+            {["Professional websites", "for local service", "businesses."].map(
+              (line, i) => (
+                <span
+                  key={i}
+                  className={`block text-4xl md:text-6xl lg:text-7xl font-bold text-navy leading-[1.1] transition-all duration-700 ${
+                    loaded
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-full"
+                  }`}
+                  style={{ transitionDelay: `${600 + i * 150}ms` }}
+                >
+                  {line}
+                </span>
+              )
+            )}
+          </h1>
+
+          {/* Subheadline */}
+          <p
+            className={`mt-8 text-lg md:text-xl text-slate/60 font-light max-w-xl leading-relaxed transition-all duration-700 delay-[1200ms] ${
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            Launch a clean, mobile-friendly website with Google-ready setup and
+            ongoing support — built for businesses that need credibility,
+            visibility, and more customer inquiries.
+          </p>
+
+          {/* CTAs */}
+          <div
+            className={`mt-10 flex flex-col sm:flex-row gap-4 transition-all duration-700 delay-[1400ms] ${
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <Link
+              href="/demos"
+              className="px-8 py-3.5 bg-navy text-cream text-sm font-medium rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300 text-center"
+            >
+              View Demo Sites
+            </Link>
+            <Link
+              href="/#contact"
+              className="px-8 py-3.5 text-navy text-sm font-medium rounded-lg border border-navy/20 hover:border-navy hover:bg-navy hover:text-cream transition-all duration-300 text-center"
+            >
+              Book a Free Consultation
+            </Link>
+          </div>
+
+          {/* Stats row */}
+          <div
+            className={`mt-16 flex flex-wrap gap-12 transition-all duration-700 delay-[1600ms] ${
+              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-navy">14</p>
+              <p className="text-xs tracking-[0.15em] uppercase text-slate/40 mt-1">
+                DAYS TO LAUNCH
+              </p>
             </div>
-          ))}
+            <div>
+              <p className="text-4xl md:text-5xl font-bold text-navy">100</p>
+              <p className="text-xs tracking-[0.15em] uppercase text-slate/40 mt-1">
+                % MOBILE-FRIENDLY
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

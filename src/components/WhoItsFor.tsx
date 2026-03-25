@@ -1,3 +1,4 @@
+import { ScrollReveal } from "./ScrollReveal";
 import {
   WrenchScrewdriverIcon,
   HomeIcon,
@@ -22,37 +23,44 @@ const businessTypes = [
 
 export function WhoItsFor() {
   return (
-    <section className="py-20 px-6 bg-ivory">
-      <div className="max-w-5xl mx-auto">
-        {/* Headline */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
-          <h2 className="text-3xl md:text-4xl font-bold text-navy">
-            Built for local service businesses ready to grow.
+    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
+      <div className="max-w-6xl mx-auto">
+        <ScrollReveal>
+          <p className="section-label mb-8">Built For</p>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-3xl">
+            Local service businesses ready to grow.
           </h2>
-          <p className="mt-4 text-lg text-slate/80">
-            This is designed for businesses that depend on reputation, referrals,
-            and local trust — but need a stronger online presence.
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <p className="mt-6 text-lg text-slate/50 font-light max-w-xl">
+            Designed for businesses that depend on reputation, referrals, and
+            local trust — but need a stronger online presence.
           </p>
-        </div>
+        </ScrollReveal>
 
-        {/* Business Type Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {businessTypes.map((biz) => (
-            <div
-              key={biz.name}
-              className="flex flex-col items-center text-center p-5 rounded-xl border border-gray-100 bg-white"
-            >
-              <biz.Icon className="w-7 h-7 text-navy/50 mb-2" />
-              <p className="text-sm font-medium text-navy">{biz.name}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Qualifier */}
-        <p className="mt-10 text-center text-slate/70 text-sm">
-          If your business runs on local trust and customer referrals, this is
-          built for you.
-        </p>
+        {/* Business Types Grid */}
+        <ScrollReveal className="mt-16">
+          <div className="grid grid-cols-2 md:grid-cols-4 border border-slate/10 rounded-xl overflow-hidden">
+            {businessTypes.map((biz, i) => (
+              <div
+                key={biz.name}
+                className={`p-6 md:p-8 ${
+                  i < 4 ? "border-b border-slate/10" : ""
+                } ${(i + 1) % 4 !== 0 ? "border-r border-slate/10" : ""} ${
+                  // Mobile: every other item gets right border
+                  (i + 1) % 2 !== 0 ? "max-md:border-r" : "max-md:border-r-0"
+                } ${i < 6 ? "max-md:border-b" : ""}`}
+              >
+                <biz.Icon className="w-6 h-6 text-slate/30 mb-3" />
+                <p className="text-sm font-medium text-navy">{biz.name}</p>
+              </div>
+            ))}
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

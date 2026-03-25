@@ -1,100 +1,99 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { ScrollReveal } from "./ScrollReveal";
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // TODO: Wire up to a real form handler (e.g., API route, Formspree, etc.)
     setSubmitted(true);
   }
 
   return (
-    <section className="py-20 px-6 bg-navy" id="contact">
+    <section className="bg-navy py-24 md:py-32 px-6 md:px-12 lg:px-20" id="contact">
       <div className="max-w-2xl mx-auto text-center">
-        {/* Headline */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white">
-          Ready to get your business online?
-        </h2>
-        <p className="mt-4 text-lg text-white/80">
-          Book a free 15-minute consultation. We&apos;ll talk through what your
-          business needs and map out the right next step.
-        </p>
+        <ScrollReveal>
+          <p className="section-label !text-cream/30 justify-center mb-8 after:!bg-cream/20">
+            Get Started
+          </p>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
+            Ready to get your business online?
+          </h2>
+        </ScrollReveal>
+
+        <ScrollReveal>
+          <p className="mt-6 text-lg text-white/40 font-light">
+            Book a free 15-minute consultation. We&apos;ll talk through what your
+            business needs and map out the right next step.
+          </p>
+        </ScrollReveal>
 
         {/* Form */}
-        {submitted ? (
-          <div className="mt-10 p-8 rounded-xl bg-white/10 text-white">
-            <p className="text-xl font-semibold">Thank you!</p>
-            <p className="mt-2 text-white/80">
-              We&apos;ll be in touch within 24 hours.
-            </p>
-          </div>
-        ) : (
-          <form
-            onSubmit={handleSubmit}
-            className="mt-10 space-y-4 text-left"
-          >
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                type="text"
-                name="name"
-                placeholder="Name"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
-              />
-              <input
-                type="text"
-                name="business"
-                placeholder="Business Name"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
-              />
+        <ScrollReveal className="mt-12">
+          {submitted ? (
+            <div className="p-10 rounded-xl border border-white/10 text-white">
+              <p className="text-xl font-semibold">Thank you!</p>
+              <p className="mt-2 text-white/50 font-light">
+                We&apos;ll be in touch within 24 hours.
+              </p>
             </div>
-            <div className="grid md:grid-cols-2 gap-4">
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-4 text-left">
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  required
+                  className="w-full px-5 py-4 rounded-lg bg-transparent border border-white/15 text-white placeholder-white/30 text-sm font-light focus:outline-none focus:border-white/40 transition-colors"
+                />
+                <input
+                  type="text"
+                  name="business"
+                  placeholder="Business Name"
+                  required
+                  className="w-full px-5 py-4 rounded-lg bg-transparent border border-white/15 text-white placeholder-white/30 text-sm font-light focus:outline-none focus:border-white/40 transition-colors"
+                />
+              </div>
+              <div className="grid md:grid-cols-2 gap-4">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                  className="w-full px-5 py-4 rounded-lg bg-transparent border border-white/15 text-white placeholder-white/30 text-sm font-light focus:outline-none focus:border-white/40 transition-colors"
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone Number"
+                  className="w-full px-5 py-4 rounded-lg bg-transparent border border-white/15 text-white placeholder-white/30 text-sm font-light focus:outline-none focus:border-white/40 transition-colors"
+                />
+              </div>
+              <textarea
+                name="message"
+                placeholder="Tell us about your business and what you need..."
+                rows={4}
+                className="w-full px-5 py-4 rounded-lg bg-transparent border border-white/15 text-white placeholder-white/30 text-sm font-light focus:outline-none focus:border-white/40 transition-colors resize-none"
               />
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
-              />
-            </div>
-            <textarea
-              name="message"
-              placeholder="Tell us about your business and what you need..."
-              rows={4}
-              className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none"
-            />
-            <button
-              type="submit"
-              className="w-full py-3.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-muted transition-colors"
-            >
-              Book a Free Consultation
-            </button>
-          </form>
-        )}
+              <button
+                type="submit"
+                className="w-full py-4 bg-cream text-navy text-sm font-medium tracking-[0.05em] uppercase rounded-lg hover:bg-white transition-colors"
+              >
+                Book a Free Consultation
+              </button>
+            </form>
+          )}
 
-        {/* Secondary CTA */}
-        <Link
-          href="/demos"
-          className="inline-block mt-6 text-sm text-white/60 hover:text-white/90 transition-colors"
-        >
-          Or view the demo sites first →
-        </Link>
-
-        {/* Reassurance */}
-        <p className="mt-6 text-sm text-white/50">
-          No pressure. No commitment. Just a clear conversation.
-        </p>
+          <p className="mt-6 text-sm text-white/25 font-light">
+            No pressure. No commitment. Just a clear conversation.
+          </p>
+        </ScrollReveal>
       </div>
     </section>
   );
