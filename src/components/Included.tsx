@@ -50,14 +50,13 @@ export function Included() {
 
         {/* Service Grid */}
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(13,27,42,0.10)" }}>
-            {services.map((service, i) => (
+          <div className="grid md:grid-cols-2 gap-5">
+            {services.map((service) => (
               <div
                 key={service.title}
-                className="p-8 md:p-10"
+                className="p-8 md:p-10 rounded-xl bg-cream transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{
-                  borderBottom: i < 2 ? "1px solid rgba(13,27,42,0.10)" : "none",
-                  borderRight: i % 2 === 0 ? "1px solid rgba(13,27,42,0.10)" : "none",
+                  border: "1px solid rgba(13,27,42,0.10)",
                 }}
               >
                 <service.Icon className="w-7 h-7 text-navy-45" />

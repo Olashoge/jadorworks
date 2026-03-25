@@ -27,7 +27,7 @@ export function Contact() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="mt-6 text-lg font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
+          <p className="mt-6 text-lg font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.75)" }}>
             Book a free 15-minute consultation. We&apos;ll talk through what your
             business needs and map out the right next step.
           </p>
@@ -38,7 +38,7 @@ export function Contact() {
           {submitted ? (
             <div className="p-10 rounded-xl text-cream" style={{ border: "1px solid rgba(250,249,246,0.08)" }}>
               <p className="text-xl font-semibold">Thank you!</p>
-              <p className="mt-2 font-light" style={{ color: "rgba(250,249,246,0.45)" }}>
+              <p className="mt-2 font-light" style={{ color: "rgba(250,249,246,0.65)" }}>
                 We&apos;ll be in touch within 24 hours.
               </p>
             </div>
@@ -111,7 +111,7 @@ export function Contact() {
             </form>
           )}
 
-          <p className="mt-6 text-sm font-light" style={{ color: "rgba(250,249,246,0.28)" }}>
+          <p className="mt-6 text-sm font-light" style={{ color: "rgba(250,249,246,0.50)" }}>
             No pressure. No commitment. Just a clear conversation.
           </p>
         </ScrollReveal>

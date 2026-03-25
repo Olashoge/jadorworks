@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand */}
           <div>
             <p className="text-base font-semibold text-navy">{brand.name}</p>
-            <p className="mt-5 text-sm font-light text-navy-45 leading-relaxed">
+            <p className="mt-5 text-sm font-light text-navy-62 leading-relaxed">
               Professional websites for local service businesses. We help local
               businesses get found online with professional websites, Google
               Business Profile support, and ongoing care.
@@ -26,7 +26,7 @@ export function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="block text-sm font-light text-navy-45 hover:text-navy transition-colors"
+                  className="block text-sm font-light text-navy-62 hover:text-navy transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -39,7 +39,7 @@ export function Footer() {
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy mb-5">
               Get in Touch
             </p>
-            <div className="space-y-4 text-sm font-light text-navy-45">
+            <div className="space-y-4 text-sm font-light text-navy-62">
               <p>{brand.email}</p>
               <p>{brand.phone}</p>
             </div>
@@ -50,7 +50,7 @@ export function Footer() {
             <p className="text-xs font-bold tracking-[0.15em] uppercase text-navy mb-5">
               Service Area
             </p>
-            <div className="space-y-4 text-sm font-light text-navy-45">
+            <div className="space-y-4 text-sm font-light text-navy-62">
               <p>Nationwide</p>
               <p>Local SEO</p>
             </div>
@@ -67,7 +67,7 @@ export function Footer() {
           </p>
           <Link
             href="/#contact"
-            className="text-xs font-light text-navy-45 hover:text-navy transition-colors"
+            className="text-xs font-light text-navy-62 hover:text-navy transition-colors"
           >
             Book a Free Consultation →
           </Link>

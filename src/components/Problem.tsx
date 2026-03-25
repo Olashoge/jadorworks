@@ -36,7 +36,7 @@ export function Problem() {
         </ScrollReveal>
 
         <ScrollReveal>
-          <p className="mt-6 text-lg font-light max-w-xl leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
+          <p className="mt-6 text-lg font-light max-w-xl leading-relaxed" style={{ color: "rgba(250,249,246,0.78)" }}>
             Trust starts before the first phone call. If customers can&apos;t
             find you online, they move on.
           </p>
@@ -58,7 +58,7 @@ export function Problem() {
                 <h3 className="text-base font-semibold text-cream">
                   {point.title}
                 </h3>
-                <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.62)" }}>
+                <p className="mt-2 text-sm font-light leading-relaxed" style={{ color: "rgba(250,249,246,0.78)" }}>
                   {point.description}
                 </p>
               </div>

@@ -1,3 +1,5 @@
+"use client";
+
 import { ScrollReveal } from "./ScrollReveal";
 
 const packages = [
@@ -62,56 +64,63 @@ export function Packages() {
 
         {/* Package Cards */}
         <ScrollReveal>
-          <div
-            className="grid md:grid-cols-3 rounded-xl overflow-hidden"
-            style={{ border: "1px solid rgba(13,27,42,0.10)" }}
-          >
-            {packages.map((pkg, i) => (
+          <div className="grid md:grid-cols-3 gap-5">
+            {packages.map((pkg) => (
               <div
                 key={pkg.name}
-                className={`p-8 md:p-10 ${
-                  pkg.highlighted
-                    ? "bg-navy"
-                    : "bg-cream"
+                className={`group p-8 md:p-10 rounded-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-default ${
+                  pkg.highlighted ? "bg-navy" : "bg-cream"
                 }`}
                 style={{
-                  borderRight:
-                    i < 2
-                      ? `1px solid ${
-                          pkg.highlighted
-                            ? "rgba(250,249,246,0.08)"
-                            : "rgba(13,27,42,0.10)"
-                        }`
-                      : "none",
+                  border: `1px solid ${
+                    pkg.highlighted
+                      ? "rgba(250,249,246,0.12)"
+                      : "rgba(13,27,42,0.10)"
+                  }`,
                 }}
               >
                 <p
                   className={`text-xs font-bold tracking-[0.15em] uppercase ${
-                    pkg.highlighted ? "text-cream-28" : "text-navy-42"
+                    pkg.highlighted ? "text-cream-45" : "text-navy-42"
                   }`}
                 >
                   {pkg.name}
                 </p>
                 <p
-                  className={`mt-4 text-base font-semibold leading-snug ${
+                  className={`mt-4 text-lg font-semibold leading-snug ${
                     pkg.highlighted ? "text-cream" : "text-navy"
                   }`}
                 >
                   {pkg.best}
                 </p>
-                <ul className="mt-6 space-y-3">
+                <div
+                  className="my-6 h-px"
+                  style={{
+                    backgroundColor: pkg.highlighted
+                      ? "rgba(250,249,246,0.10)"
+                      : "rgba(13,27,42,0.08)",
+                  }}
+                />
+                <ul className="space-y-3.5">
                   {pkg.features.map((feature) => (
                     <li
                       key={feature}
-                      className={`text-sm font-light leading-relaxed flex items-start gap-2.5 ${
-                        pkg.highlighted ? "text-cream-62" : "text-navy-62"
+                      className={`text-sm leading-relaxed flex items-start gap-2.5 ${
+                        pkg.highlighted
+                          ? "text-cream font-light"
+                          : "text-navy-62 font-light"
                       }`}
+                      style={
+                        pkg.highlighted
+                          ? { color: "rgba(250,249,246,0.78)" }
+                          : undefined
+                      }
                     >
                       <span
-                        className="mt-1.5 w-1 h-1 rounded-full shrink-0"
+                        className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0"
                         style={{
                           backgroundColor: pkg.highlighted
-                            ? "rgba(250,249,246,0.28)"
+                            ? "rgba(250,249,246,0.40)"
                             : "rgba(13,27,42,0.25)",
                         }}
                       />
@@ -126,8 +135,8 @@ export function Packages() {
 
         <ScrollReveal>
           <p
-            className="mt-6 text-sm font-light text-center"
-            style={{ color: "rgba(13,27,42,0.42)" }}
+            className="mt-8 text-sm font-light text-center"
+            style={{ color: "rgba(13,27,42,0.50)" }}
           >
             Monthly care plans available for hosting, updates, and ongoing
             support.
