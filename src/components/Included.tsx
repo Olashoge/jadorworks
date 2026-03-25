@@ -49,7 +49,7 @@ export function Included() {
               <h3 className="mt-3 text-lg font-semibold text-navy">
                 {service.title}
               </h3>
-              <p className="mt-2 text-slate/70 leading-relaxed">
+              <p className="mt-2 text-slate/80 leading-relaxed">
                 {service.description}
               </p>
             </div>
@@ -57,7 +57,7 @@ export function Included() {
         </div>
 
         {/* Packages Line */}
-        <p className="mt-10 text-center text-slate/60 text-sm">
+        <p className="mt-10 text-center text-slate/70 text-sm">
           Starter packages available · Growth packages available · Custom quotes
           for larger businesses
         </p>

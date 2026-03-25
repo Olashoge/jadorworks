@@ -29,7 +29,7 @@ export function WhoItsFor() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             Built for local service businesses ready to grow.
           </h2>
-          <p className="mt-4 text-lg text-slate/70">
+          <p className="mt-4 text-lg text-slate/80">
             This is designed for businesses that depend on reputation, referrals,
             and local trust — but need a stronger online presence.
           </p>
@@ -49,7 +49,7 @@ export function WhoItsFor() {
         </div>
 
         {/* Qualifier */}
-        <p className="mt-10 text-center text-slate/60 text-sm italic">
+        <p className="mt-10 text-center text-slate/70 text-sm">
           If your business runs on local trust and customer referrals, this is
           built for you.
         </p>

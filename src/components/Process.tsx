@@ -34,23 +34,27 @@ export function Process() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             How it works
           </h2>
-          <p className="mt-4 text-lg text-slate/70">
+          <p className="mt-4 text-lg text-slate/80">
             From first call to live site in as little as two weeks.
           </p>
         </div>
 
         {/* Steps */}
-        <div className="grid md:grid-cols-4 gap-8">
-          {steps.map((step, i) => (
-            <div key={step.number} className="relative">
-              {/* Connector line (desktop only) */}
-              {i < steps.length - 1 && (
-                <div className="hidden md:block absolute top-6 left-full w-full h-px bg-gray-200 -translate-x-4" />
-              )}
-              <div className="text-3xl font-bold text-gold/30 mb-3">
-                {step.number}
+        <div className="grid md:grid-cols-4 gap-6">
+          {steps.map((step) => (
+            <div
+              key={step.number}
+              className="relative p-6 rounded-xl border border-gray-100 bg-ivory"
+            >
+              {/* Step number badge */}
+              <div className="w-10 h-10 rounded-full bg-navy flex items-center justify-center mb-4">
+                <span className="text-sm font-bold text-white">
+                  {step.number}
+                </span>
               </div>
-              <h3 className="text-lg font-semibold text-navy">{step.title}</h3>
+              <h3 className="text-base font-semibold text-navy">
+                {step.title}
+              </h3>
               <p className="mt-2 text-sm text-slate/70 leading-relaxed">
                 {step.description}
               </p>
@@ -59,8 +63,8 @@ export function Process() {
         </div>
 
         {/* Timeline Note */}
-        <p className="mt-12 text-center text-sm text-slate/50">
-          Most Starter sites can launch in 1–2 weeks once content is received.
+        <p className="mt-10 text-center text-sm text-slate/60">
+          Most Starter sites launch in 1–2 weeks once content is received.
           Growth sites typically launch in 2–3 weeks.
         </p>
       </div>

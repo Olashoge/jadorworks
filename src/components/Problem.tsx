@@ -36,7 +36,7 @@ export function Problem() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             Your customers are searching for you online — and finding nothing.
           </h2>
-          <p className="mt-4 text-lg text-slate/70">
+          <p className="mt-4 text-lg text-slate/80">
             Trust starts before the first phone call. If customers can&apos;t
             find you online, they move on.
           </p>
@@ -53,7 +53,7 @@ export function Problem() {
               <h3 className="mt-3 text-lg font-semibold text-navy">
                 {point.title}
               </h3>
-              <p className="mt-2 text-slate/70 leading-relaxed">
+              <p className="mt-2 text-slate/80 leading-relaxed">
                 {point.description}
               </p>
             </div>

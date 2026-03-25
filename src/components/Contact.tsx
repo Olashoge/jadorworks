@@ -19,7 +19,7 @@ export function Contact() {
         <h2 className="text-3xl md:text-4xl font-bold text-white">
           Ready to get your business online?
         </h2>
-        <p className="mt-4 text-lg text-white/70">
+        <p className="mt-4 text-lg text-white/80">
           Book a free 15-minute consultation. We&apos;ll talk through what your
           business needs and map out the right next step.
         </p>
@@ -28,7 +28,7 @@ export function Contact() {
         {submitted ? (
           <div className="mt-10 p-8 rounded-xl bg-white/10 text-white">
             <p className="text-xl font-semibold">Thank you!</p>
-            <p className="mt-2 text-white/70">
+            <p className="mt-2 text-white/80">
               We&apos;ll be in touch within 24 hours.
             </p>
           </div>
@@ -43,14 +43,14 @@ export function Contact() {
                 name="name"
                 placeholder="Name"
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-gold"
+                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
               />
               <input
                 type="text"
                 name="business"
                 placeholder="Business Name"
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-gold"
+                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
               />
             </div>
             <div className="grid md:grid-cols-2 gap-4">
@@ -59,20 +59,20 @@ export function Contact() {
                 name="email"
                 placeholder="Email"
                 required
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-gold"
+                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
               />
               <input
                 type="tel"
                 name="phone"
                 placeholder="Phone Number"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-gold"
+                className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50"
               />
             </div>
             <textarea
               name="message"
               placeholder="Tell us about your business and what you need..."
               rows={4}
-              className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/40 focus:outline-none focus:border-gold resize-none"
+              className="w-full px-4 py-3 rounded-lg bg-white/15 border border-white/25 text-white placeholder-white/50 focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/50 resize-none"
             />
             <button
               type="submit"
@@ -86,13 +86,13 @@ export function Contact() {
         {/* Secondary CTA */}
         <Link
           href="/demos"
-          className="inline-block mt-6 text-sm text-white/50 hover:text-white/80 transition-colors"
+          className="inline-block mt-6 text-sm text-white/60 hover:text-white/90 transition-colors"
         >
           Or view the demo sites first →
         </Link>
 
         {/* Reassurance */}
-        <p className="mt-8 text-sm text-white/30">
+        <p className="mt-6 text-sm text-white/50">
           No pressure. No commitment. Just a clear conversation.
         </p>
       </div>

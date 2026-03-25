@@ -32,7 +32,7 @@ export function DemoSites() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
             See what we build.
           </h2>
-          <p className="mt-4 text-lg text-slate/70">
+          <p className="mt-4 text-lg text-slate/80">
             Real examples of clean, modern websites built for local service
             businesses. Click any site to explore it live.
           </p>
@@ -47,16 +47,16 @@ export function DemoSites() {
               className="group block p-6 rounded-xl border border-gray-100 hover:border-gold/40 hover:shadow-md transition-all"
             >
               {/* Placeholder thumbnail */}
-              <div className="aspect-video bg-gray-50 rounded-lg mb-4 flex items-center justify-center border border-gray-100">
-                <span className="text-sm text-slate/40">Preview coming soon</span>
+              <div className="aspect-video bg-gradient-to-br from-gray-50 to-gray-100 rounded-lg mb-4 flex items-center justify-center border border-gray-100">
+                <span className="text-sm text-slate/40 font-medium">Demo in Progress</span>
               </div>
 
               <h3 className="text-lg font-semibold text-navy group-hover:text-gold transition-colors">
                 {demo.title}
               </h3>
-              <p className="mt-1 text-sm text-slate/60">{demo.description}</p>
+              <p className="mt-1 text-sm text-slate/70">{demo.description}</p>
               <span className="inline-block mt-3 text-sm font-medium text-gold">
-                View Live Site →
+                Preview Demo →
               </span>
             </Link>
           ))}
