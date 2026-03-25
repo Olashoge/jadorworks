@@ -1,27 +1,29 @@
+import { SearchIcon, MapPinIcon, ExclamationIcon, WrenchIcon } from "./Icons";
+
 const painPoints = [
   {
     title: "No website, no credibility",
     description:
       "Customers are less likely to trust a business they cannot verify online.",
-    icon: "🔍",
+    Icon: SearchIcon,
   },
   {
     title: "No Google presence, less visibility",
     description:
       "If you do not show up clearly in search, you lose attention to competitors who do.",
-    icon: "📍",
+    Icon: MapPinIcon,
   },
   {
     title: "A bad website can hurt more than help",
     description:
       "Broken pages, old information, and weak design create doubt.",
-    icon: "⚠️",
+    Icon: ExclamationIcon,
   },
   {
     title: "No support means it goes stale",
     description:
       "A website needs updates, maintenance, and follow-through to stay useful.",
-    icon: "🔧",
+    Icon: WrenchIcon,
   },
 ];
 
@@ -47,7 +49,7 @@ export function Problem() {
               key={point.title}
               className="p-6 rounded-xl border border-gray-100 hover:border-gold/30 transition-colors"
             >
-              <span className="text-2xl">{point.icon}</span>
+              <point.Icon className="w-7 h-7 text-navy/60" />
               <h3 className="mt-3 text-lg font-semibold text-navy">
                 {point.title}
               </h3>

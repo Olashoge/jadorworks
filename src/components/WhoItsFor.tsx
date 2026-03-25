@@ -1,12 +1,23 @@
+import {
+  WrenchScrewdriverIcon,
+  HomeIcon,
+  HeartIcon,
+  LeafIcon,
+  SparklesIcon,
+  BoltIcon,
+  ScissorsIcon,
+  BuildingStorefrontIcon,
+} from "./Icons";
+
 const businessTypes = [
-  { name: "HVAC & Plumbing", icon: "🔧" },
-  { name: "Remodeling & Home Improvement", icon: "🏠" },
-  { name: "Home Care & Senior Services", icon: "❤️" },
-  { name: "Landscaping & Lawn Care", icon: "🌿" },
-  { name: "Cleaning Services", icon: "✨" },
-  { name: "Electrical & Handyman", icon: "⚡" },
-  { name: "Salons & Barbershops", icon: "✂️" },
-  { name: "Local Shops & Solo Operators", icon: "🏪" },
+  { name: "HVAC & Plumbing", Icon: WrenchScrewdriverIcon },
+  { name: "Remodeling & Home Improvement", Icon: HomeIcon },
+  { name: "Home Care & Senior Services", Icon: HeartIcon },
+  { name: "Landscaping & Lawn Care", Icon: LeafIcon },
+  { name: "Cleaning Services", Icon: SparklesIcon },
+  { name: "Electrical & Handyman", Icon: BoltIcon },
+  { name: "Salons & Barbershops", Icon: ScissorsIcon },
+  { name: "Local Shops & Solo Operators", Icon: BuildingStorefrontIcon },
 ];
 
 export function WhoItsFor() {
@@ -31,7 +42,7 @@ export function WhoItsFor() {
               key={biz.name}
               className="flex flex-col items-center text-center p-5 rounded-xl border border-gray-100 bg-white"
             >
-              <span className="text-2xl mb-2">{biz.icon}</span>
+              <biz.Icon className="w-7 h-7 text-navy/50 mb-2" />
               <p className="text-sm font-medium text-navy">{biz.name}</p>
             </div>
           ))}

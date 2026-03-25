@@ -1,27 +1,29 @@
+import { ComputerIcon, GlobeIcon, MagnifyingGlassIcon, ShieldCheckIcon } from "./Icons";
+
 const services = [
   {
     title: "Professional Website",
     description:
       "Clean, mobile-friendly, fast-loading, and built to turn visitors into calls or inquiries.",
-    icon: "💻",
+    Icon: ComputerIcon,
   },
   {
     title: "Google Business Profile Support",
     description:
       "Setup or cleanup so your business is easier to find and trust.",
-    icon: "📍",
+    Icon: GlobeIcon,
   },
   {
     title: "Local SEO Foundation",
     description:
       "Page structure and setup designed to support visibility for the services you offer in your area.",
-    icon: "🔎",
+    Icon: MagnifyingGlassIcon,
   },
   {
     title: "Ongoing Support",
     description:
       "Hosting, maintenance, updates, and monitoring so the site does not get neglected after launch.",
-    icon: "🛡️",
+    Icon: ShieldCheckIcon,
   },
 ];
 
@@ -43,7 +45,7 @@ export function Included() {
               key={service.title}
               className="p-6 rounded-xl border border-gray-100"
             >
-              <span className="text-2xl">{service.icon}</span>
+              <service.Icon className="w-7 h-7 text-navy/60" />
               <h3 className="mt-3 text-lg font-semibold text-navy">
                 {service.title}
               </h3>
