@@ -32,7 +32,7 @@ export function Included() {
           <p className="section-label mb-8">What&apos;s Included</p>
         </ScrollReveal>
 
-        {/* Split layout: headline left, packages right */}
+        {/* Split layout */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
           <ScrollReveal>
             <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-xl">
@@ -41,7 +41,7 @@ export function Included() {
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="text-sm text-slate/50 font-light md:text-right md:max-w-xs md:mt-4">
+            <p className="text-sm font-light text-navy-45 md:text-right md:max-w-xs md:mt-4">
               Starter packages · Growth packages · Custom quotes for larger
               businesses
             </p>
@@ -50,19 +50,21 @@ export function Included() {
 
         {/* Service Grid */}
         <ScrollReveal>
-          <div className="grid md:grid-cols-2 border border-slate/10 rounded-xl overflow-hidden">
+          <div className="grid md:grid-cols-2 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(13,27,42,0.10)" }}>
             {services.map((service, i) => (
               <div
                 key={service.title}
-                className={`p-8 md:p-10 ${
-                  i < 2 ? "border-b border-slate/10" : ""
-                } ${i % 2 === 0 ? "md:border-r border-slate/10" : ""}`}
+                className="p-8 md:p-10"
+                style={{
+                  borderBottom: i < 2 ? "1px solid rgba(13,27,42,0.10)" : "none",
+                  borderRight: i % 2 === 0 ? "1px solid rgba(13,27,42,0.10)" : "none",
+                }}
               >
-                <service.Icon className="w-7 h-7 text-slate/30" />
+                <service.Icon className="w-7 h-7 text-navy-45" />
                 <h3 className="mt-4 text-base font-semibold text-navy">
                   {service.title}
                 </h3>
-                <p className="mt-2 text-sm text-slate/50 font-light leading-relaxed">
+                <p className="mt-2 text-sm font-light text-navy-45 leading-relaxed">
                   {service.description}
                 </p>
               </div>

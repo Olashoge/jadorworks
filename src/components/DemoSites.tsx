@@ -26,7 +26,7 @@ const demos = [
 
 export function DemoSites() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20" id="demos">
+    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20" id="demos" style={{ backgroundColor: "rgba(13,27,42,0.03)" }}>
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="section-label mb-8">See What We Build</p>
@@ -44,11 +44,12 @@ export function DemoSites() {
             <ScrollReveal key={demo.slug}>
               <Link
                 href={`/demos#${demo.slug}`}
-                className="group block border border-slate/10 rounded-xl overflow-hidden hover:border-slate/25 transition-all duration-300"
+                className="group block rounded-xl overflow-hidden bg-cream transition-all duration-300"
+                style={{ border: "1px solid rgba(13,27,42,0.10)" }}
               >
                 {/* Thumbnail placeholder */}
-                <div className="aspect-[16/10] bg-gradient-to-br from-gray-100 to-gray-50 flex items-center justify-center">
-                  <span className="text-xs tracking-[0.15em] uppercase text-slate/30 font-medium">
+                <div className="aspect-[16/10] flex items-center justify-center" style={{ backgroundColor: "rgba(13,27,42,0.03)" }}>
+                  <span className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45">
                     Demo in Progress
                   </span>
                 </div>
@@ -57,10 +58,10 @@ export function DemoSites() {
                   <h3 className="text-base font-semibold text-navy group-hover:underline underline-offset-4 transition-all">
                     {demo.title}
                   </h3>
-                  <p className="mt-1 text-sm text-slate/50 font-light">
+                  <p className="mt-1 text-sm font-light text-navy-45">
                     {demo.description}
                   </p>
-                  <span className="inline-block mt-4 text-sm font-medium text-navy">
+                  <span className="inline-block mt-4 text-sm font-normal text-navy">
                     Preview Demo →
                   </span>
                 </div>

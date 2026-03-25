@@ -26,7 +26,7 @@ const steps = [
 
 export function Process() {
   return (
-    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20">
+    <section className="py-24 md:py-32 px-6 md:px-12 lg:px-20" id="process" style={{ backgroundColor: "rgba(13,27,42,0.03)" }}>
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
           <p className="section-label mb-8">The Process</p>
@@ -40,32 +40,31 @@ export function Process() {
 
         {/* Steps */}
         <ScrollReveal className="mt-16">
-          <div className="grid md:grid-cols-4 border border-slate/10 rounded-xl overflow-hidden">
-            {steps.map((step) => (
+          <div className="grid md:grid-cols-4 rounded-xl overflow-hidden" style={{ border: "1px solid rgba(13,27,42,0.10)" }}>
+            {steps.map((step, i) => (
               <div
                 key={step.number}
-                className={`p-8 md:p-8 border-b md:border-b-0 md:border-r border-slate/10 last:border-r-0 last:border-b-0 ${
-                  step.highlight ? "bg-navy text-white" : ""
-                }`}
+                className={`p-8 ${step.highlight ? "bg-navy" : "bg-cream"}`}
+                style={{
+                  borderRight: i < 3 ? `1px solid ${step.highlight ? "rgba(250,249,246,0.08)" : "rgba(13,27,42,0.10)"}` : "none",
+                }}
               >
                 <p
-                  className={`text-xs font-medium tracking-[0.15em] ${
-                    step.highlight ? "text-white/40" : "text-slate/30"
-                  }`}
+                  className="text-xs font-medium tracking-[0.15em]"
+                  style={{ color: step.highlight ? "rgba(250,249,246,0.28)" : "rgba(13,27,42,0.45)" }}
                 >
                   {step.number}
                 </p>
                 <h3
                   className={`mt-4 text-base font-semibold ${
-                    step.highlight ? "text-white" : "text-navy"
+                    step.highlight ? "text-cream" : "text-navy"
                   }`}
                 >
                   {step.title}
                 </h3>
                 <p
-                  className={`mt-2 text-sm font-light leading-relaxed ${
-                    step.highlight ? "text-white/50" : "text-slate/50"
-                  }`}
+                  className="mt-2 text-sm font-light leading-relaxed"
+                  style={{ color: step.highlight ? "rgba(250,249,246,0.45)" : "rgba(13,27,42,0.45)" }}
                 >
                   {step.description}
                 </p>

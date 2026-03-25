@@ -48,7 +48,7 @@ export function Hero() {
 
           {/* Subheadline */}
           <p
-            className={`mt-8 text-lg md:text-xl text-slate/60 font-light max-w-xl leading-relaxed transition-all duration-700 delay-[1200ms] ${
+            className={`mt-8 text-lg md:text-xl font-light text-navy-45 max-w-xl leading-relaxed transition-all duration-700 delay-[1200ms] ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -71,7 +71,7 @@ export function Hero() {
             </Link>
             <Link
               href="/#contact"
-              className="px-8 py-3.5 text-navy text-sm font-medium rounded-lg border border-navy/20 hover:border-navy hover:bg-navy hover:text-cream transition-all duration-300 text-center"
+              className="px-8 py-3.5 text-navy text-sm font-medium rounded-lg border border-navy-10 hover:border-navy hover:bg-navy hover:text-cream transition-all duration-300 text-center"
             >
               Book a Free Consultation
             </Link>
@@ -84,15 +84,15 @@ export function Hero() {
             }`}
           >
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-navy">14</p>
-              <p className="text-xs tracking-[0.15em] uppercase text-slate/40 mt-1">
-                DAYS TO LAUNCH
+              <p className="text-4xl md:text-5xl font-thin text-navy">14</p>
+              <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mt-1">
+                Days to Launch
               </p>
             </div>
             <div>
-              <p className="text-4xl md:text-5xl font-bold text-navy">100</p>
-              <p className="text-xs tracking-[0.15em] uppercase text-slate/40 mt-1">
-                % MOBILE-FRIENDLY
+              <p className="text-4xl md:text-5xl font-thin text-navy">100</p>
+              <p className="text-xs font-medium tracking-[0.15em] uppercase text-navy-45 mt-1">
+                % Mobile-Friendly
               </p>
             </div>
           </div>

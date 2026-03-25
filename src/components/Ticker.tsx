@@ -1,7 +1,7 @@
 const items = [
   "LOCAL SEO",
   "ONGOING SUPPORT",
-  "LAUNCH IN 1–2 WEEKS",
+  "LAUNCH IN 1\u20132 WEEKS",
   "PROFESSIONAL DESIGN",
   "MOBILE-FRIENDLY",
   "GOOGLE BUSINESS PROFILE",
@@ -16,10 +16,11 @@ export function Ticker() {
         {repeated.map((item, i) => (
           <span
             key={i}
-            className="text-xs font-medium tracking-[0.15em] text-cream/60 mx-8 flex items-center gap-8"
+            className="text-xs font-normal tracking-[0.15em] mx-8 flex items-center gap-8"
+            style={{ color: "rgba(250,249,246,0.45)" }}
           >
             {item}
-            <span className="text-cream/30">·</span>
+            <span style={{ color: "rgba(250,249,246,0.20)" }}>·</span>
           </span>
         ))}
       </div>

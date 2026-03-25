@@ -10,20 +10,20 @@ const config: Config = {
     extend: {
       colors: {
         cream: "#FAF9F6",
-        navy: "#1B2A4A",
-        "navy-light": "#2A3F6A",
-        slate: "#3A3A3A",
+        navy: "#0D1B2A",
+        // Opacity variants for light backgrounds
+        "navy-45": "rgba(13,27,42,0.45)",
+        "navy-10": "rgba(13,27,42,0.10)",
+        "navy-03": "rgba(13,27,42,0.03)",
+        // Opacity variants for dark backgrounds
+        "cream-45": "rgba(250,249,246,0.45)",
+        "cream-28": "rgba(250,249,246,0.28)",
+        "cream-08": "rgba(250,249,246,0.08)",
+        "cream-07": "rgba(250,249,246,0.07)",
+        "cream-04": "rgba(250,249,246,0.04)",
       },
       fontFamily: {
         sans: ["Inter", "system-ui", "sans-serif"],
-      },
-      fontWeight: {
-        thin: "200",
-        light: "300",
-        normal: "400",
-        medium: "500",
-        semibold: "600",
-        bold: "700",
       },
       keyframes: {
         "fade-up": {

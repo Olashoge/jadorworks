@@ -5,7 +5,7 @@ import Link from "next/link";
 import { brand } from "@/lib/brand";
 
 const navLinks = [
-  { label: "What's Included", href: "/#included" },
+  { label: "What\u2019s Included", href: "/#included" },
   { label: "Demo Sites", href: "/demos" },
   { label: "How It Works", href: "/#process" },
   { label: "Contact", href: "/#contact" },
@@ -25,16 +25,14 @@ export function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-cream/95 backdrop-blur-sm border-b border-slate/10"
+          ? "bg-cream/95 backdrop-blur-sm"
           : "bg-transparent"
       }`}
+      style={{ borderBottom: scrolled ? "1px solid rgba(13,27,42,0.10)" : "none" }}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
         {/* Logo */}
-        <Link
-          href="/"
-          className="text-base font-bold text-navy tracking-tight"
-        >
+        <Link href="/" className="text-base font-semibold text-navy tracking-tight">
           {brand.name}
         </Link>
 
@@ -44,7 +42,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-slate/50 hover:text-navy transition-colors font-light"
+              className="text-sm font-normal text-navy-45 hover:text-navy transition-colors"
             >
               {link.label}
             </Link>
@@ -89,13 +87,13 @@ export function Navbar() {
           mobileOpen ? "max-h-80" : "max-h-0"
         }`}
       >
-        <div className="bg-cream/95 backdrop-blur-sm border-t border-slate/10 px-6 py-6 space-y-4">
+        <div className="bg-cream/95 backdrop-blur-sm px-6 py-6 space-y-4" style={{ borderTop: "1px solid rgba(13,27,42,0.10)" }}>
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-sm text-slate/60 hover:text-navy font-light"
+              className="block text-sm font-light text-navy-45 hover:text-navy"
             >
               {link.label}
             </Link>
