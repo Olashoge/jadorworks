@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import { brand } from "@/lib/brand";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
 
@@ -20,9 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="font-sans">
         <CustomCursor />
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
