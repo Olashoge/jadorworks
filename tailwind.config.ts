@@ -26,7 +26,9 @@ const config: Config = {
         "cream-04": "rgba(250,249,246,0.04)",
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        barlow: ["var(--font-barlow)", "system-ui", "sans-serif"],
+        condensed: ["var(--font-barlow-condensed)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-up": {
