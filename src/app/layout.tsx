@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow, Barlow_Condensed } from "next/font/google";
+import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { brand } from "@/lib/brand";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
@@ -25,6 +25,21 @@ const barlowCondensed = Barlow_Condensed({
   display: "swap",
 });
 
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: `${brand.serviceLine} — ${brand.tagline}`,
   description:
@@ -37,7 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable}`}>
+    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable}`}>
       <body className="font-sans">
         <CustomCursor />
         {children}

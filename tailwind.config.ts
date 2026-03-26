@@ -29,6 +29,8 @@ const config: Config = {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         barlow: ["var(--font-barlow)", "system-ui", "sans-serif"],
         condensed: ["var(--font-barlow-condensed)", "system-ui", "sans-serif"],
+        cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
+        "dm-sans": ["var(--font-dm-sans)", "system-ui", "sans-serif"],
       },
       keyframes: {
         "fade-up": {
