@@ -3,24 +3,44 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const demos = [
   {
-    title: "HVAC / Plumbing Company",
-    description: "A professional site for heating, cooling, and plumbing services.",
-    slug: "hvac-plumbing",
+    title: "HVAC & Plumbing",
+    business: "Summit Air & Plumbing",
+    description:
+      "A professional site for heating, cooling, and plumbing services. Features emergency contact, service area coverage, and trust indicators.",
+    slug: "hvac",
+    color: "#1B3A5C",
+    accent: "#1B6CA8",
+    status: "Live",
   },
   {
-    title: "Remodeling / Home Improvement",
-    description: "Showcase renovation work with a clean, trustworthy design.",
+    title: "Remodeling & Home Improvement",
+    business: "Cornerstone Renovations",
+    description:
+      "Showcase renovation work with a project gallery, before/after highlights, and customer inquiry form.",
     slug: "remodeling",
+    color: "#2C2C2C",
+    accent: "#B8875A",
+    status: "Coming Soon",
   },
   {
-    title: "Home Care",
-    description: "A warm, reliable site for home care and senior services.",
-    slug: "home-care",
-  },
-  {
-    title: "Landscaping Company",
-    description: "Highlight outdoor projects with a fresh, modern layout.",
+    title: "Landscaping & Lawn Care",
+    business: "GreenLine Landscaping",
+    description:
+      "Highlight outdoor projects with seasonal services, a portfolio gallery, and easy quote request.",
     slug: "landscaping",
+    color: "#2D5A3D",
+    accent: "#8B6F47",
+    status: "Coming Soon",
+  },
+  {
+    title: "Home Care & Senior Services",
+    business: "Graceful Living Home Care",
+    description:
+      "A warm, trustworthy site for home care services. Emphasizes family trust, caregiver quality, and personal care.",
+    slug: "home-care",
+    color: "#2A3D54",
+    accent: "#7FA868",
+    status: "Coming Soon",
   },
 ];
 
@@ -43,45 +63,100 @@ export function DemoSites() {
           {demos.map((demo) => (
             <ScrollReveal key={demo.slug}>
               <Link
-                href={`/demos#${demo.slug}`}
-                className="group block rounded-xl overflow-hidden bg-cream transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                style={{ border: "1px solid rgba(13,27,42,0.10)" }}
+                href={
+                  demo.status === "Live"
+                    ? `/demos/${demo.slug}`
+                    : "/demos"
+                }
+                className={`group block rounded-xl overflow-hidden transition-all duration-300 ${
+                  demo.status === "Live"
+                    ? "hover:-translate-y-1 hover:shadow-lg"
+                    : "opacity-80"
+                }`}
+                style={{
+                  border: "1px solid rgba(13,27,42,0.10)",
+                }}
               >
-                {/* Dark navy wireframe mockup */}
-                <div className="aspect-[16/10] bg-navy relative overflow-hidden">
-                  {/* Browser chrome bar */}
-                  <div className="flex items-center gap-1.5 px-4 pt-3 pb-2">
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "rgba(250,249,246,0.15)" }} />
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "rgba(250,249,246,0.15)" }} />
-                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: "rgba(250,249,246,0.15)" }} />
-                    <span className="ml-3 h-4 rounded-sm flex-1 max-w-[140px]" style={{ backgroundColor: "rgba(250,249,246,0.07)" }} />
+                {/* Preview area */}
+                <div
+                  className="aspect-[16/10] flex flex-col items-center justify-center relative"
+                  style={{ backgroundColor: demo.color }}
+                >
+                  {/* Wireframe mockup */}
+                  <div className="w-3/4 max-w-xs">
+                    <div className="flex gap-1 mb-3">
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
+                      />
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
+                      />
+                      <span
+                        className="w-1.5 h-1.5 rounded-full"
+                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
+                      />
+                    </div>
+                    <div
+                      className="h-2 w-2/3 rounded mb-2"
+                      style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
+                    />
+                    <div
+                      className="h-1.5 w-full rounded mb-1.5"
+                      style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+                    />
+                    <div
+                      className="h-1.5 w-4/5 rounded mb-3"
+                      style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
+                    />
+                    <div
+                      className="h-6 w-24 rounded"
+                      style={{ backgroundColor: demo.accent }}
+                    />
                   </div>
-                  {/* Wireframe content lines */}
-                  <div className="px-4 pt-3 space-y-2">
-                    <div className="h-3 rounded-sm w-3/4" style={{ backgroundColor: "rgba(250,249,246,0.10)" }} />
-                    <div className="h-3 rounded-sm w-1/2" style={{ backgroundColor: "rgba(250,249,246,0.07)" }} />
-                    <div className="h-2 rounded-sm w-5/6 mt-3" style={{ backgroundColor: "rgba(250,249,246,0.05)" }} />
-                    <div className="h-2 rounded-sm w-2/3" style={{ backgroundColor: "rgba(250,249,246,0.05)" }} />
-                    <div className="h-6 rounded-md w-1/3 mt-3" style={{ backgroundColor: "rgba(250,249,246,0.08)" }} />
-                  </div>
-                  {/* Coming soon label */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-xs font-medium tracking-[0.15em] uppercase text-cream-28">
-                      Demo in Progress
-                    </span>
+
+                  {/* Status badge */}
+                  <div
+                    className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium"
+                    style={{
+                      backgroundColor:
+                        demo.status === "Live"
+                          ? "rgba(255,255,255,0.15)"
+                          : "rgba(255,255,255,0.08)",
+                      color:
+                        demo.status === "Live"
+                          ? "rgba(255,255,255,0.85)"
+                          : "rgba(255,255,255,0.35)",
+                    }}
+                  >
+                    {demo.status}
                   </div>
                 </div>
 
-                <div className="p-6">
-                  <h3 className="text-base font-semibold text-navy group-hover:underline underline-offset-4 transition-all">
+                {/* Card content */}
+                <div className="p-6 bg-cream">
+                  <p className="text-xs font-medium text-navy-42 tracking-wide uppercase">
                     {demo.title}
+                  </p>
+                  <h3 className="mt-1.5 text-lg font-semibold text-navy">
+                    {demo.business}
                   </h3>
-                  <p className="mt-1 text-sm font-light text-navy-62">
+                  <p className="mt-2 text-sm font-light text-navy-62 leading-relaxed">
                     {demo.description}
                   </p>
-                  <span className="inline-block mt-4 text-sm font-normal text-navy">
-                    Preview Demo →
-                  </span>
+                  {demo.status === "Live" ? (
+                    <span className="inline-block mt-4 text-sm font-medium text-navy group-hover:underline underline-offset-4">
+                      Explore Demo →
+                    </span>
+                  ) : (
+                    <span
+                      className="inline-block mt-4 text-sm font-light"
+                      style={{ color: "rgba(13,27,42,0.30)" }}
+                    >
+                      Coming soon
+                    </span>
+                  )}
                 </div>
               </Link>
             </ScrollReveal>
