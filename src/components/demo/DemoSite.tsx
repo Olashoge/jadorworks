@@ -13,6 +13,20 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 export function DemoSite({ config }: { config: DemoConfig }) {
   const { colors } = config;
 
+  // Fix 5: Hide custom cursor on demo sites
+  useEffect(() => {
+    document.body.style.cursor = "auto";
+    const dot = document.querySelector(".cursor-dot") as HTMLElement;
+    const ring = document.querySelector(".cursor-ring") as HTMLElement;
+    if (dot) dot.style.display = "none";
+    if (ring) ring.style.display = "none";
+    return () => {
+      document.body.style.cursor = "";
+      if (dot) dot.style.display = "";
+      if (ring) ring.style.display = "";
+    };
+  }, []);
+
   return (
     <div style={{ backgroundColor: colors.background, color: colors.primary }}>
       <DemoNav config={config} />
@@ -134,10 +148,25 @@ function DemoHero({ config }: { config: DemoConfig }) {
 
   return (
     <section
-      className="pt-36 md:pt-44 pb-20 md:pb-28 px-6 md:px-12 lg:px-20"
+      className="pt-36 md:pt-44 pb-14 md:pb-16 px-6 md:px-12 lg:px-20 relative overflow-hidden"
       style={{ backgroundColor: colors.background }}
     >
-      <div className="max-w-5xl mx-auto">
+      {/* Subtle grid pattern for visual weight */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(rgba(${colors.primaryRgb},0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(${colors.primaryRgb},0.03) 1px, transparent 1px)`,
+          backgroundSize: "60px 60px",
+        }}
+      />
+      {/* Gradient fade at bottom so grid doesn't end abruptly */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none"
+        style={{
+          background: `linear-gradient(to top, ${colors.background}, transparent)`,
+        }}
+      />
+      <div className="max-w-5xl mx-auto relative">
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-6"
@@ -329,15 +358,8 @@ function DemoServices({ config }: { config: DemoConfig }) {
                   });
                 }}
               >
-                <span
-                  className="text-xs font-bold tracking-wider transition-colors duration-300"
-                  data-flip-sub
-                  style={{ color: `rgba(${colors.primaryRgb},0.30)` }}
-                >
-                  0{i + 1}
-                </span>
                 <h3
-                  className="mt-3 text-lg font-semibold transition-colors duration-300"
+                  className="text-lg font-semibold transition-colors duration-300"
                   data-flip
                   style={{ color: colors.primary }}
                 >
@@ -697,8 +719,8 @@ function DemoCTA({ config }: { config: DemoConfig }) {
                   placeholder={field}
                   className="w-full px-4 py-3.5 rounded-lg text-sm font-light outline-none transition-colors placeholder:opacity-40"
                   style={{
-                    backgroundColor: "rgba(250,249,246,0.07)",
-                    border: "1px solid rgba(250,249,246,0.10)",
+                    backgroundColor: "rgba(250,249,246,0.10)",
+                    border: "1px solid rgba(250,249,246,0.20)",
                     color: colors.background,
                   }}
                 />
@@ -708,8 +730,8 @@ function DemoCTA({ config }: { config: DemoConfig }) {
                 rows={3}
                 className="w-full px-4 py-3.5 rounded-lg text-sm font-light outline-none transition-colors placeholder:opacity-40 resize-none"
                 style={{
-                  backgroundColor: "rgba(250,249,246,0.07)",
-                  border: "1px solid rgba(250,249,246,0.10)",
+                  backgroundColor: "rgba(250,249,246,0.10)",
+                  border: "1px solid rgba(250,249,246,0.20)",
                   color: colors.background,
                 }}
               />

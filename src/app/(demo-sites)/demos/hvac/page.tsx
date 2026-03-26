@@ -18,11 +18,11 @@ const hvacConfig: DemoConfig = {
   tone: "Reliable · Urgent · Practical",
 
   colors: {
-    primary: "#1B3A5C",
-    accent: "#1B6CA8",
+    primary: "#1A2E44",
+    accent: "#2980B9",
     background: "#FAFAFA",
-    primaryRgb: "27,58,92",
-    accentRgb: "27,108,168",
+    primaryRgb: "26,46,68",
+    accentRgb: "41,128,185",
   },
 
   hero: {
