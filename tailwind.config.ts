@@ -24,6 +24,13 @@ const config: Config = {
         "cream-08": "rgba(250,249,246,0.08)",
         "cream-07": "rgba(250,249,246,0.07)",
         "cream-04": "rgba(250,249,246,0.04)",
+        "gl-green": "#2D5A3D",
+        "gl-green2": "#1E3D2A",
+        "gl-green-lt": "#3D7A52",
+        "gl-brown": "#8B6F47",
+        "gl-brown-lt": "#A88458",
+        "gl-stone": "#F5F3EF",
+        "gl-stone2": "#EAE6DF",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],

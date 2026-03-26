@@ -38,7 +38,7 @@ const demos = [
     slug: "landscaping",
     color: "#2D5A3D",
     accent: "#8B6F47",
-    status: "Coming Soon",
+    status: "Live",
   },
   {
     title: "Home Care & Senior Services",

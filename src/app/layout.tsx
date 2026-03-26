@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans, Outfit, Lora } from "next/font/google";
 import { brand } from "@/lib/brand";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
@@ -40,6 +40,21 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const lora = Lora({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-lora",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: `${brand.serviceLine} — ${brand.tagline}`,
   description:
@@ -52,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable} ${outfit.variable} ${lora.variable}`}>
       <body className="font-sans">
         <CustomCursor />
         {children}
