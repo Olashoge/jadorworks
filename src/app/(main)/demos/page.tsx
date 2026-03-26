@@ -28,7 +28,7 @@ const demos = [
     slug: "remodeling",
     color: "#2C2C2C",
     accent: "#B8875A",
-    status: "Coming Soon",
+    status: "Live",
   },
   {
     title: "Landscaping & Lawn Care",
