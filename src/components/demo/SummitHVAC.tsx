@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import Image from "next/image";
-import Link from "next/link";
 
 /* ------------------------------------------------------------------ */
 /*  Summit Air & Plumbing — Full One-Page HVAC Demo                   */
@@ -98,13 +96,6 @@ export function SummitHVAC() {
 
   return (
     <div ref={mainRef}>
-      {/* Google Fonts */}
-      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@600;700;800;900&display=swap"
-      />
-
       {/* reveal animation styles */}
       <style>{`
         .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
