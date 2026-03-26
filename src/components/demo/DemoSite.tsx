@@ -74,24 +74,6 @@ function DemoNav({ config }: { config: DemoConfig }) {
           : "none",
       }}
     >
-      {/* Back to JadorWorks bar */}
-      <div
-        className="text-center py-1.5 text-xs font-light"
-        style={{
-          backgroundColor: `rgba(${colors.primaryRgb},0.04)`,
-          color: `rgba(${colors.primaryRgb},0.45)`,
-        }}
-      >
-        This is a demo site built by{" "}
-        <Link
-          href="/"
-          className="font-medium underline underline-offset-2 hover:opacity-80 transition-opacity"
-          style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
-        >
-          JadorWorks Web Studio
-        </Link>
-      </div>
-
       <nav className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
         <a
           href="#"
@@ -107,7 +89,7 @@ function DemoNav({ config }: { config: DemoConfig }) {
               key={link.href}
               href={link.href}
               className="text-sm font-normal transition-colors hover:opacity-100"
-              style={{ color: `rgba(${colors.primaryRgb},0.62)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
             >
               {link.label}
             </a>
@@ -170,7 +152,7 @@ function DemoHero({ config }: { config: DemoConfig }) {
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-6"
-            style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
             {config.tagline}
           </p>
@@ -188,7 +170,7 @@ function DemoHero({ config }: { config: DemoConfig }) {
         <ScrollReveal>
           <p
             className="mt-6 text-lg md:text-xl font-light leading-relaxed max-w-2xl"
-            style={{ color: `rgba(${colors.primaryRgb},0.62)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
           >
             {hero.subheadline}
           </p>
@@ -211,7 +193,7 @@ function DemoHero({ config }: { config: DemoConfig }) {
               className="inline-flex items-center justify-center px-8 py-4 text-base font-medium rounded-lg transition-all duration-300"
               style={{
                 border: `1px solid rgba(${colors.primaryRgb},0.15)`,
-                color: `rgba(${colors.primaryRgb},0.62)`,
+                color: `rgba(${colors.primaryRgb},0.70)`,
               }}
             >
               View Our Services
@@ -285,7 +267,7 @@ function DemoTrust({ config }: { config: DemoConfig }) {
             </svg>
             <span
               className="text-sm font-medium"
-              style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
             >
               {badge}
             </span>
@@ -303,12 +285,12 @@ function DemoServices({ config }: { config: DemoConfig }) {
   const { colors } = config;
 
   return (
-    <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20" id="services">
+    <section className="py-16 md:py-20 px-6 md:px-12 lg:px-20" id="services">
       <div className="max-w-5xl mx-auto">
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-4"
-            style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
             Our Services
           </p>
@@ -368,7 +350,7 @@ function DemoServices({ config }: { config: DemoConfig }) {
                 <p
                   className="mt-2 text-sm font-light leading-relaxed transition-colors duration-300"
                   data-flip-sub
-                  style={{ color: `rgba(${colors.primaryRgb},0.62)` }}
+                  style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
                 >
                   {service.description}
                 </p>
@@ -398,7 +380,7 @@ function DemoGallery({ config }: { config: DemoConfig }) {
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-4"
-            style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
             Our Work
           </p>
@@ -477,13 +459,20 @@ function DemoAbout({ config }: { config: DemoConfig }) {
   const { colors } = config;
 
   return (
-    <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20" id="about">
+    <section
+      className="py-16 md:py-20 px-6 md:px-12 lg:px-20"
+      id="about"
+      style={{
+        backgroundColor: `rgba(${colors.primaryRgb},0.03)`,
+        borderTop: `1px solid rgba(${colors.primaryRgb},0.06)`,
+      }}
+    >
       <div className="max-w-5xl mx-auto">
         <div className="max-w-3xl">
           <ScrollReveal>
             <p
               className="text-xs font-medium tracking-[0.2em] uppercase mb-4"
-              style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
             >
               About Us
             </p>
@@ -498,7 +487,7 @@ function DemoAbout({ config }: { config: DemoConfig }) {
           <ScrollReveal>
             <p
               className="mt-6 text-base md:text-lg font-light leading-relaxed"
-              style={{ color: `rgba(${colors.primaryRgb},0.62)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
             >
               {config.about}
             </p>
@@ -515,7 +504,7 @@ function DemoAbout({ config }: { config: DemoConfig }) {
                 </p>
                 <p
                   className="mt-1 text-sm font-light"
-                  style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+                  style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
                 >
                   {config.hours}
                 </p>
@@ -535,7 +524,7 @@ function DemoAbout({ config }: { config: DemoConfig }) {
                 </p>
                 <p
                   className="mt-1 text-sm font-light"
-                  style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+                  style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
                 >
                   {config.area}
                 </p>
@@ -565,7 +554,7 @@ function DemoServiceArea({ config }: { config: DemoConfig }) {
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-4"
-            style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
             Service Area
           </p>
@@ -579,11 +568,11 @@ function DemoServiceArea({ config }: { config: DemoConfig }) {
             {config.serviceArea.regions.map((region) => (
               <span
                 key={region}
-                className="px-4 py-2 rounded-lg text-sm font-light"
+                className="px-5 py-2.5 rounded-lg text-sm font-normal"
                 style={{
                   backgroundColor: `rgba(${colors.primaryRgb},0.05)`,
-                  color: `rgba(${colors.primaryRgb},0.55)`,
-                  border: `1px solid rgba(${colors.primaryRgb},0.08)`,
+                  color: `rgba(${colors.primaryRgb},0.70)`,
+                  border: `1px solid rgba(${colors.primaryRgb},0.12)`,
                 }}
               >
                 {region}
@@ -611,7 +600,7 @@ function DemoTestimonials({ config }: { config: DemoConfig }) {
         <ScrollReveal>
           <p
             className="text-xs font-medium tracking-[0.2em] uppercase mb-4"
-            style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
             Testimonials
           </p>
@@ -633,18 +622,26 @@ function DemoTestimonials({ config }: { config: DemoConfig }) {
                   backgroundColor: colors.background,
                 }}
               >
-                {/* Quote mark */}
-                <span
-                  className="text-3xl font-serif leading-none"
-                  style={{ color: `rgba(${colors.primaryRgb},0.12)` }}
-                >
-                  &ldquo;
-                </span>
+                {/* Star rating */}
+                <div className="flex items-center gap-0.5 mb-3">
+                  {[...Array(5)].map((_, s) => (
+                    <svg
+                      key={s}
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill={colors.accent}
+                      stroke="none"
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </div>
                 <p
-                  className="mt-2 text-sm font-light leading-relaxed"
-                  style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
+                  className="text-sm font-light leading-relaxed"
+                  style={{ color: `rgba(${colors.primaryRgb},0.72)` }}
                 >
-                  {testimonial.quote}
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <div
                   className="mt-5 pt-4"
@@ -658,12 +655,23 @@ function DemoTestimonials({ config }: { config: DemoConfig }) {
                   >
                     {testimonial.name}
                   </p>
-                  <p
-                    className="text-xs font-light mt-0.5"
-                    style={{ color: `rgba(${colors.primaryRgb},0.42)` }}
-                  >
-                    {testimonial.location}
-                  </p>
+                  <div className="flex items-center gap-2 mt-1">
+                    <p
+                      className="text-xs font-light"
+                      style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
+                    >
+                      {testimonial.location}
+                    </p>
+                    <span
+                      className="text-xs font-medium px-2 py-0.5 rounded-full"
+                      style={{
+                        backgroundColor: `rgba(${colors.primaryRgb},0.05)`,
+                        color: `rgba(${colors.primaryRgb},0.45)`,
+                      }}
+                    >
+                      Verified homeowner
+                    </span>
+                  </div>
                 </div>
               </div>
             </ScrollReveal>
@@ -696,7 +704,7 @@ function DemoCTA({ config }: { config: DemoConfig }) {
           </h2>
           <p
             className="mt-4 text-base md:text-lg font-light leading-relaxed"
-            style={{ color: `rgba(250,249,246,0.65)` }}
+            style={{ color: `rgba(250,249,246,0.75)` }}
           >
             {cta.subheadline}
           </p>
@@ -719,8 +727,8 @@ function DemoCTA({ config }: { config: DemoConfig }) {
                   placeholder={field}
                   className="w-full px-4 py-3.5 rounded-lg text-sm font-light outline-none transition-colors placeholder:opacity-40"
                   style={{
-                    backgroundColor: "rgba(250,249,246,0.10)",
-                    border: "1px solid rgba(250,249,246,0.20)",
+                    backgroundColor: "rgba(250,249,246,0.12)",
+                    border: "1px solid rgba(250,249,246,0.28)",
                     color: colors.background,
                   }}
                 />
@@ -730,8 +738,8 @@ function DemoCTA({ config }: { config: DemoConfig }) {
                 rows={3}
                 className="w-full px-4 py-3.5 rounded-lg text-sm font-light outline-none transition-colors placeholder:opacity-40 resize-none"
                 style={{
-                  backgroundColor: "rgba(250,249,246,0.10)",
-                  border: "1px solid rgba(250,249,246,0.20)",
+                  backgroundColor: "rgba(250,249,246,0.12)",
+                  border: "1px solid rgba(250,249,246,0.28)",
                   color: colors.background,
                 }}
               />
@@ -748,7 +756,7 @@ function DemoCTA({ config }: { config: DemoConfig }) {
 
             <p
               className="mt-4 text-sm font-light"
-              style={{ color: "rgba(250,249,246,0.35)" }}
+              style={{ color: "rgba(250,249,246,0.50)" }}
             >
               We&apos;ll get back to you within one business day.
             </p>
@@ -765,7 +773,7 @@ function DemoCTA({ config }: { config: DemoConfig }) {
           >
             <p
               className="text-sm font-light"
-              style={{ color: "rgba(250,249,246,0.45)" }}
+              style={{ color: "rgba(250,249,246,0.55)" }}
             >
               Prefer to call?{" "}
               <a
@@ -805,7 +813,7 @@ function DemoFooter({ config }: { config: DemoConfig }) {
             </p>
             <p
               className="mt-3 text-sm font-light leading-relaxed"
-              style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
             >
               {config.tagline}
             </p>
@@ -821,7 +829,7 @@ function DemoFooter({ config }: { config: DemoConfig }) {
             </p>
             <div
               className="space-y-2 text-sm font-light"
-              style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.70)` }}
             >
               <p>{config.phone}</p>
               <p>{config.email}</p>
@@ -839,7 +847,7 @@ function DemoFooter({ config }: { config: DemoConfig }) {
             </p>
             <p
               className="text-sm font-light"
-              style={{ color: `rgba(${colors.primaryRgb},0.55)` }}
+              style={{ color: `rgba(${colors.primaryRgb},0.65)` }}
             >
               {config.area}
             </p>
@@ -856,17 +864,17 @@ function DemoFooter({ config }: { config: DemoConfig }) {
         <div className="max-w-5xl mx-auto px-6 md:px-12 lg:px-20 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p
             className="text-xs font-light"
-            style={{ color: `rgba(${colors.primaryRgb},0.30)` }}
+            style={{ color: `rgba(${colors.primaryRgb},0.45)` }}
           >
             &copy; {new Date().getFullYear()} {config.businessName}. All rights
             reserved.
           </p>
           <Link
             href="/"
-            className="text-xs font-light transition-colors hover:opacity-80"
-            style={{ color: `rgba(${colors.primaryRgb},0.40)` }}
+            className="text-xs font-medium transition-colors hover:opacity-80"
+            style={{ color: `rgba(${colors.primaryRgb},0.50)` }}
           >
-            Built by JadorWorks Web Studio →
+            Demo site — Built by JadorWorks Web Studio →
           </Link>
         </div>
       </div>
