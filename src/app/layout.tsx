@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans, Outfit, Lora } from "next/font/google";
+import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans, Outfit, Lora, Nunito_Sans, Playfair_Display } from "next/font/google";
 import { brand } from "@/lib/brand";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
@@ -55,6 +55,22 @@ const lora = Lora({
   display: "swap",
 });
 
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "600", "700", "800"],
+  style: ["normal", "italic"],
+  variable: "--font-nunito",
+  display: "swap",
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: `${brand.serviceLine} — ${brand.tagline}`,
   description:
@@ -67,7 +83,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable} ${outfit.variable} ${lora.variable}`}>
+    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable} ${outfit.variable} ${lora.variable} ${nunitoSans.variable} ${playfairDisplay.variable}`}>
       <body className="font-sans">
         <CustomCursor />
         {children}

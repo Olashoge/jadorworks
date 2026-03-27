@@ -48,7 +48,7 @@ const demos = [
     slug: "home-care",
     color: "#2A3D54",
     accent: "#7FA868",
-    status: "Coming Soon",
+    status: "Live",
   },
 ];
 

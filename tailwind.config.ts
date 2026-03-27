@@ -31,6 +31,14 @@ const config: Config = {
         "gl-brown-lt": "#A88458",
         "gl-stone": "#F5F3EF",
         "gl-stone2": "#EAE6DF",
+        "hc-navy": "#2A3D54",
+        "hc-navy2": "#1C2B3C",
+        "hc-navy-lt": "#3A5470",
+        "hc-sage": "#7FA868",
+        "hc-sage-lt": "#95C07D",
+        "hc-sage-dk": "#5D8A4A",
+        "hc-warm": "#FBF9F6",
+        "hc-warm2": "#F2EEE8",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -38,6 +46,8 @@ const config: Config = {
         condensed: ["var(--font-barlow-condensed)", "system-ui", "sans-serif"],
         cormorant: ["var(--font-cormorant)", "Georgia", "serif"],
         "dm-sans": ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        nunito: ["var(--font-nunito)", "system-ui", "sans-serif"],
+        playfair: ["var(--font-playfair)", "Georgia", "serif"],
       },
       keyframes: {
         "fade-up": {
