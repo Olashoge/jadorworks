@@ -34,31 +34,19 @@ export async function GET() {
           }}
         />
 
-        {/* Pixel J Mark — 5-square pattern */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "4px",
-            marginBottom: "32px",
-          }}
-        >
-          {/* Row 1: single square top-right */}
-          <div style={{ display: "flex", gap: "4px", justifyContent: "flex-end" }}>
-            <div style={{ width: "20px", height: "20px", backgroundColor: "#FAF9F6", borderRadius: "2px", display: "flex" }} />
+        {/* Pixel J Mark — correct 2-column, 5-square construction */}
+        <div style={{ display: "flex", gap: "16px", marginBottom: "32px" }}>
+          {/* Left column — top filled, middle empty, bottom filled */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
+            <div style={{ width: 40, height: 40, background: "transparent", display: "flex" }} />
+            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
           </div>
-          {/* Row 2: single square top-right */}
-          <div style={{ display: "flex", gap: "4px", justifyContent: "flex-end" }}>
-            <div style={{ width: "20px", height: "20px", backgroundColor: "#FAF9F6", borderRadius: "2px", display: "flex" }} />
-          </div>
-          {/* Row 3: two squares — hook */}
-          <div style={{ display: "flex", gap: "4px" }}>
-            <div style={{ width: "20px", height: "20px", backgroundColor: "#FAF9F6", borderRadius: "2px", display: "flex" }} />
-            <div style={{ width: "20px", height: "20px", backgroundColor: "#FAF9F6", borderRadius: "2px", display: "flex" }} />
-          </div>
-          {/* Row 4: single square bottom-left — tail */}
-          <div style={{ display: "flex", gap: "4px" }}>
-            <div style={{ width: "20px", height: "20px", backgroundColor: "#FAF9F6", borderRadius: "2px", display: "flex" }} />
+          {/* Right column — all three filled */}
+          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
+            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
+            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
           </div>
         </div>
 
