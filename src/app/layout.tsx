@@ -72,13 +72,98 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: `${brand.serviceLine} — ${brand.tagline}`,
+  metadataBase: new URL("https://jadorworks.com"),
+  title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions · Indiana",
   description:
-    "Launch a clean, mobile-friendly website with Google-ready setup and ongoing support. Built for local service businesses that need credibility, visibility, and more customer inquiries.",
+    "Professional websites, webapps, and digital solutions for local service businesses in Indiana. Google Business Profile setup and ongoing support included. Launch in 1–2 weeks.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
+  openGraph: {
+    title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
+    description:
+      "We build professional websites, webapps, and digital solutions for local service businesses — with Google setup and ongoing support included.",
+    url: "https://jadorworks.com",
+    siteName: "JadorWorks Web Studio",
+    images: [
+      {
+        url: "/og",
+        width: 1200,
+        height: 630,
+        alt: "JadorWorks Web Studio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
+    description:
+      "We build professional websites, webapps, and digital solutions for local service businesses — with Google setup and ongoing support included.",
+    images: ["/og"],
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "JadorWorks Web Studio",
+  description:
+    "Websites, webapps, and digital solutions for local service businesses in Indiana.",
+  url: "https://jadorworks.com",
+  telephone: "+13177215551",
+  email: "hello@jadorworks.com",
+  areaServed: { "@type": "State", name: "Indiana" },
+  serviceType: [
+    "Website Design",
+    "Web Application Development",
+    "Digital Solutions",
+    "Google Business Profile Setup",
+    "Local SEO",
+  ],
+  priceRange: "$",
+  sameAs: [],
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What does JadorWorks Web Studio do?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "JadorWorks Web Studio builds professional websites, webapps, and digital solutions for local service businesses. We handle everything from design and development to Google Business Profile setup and ongoing support.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does it take to launch a website with JadorWorks?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Most websites launch in 1–2 weeks. We keep the process simple: a short consultation, a design phase, and a fast build so your business gets online quickly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What types of businesses does JadorWorks work with?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We specialize in local service businesses — HVAC companies, remodeling contractors, landscapers, home care providers, and similar trades that need a professional online presence to attract local customers.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does JadorWorks help with Google and local SEO?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Every project includes Google Business Profile setup and local SEO foundations so your business shows up when nearby customers search for your services.",
+      },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -88,6 +173,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable} ${outfit.variable} ${lora.variable} ${nunitoSans.variable} ${playfairDisplay.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      </head>
       <body className="font-sans">
         <CustomCursor />
         {children}

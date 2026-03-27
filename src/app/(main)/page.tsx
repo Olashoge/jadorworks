@@ -1,5 +1,6 @@
 import { Hero } from "@/components/Hero";
 import { Ticker } from "@/components/Ticker";
+import { AboutSnippet } from "@/components/AboutSnippet";
 import { Problem } from "@/components/Problem";
 import { DemoSites } from "@/components/DemoSites";
 import { Included } from "@/components/Included";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <Hero />
       <Ticker />
+      <AboutSnippet />
       <Problem />
       <DemoSites />
       <Included />
