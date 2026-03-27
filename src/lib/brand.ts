@@ -9,7 +9,7 @@ export const brand = {
   domain: "jadorworks.com",
   email: "hello@jadorworks.com",
   tagline: "Professional websites for local service businesses",
-  phone: "(555) 000-0000", // Update with real number
+  phone: "(317) 721-5551",
 } as const;
 
 export const nav = {
