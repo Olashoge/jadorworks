@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Barlow, Barlow_Condensed, Cormorant_Garamond, DM_Sans, Outfit, Lora, Nunito_Sans, Playfair_Display } from "next/font/google";
-import { brand } from "@/lib/brand";
+import { Inter } from "next/font/google";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
 
@@ -10,72 +9,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const barlow = Barlow({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800", "900"],
-  style: ["normal", "italic"],
-  variable: "--font-barlow",
-  display: "swap",
-});
-
-const barlowCondensed = Barlow_Condensed({
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-  variable: "--font-barlow-condensed",
-  display: "swap",
-});
-
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-outfit",
-  display: "swap",
-});
-
-const lora = Lora({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
-  variable: "--font-lora",
-  display: "swap",
-});
-
-const nunitoSans = Nunito_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "600", "700", "800"],
-  style: ["normal", "italic"],
-  variable: "--font-nunito",
-  display: "swap",
-});
-
-const playfairDisplay = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://jadorworks.com"),
-  title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions · Indiana",
+  title: "JadorWorks Web Studio — Websites & Digital Solutions",
   description:
-    "Professional websites, webapps, and digital solutions for local service businesses in Indiana. Google Business Profile setup and ongoing support included. Launch in 1–2 weeks.",
+    "Indiana's local service businesses get professional websites, webapps, and digital solutions from JadorWorks — including Google Business Profile setup and ongoing support. Live in 1–2 weeks.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
@@ -83,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
     description:
-      "We build professional websites, webapps, and digital solutions for local service businesses — with Google setup and ongoing support included.",
+      "We build professional websites, webapps, and digital solutions for local service businesses in Indiana — with Google Business Profile setup and ongoing support included.",
     url: "https://jadorworks.com",
     siteName: "JadorWorks Web Studio",
     images: [
@@ -91,7 +29,7 @@ export const metadata: Metadata = {
         url: "/og",
         width: 1200,
         height: 630,
-        alt: "JadorWorks Web Studio",
+        alt: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions · Indiana",
       },
     ],
     locale: "en_US",
@@ -101,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
     description:
-      "We build professional websites, webapps, and digital solutions for local service businesses — with Google setup and ongoing support included.",
+      "We build professional websites, webapps, and digital solutions for local service businesses in Indiana — with Google setup and ongoing support included.",
     images: ["/og"],
   },
 };
@@ -115,16 +53,25 @@ const jsonLd = {
   url: "https://jadorworks.com",
   telephone: "+13177215551",
   email: "hello@jadorworks.com",
-  areaServed: { "@type": "State", name: "Indiana" },
+  logo: "https://jadorworks.com/favicon.svg",
+  foundingDate: "2026",
+  areaServed: {
+    "@type": "State",
+    name: "Indiana",
+    sameAs: "https://en.wikipedia.org/wiki/Indiana",
+  },
   serviceType: [
-    "Website Design",
+    "Website Design and Development",
     "Web Application Development",
     "Digital Solutions",
     "Google Business Profile Setup",
     "Local SEO",
+    "Ongoing Website Support",
   ],
-  priceRange: "$",
-  sameAs: [],
+  priceRange: "$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Credit Card, Bank Transfer",
+  sameAs: ["https://jadorworks.com"],
 };
 
 const faqJsonLd = {
@@ -133,34 +80,34 @@ const faqJsonLd = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What does JadorWorks Web Studio do?",
+      name: "What does JadorWorks Web Studio build?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "JadorWorks Web Studio builds professional websites, webapps, and digital solutions for local service businesses. We handle everything from design and development to Google Business Profile setup and ongoing support.",
+        text: "JadorWorks Web Studio builds professional websites, webapps, and digital solutions for local service businesses in Indiana. Every project includes Google Business Profile setup and ongoing support.",
       },
     },
     {
       "@type": "Question",
-      name: "How long does it take to launch a website with JadorWorks?",
+      name: "How long does it take to launch a website?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most websites launch in 1–2 weeks. We keep the process simple: a short consultation, a design phase, and a fast build so your business gets online quickly.",
+        text: "Most websites built by JadorWorks Web Studio go live in 1 to 2 weeks from the initial consultation.",
       },
     },
     {
       "@type": "Question",
-      name: "What types of businesses does JadorWorks work with?",
+      name: "Does JadorWorks Web Studio serve businesses outside Indianapolis?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "We specialize in local service businesses — HVAC companies, remodeling contractors, landscapers, home care providers, and similar trades that need a professional online presence to attract local customers.",
+        text: "Yes. JadorWorks Web Studio serves local service businesses across Indiana, with roots in Indianapolis and the surrounding areas.",
       },
     },
     {
       "@type": "Question",
-      name: "Does JadorWorks help with Google and local SEO?",
+      name: "What is included in a JadorWorks website package?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. Every project includes Google Business Profile setup and local SEO foundations so your business shows up when nearby customers search for your services.",
+        text: "Every package includes a professional website, Google Business Profile setup or cleanup, local SEO foundation, and ongoing hosting and support. Starter, Growth, and Custom tiers are available.",
       },
     },
   ],
@@ -172,8 +119,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${barlow.variable} ${barlowCondensed.variable} ${cormorant.variable} ${dmSans.variable} ${outfit.variable} ${lora.variable} ${nunitoSans.variable} ${playfairDisplay.variable}`}>
+    <html lang="en" className={inter.variable}>
       <body className="font-sans">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.body.classList.add('js-enabled');`,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

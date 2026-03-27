@@ -1,42 +1,44 @@
 import type { MetadataRoute } from "next";
 
+const LAST_UPDATED = new Date("2026-03-27");
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://jadorworks.com";
 
   return [
     {
       url: baseUrl,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${baseUrl}/demos`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${baseUrl}/demos/hvac`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/demos/remodeling`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/demos/landscaping`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.6,
     },
     {
       url: `${baseUrl}/demos/home-care`,
-      lastModified: new Date(),
+      lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.6,
     },

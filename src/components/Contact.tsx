@@ -23,6 +23,7 @@ export function Contact() {
       email: formData.get("email") as string,
       phone: formData.get("phone") as string,
       message: formData.get("message") as string,
+      website: formData.get("website") as string, // honeypot
       source: "main",
     };
 
@@ -105,6 +106,15 @@ export function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 text-left">
+              {/* Honeypot — invisible to real users, bots fill it */}
+              <input
+                name="website"
+                type="text"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+              />
               <div className="grid md:grid-cols-2 gap-4">
                 <input
                   type="text"

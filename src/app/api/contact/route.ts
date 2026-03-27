@@ -9,6 +9,33 @@ const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || "hello@jadorworks.com";
 const FROM_EMAIL = process.env.FROM_EMAIL || "JadorWorks Web Studio <noreply@jadorworks.com>";
 
+// ------------------------------------
+// Lightweight rate limiting (best-effort)
+// Resets on cold start, does not coordinate
+// across serverless instances. This is temporary
+// anti-spam friction, not durable rate limiting.
+// ------------------------------------
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 3; // max submissions per IP per window
+
+const rateLimitMap = new Map<string, { count: number; resetAt: number }>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const entry = rateLimitMap.get(ip);
+
+  if (!entry || now > entry.resetAt) {
+    rateLimitMap.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return false;
+  }
+
+  entry.count += 1;
+  return entry.count > RATE_LIMIT_MAX;
+}
+
+// ------------------------------------
+// Types & validation
+// ------------------------------------
 interface ContactFormData {
   name: string;
   business: string;
@@ -16,6 +43,7 @@ interface ContactFormData {
   phone?: string;
   message?: string;
   source?: string; // "main" | "hvac" | "remodeling" | "landscaping" | "home-care"
+  website?: string; // honeypot — should always be empty
 }
 
 function buildEmailHTML(data: ContactFormData): string {
@@ -110,13 +138,46 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Parse form data
-    const body = await req.json() as ContactFormData;
+    // Rate limiting (best-effort, per-instance)
+    const ip =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
 
-    // Validate required fields
-    if (!body.name || !body.business || !body.email) {
+    if (isRateLimited(ip)) {
       return NextResponse.json(
-        { error: "Name, business, and email are required" },
+        { error: "Too many requests. Please try again later." },
+        { status: 429 }
+      );
+    }
+
+    // Parse form data
+    const body = (await req.json()) as ContactFormData;
+
+    // Honeypot — bots fill hidden fields, real users don't
+    if (body.website) {
+      // Silent success — don't reveal it's a trap
+      return NextResponse.json({ success: true });
+    }
+
+    // Validate required fields with length limits
+    if (!body.name || typeof body.name !== "string" || body.name.length > 100) {
+      return NextResponse.json(
+        { error: "Name is required (max 100 characters)" },
+        { status: 400 }
+      );
+    }
+
+    if (!body.business || typeof body.business !== "string" || body.business.length > 200) {
+      return NextResponse.json(
+        { error: "Business name is required (max 200 characters)" },
+        { status: 400 }
+      );
+    }
+
+    if (!body.email || typeof body.email !== "string" || body.email.length > 200) {
+      return NextResponse.json(
+        { error: "Email is required (max 200 characters)" },
         { status: 400 }
       );
     }
@@ -126,6 +187,21 @@ export async function POST(req: NextRequest) {
     if (!emailRegex.test(body.email)) {
       return NextResponse.json(
         { error: "Invalid email address" },
+        { status: 400 }
+      );
+    }
+
+    // Optional field length limits
+    if (body.phone && (typeof body.phone !== "string" || body.phone.length > 30)) {
+      return NextResponse.json(
+        { error: "Phone number too long (max 30 characters)" },
+        { status: 400 }
+      );
+    }
+
+    if (body.message && (typeof body.message !== "string" || body.message.length > 2000)) {
+      return NextResponse.json(
+        { error: "Message too long (max 2000 characters)" },
         { status: 400 }
       );
     }

@@ -53,7 +53,7 @@ export function Footer() {
               Service Area
             </p>
             <div className="space-y-4 text-sm font-light text-navy-62">
-              <p>Nationwide</p>
+              <p>Indianapolis & Indiana</p>
               <p>Local SEO</p>
             </div>
           </div>

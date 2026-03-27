@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { brand } from "@/lib/brand";
 import { LogoLockup } from "@/components/PixelJMark";
 
 const navLinks = [
