@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { CustomCursor } from "@/components/CustomCursor";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jadorworks.com"),
   title: "JadorWorks Web Studio — Websites & Digital Solutions",
   description:
-    "Indiana's local service businesses get professional websites, webapps, and digital solutions from JadorWorks — including Google Business Profile setup and ongoing support. Live in 1–2 weeks.",
+    "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
@@ -21,12 +23,12 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
     description:
-      "We build professional websites, webapps, and digital solutions for local service businesses in Indiana — with Google Business Profile setup and ongoing support included.",
+      "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
     url: "https://jadorworks.com",
     siteName: "JadorWorks Web Studio",
     images: [
       {
-        url: "/og",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions · Indiana",
@@ -39,8 +41,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JadorWorks Web Studio — Websites, Webapps & Digital Solutions",
     description:
-      "We build professional websites, webapps, and digital solutions for local service businesses in Indiana — with Google setup and ongoing support included.",
-    images: ["/og"],
+      "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -60,14 +62,48 @@ const jsonLd = {
     name: "Indiana",
     sameAs: "https://en.wikipedia.org/wiki/Indiana",
   },
-  serviceType: [
-    "Website Design and Development",
-    "Web Application Development",
-    "Digital Solutions",
-    "Google Business Profile Setup",
-    "Local SEO",
-    "Ongoing Website Support",
-  ],
+  image: "https://jadorworks.com/og-image.png",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Web & Digital Services",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Website Design and Development",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Web Application Development",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Google Business Profile Setup",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Local SEO",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Ongoing Website Support",
+        },
+      },
+    ],
+  },
   priceRange: "$$",
   currenciesAccepted: "USD",
   paymentAccepted: "Credit Card, Bank Transfer",
@@ -136,6 +172,8 @@ export default function RootLayout({
         />
         <CustomCursor />
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
