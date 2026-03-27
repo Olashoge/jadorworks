@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { brand, nav } from "@/lib/brand";
+import { LogoLockup } from "@/components/PixelJMark";
 
 export function Footer() {
   return (
@@ -8,7 +9,8 @@ export function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
-            <p className="text-base font-semibold text-navy">{brand.name}</p>
+            <LogoLockup size={16} color="#0D1B2A" />
+            <div className="mt-2" />
             <p className="mt-5 text-sm font-light text-navy-62 leading-relaxed">
               Professional websites for local service businesses. We help local
               businesses get found online with professional websites, Google

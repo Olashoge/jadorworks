@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { brand } from "@/lib/brand";
+import { LogoLockup } from "@/components/PixelJMark";
 
 const navLinks = [
   { label: "What\u2019s Included", href: "/#included" },
@@ -31,9 +32,9 @@ export function Navbar() {
       style={{ borderBottom: scrolled ? "1px solid rgba(13,27,42,0.10)" : "none" }}
     >
       <nav className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="text-base font-semibold text-navy tracking-tight">
-          {brand.name}
+        {/* Logo — Pixel J Mark + Wordmark */}
+        <Link href="/" className="flex items-center">
+          <LogoLockup size={18} color="#0D1B2A" />
         </Link>
 
         {/* Desktop Nav */}

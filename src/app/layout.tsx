@@ -75,6 +75,10 @@ export const metadata: Metadata = {
   title: `${brand.serviceLine} — ${brand.tagline}`,
   description:
     "Launch a clean, mobile-friendly website with Google-ready setup and ongoing support. Built for local service businesses that need credibility, visibility, and more customer inquiries.",
+  icons: {
+    icon: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({

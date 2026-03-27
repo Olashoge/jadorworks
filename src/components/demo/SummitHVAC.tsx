@@ -113,10 +113,11 @@ export function SummitHVAC() {
           href="https://jadorworks.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:no-underline"
-          style={{ color: C.orange }}
+          className="underline-offset-2 hover:opacity-80"
+          style={{ color: C.orange, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
         >
-          JadorWorks Web Studio
+          <svg width="10" height="16" viewBox="0 0 28 44" fill="none"><rect x="0" y="0" width="12" height="12" fill={C.orange}/><rect x="16" y="0" width="12" height="12" fill={C.orange}/><rect x="16" y="16" width="12" height="12" fill={C.orange}/><rect x="16" y="32" width="12" height="12" fill={C.orange}/><rect x="0" y="32" width="12" height="12" fill={C.orange}/></svg>
+          <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span>{" "}Web Studio
         </a>
       </div>
 
@@ -1380,7 +1381,7 @@ export function SummitHVAC() {
               className="text-[11px] hover:underline"
               style={{ color: "rgba(255,255,255,.35)", ...barlow(500) }}
             >
-              Built by JadorWorks Web Studio &rarr;
+              Built by <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span> Web Studio &rarr;
             </a>
           </div>
         </div>

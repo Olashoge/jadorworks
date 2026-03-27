@@ -363,9 +363,10 @@ export function GracefulLivingHomeCare() {
         This is a demo site built by{" "}
         <a
           href="/"
-          style={{ color: C.sageLt, textDecoration: "none", fontWeight: 700 }}
+          style={{ color: C.sageLt, textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 6 }}
         >
-          JadorWorks Web Studio
+          <svg width="10" height="16" viewBox="0 0 28 44" fill="none"><rect x="0" y="0" width="12" height="12" fill={C.sageLt}/><rect x="16" y="0" width="12" height="12" fill={C.sageLt}/><rect x="16" y="16" width="12" height="12" fill={C.sageLt}/><rect x="16" y="32" width="12" height="12" fill={C.sageLt}/><rect x="0" y="32" width="12" height="12" fill={C.sageLt}/></svg>
+          <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span>{" "}Web Studio
         </a>
       </div>
 
@@ -1441,7 +1442,7 @@ export function GracefulLivingHomeCare() {
           <div style={{ ...nunito(400, { fontSize: "12px", color: "rgba(255,255,255,0.2)" }) }}>
             Built by{" "}
             <a href="/" style={{ color: "rgba(255,255,255,0.32)", textDecoration: "none" }}>
-              JadorWorks Web Studio →
+              <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span> Web Studio →
             </a>
           </div>
         </div>

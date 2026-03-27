@@ -185,10 +185,13 @@ export function CornerstoneRenovations() {
           style={{
             color: C.wood,
             textDecoration: "none",
-            fontWeight: 600,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: 6,
           }}
         >
-          JadorWorks Web Studio
+          <svg width="10" height="16" viewBox="0 0 28 44" fill="none"><rect x="0" y="0" width="12" height="12" fill={C.wood}/><rect x="16" y="0" width="12" height="12" fill={C.wood}/><rect x="16" y="16" width="12" height="12" fill={C.wood}/><rect x="16" y="32" width="12" height="12" fill={C.wood}/><rect x="0" y="32" width="12" height="12" fill={C.wood}/></svg>
+          <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span>{" "}Web Studio
         </a>
       </div>
 
@@ -222,13 +225,8 @@ export function CornerstoneRenovations() {
             textDecoration: "none",
           }}
         >
-          <svg
-            width="14"
-            height="14"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-          >
-            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
           </svg>
           (555) 610-2385
         </a>
@@ -2113,7 +2111,7 @@ export function CornerstoneRenovations() {
                 textDecoration: "none",
               }}
             >
-              JadorWorks Web Studio &rarr;
+              <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span> Web Studio &rarr;
             </a>
           </div>
         </div>
