@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const LAST_UPDATED = new Date("2026-03-27");
+const LAST_UPDATED = new Date("2026-03-28");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://jadorworks.com";
@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/onboarding`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 }
