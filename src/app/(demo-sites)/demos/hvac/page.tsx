@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SummitHVAC } from "@/components/demo/SummitHVAC";
+import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
   title: "Summit Air & Plumbing — Indianapolis HVAC & Plumbing Experts",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function HVACDemoPage() {
-  return <SummitHVAC />;
+  return (
+    <>
+      <SummitHVAC />
+      <ExploreMoreDemos currentHref="/demos/hvac" />
+    </>
+  );
 }

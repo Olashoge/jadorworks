@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CornerstoneRenovations } from "@/components/demo/CornerstoneRenovations";
+import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
   title: "Cornerstone Renovations — Indianapolis Remodeling & Home Improvement",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function RemodelingDemoPage() {
-  return <CornerstoneRenovations />;
+  return (
+    <>
+      <CornerstoneRenovations />
+      <ExploreMoreDemos currentHref="/demos/remodeling" />
+    </>
+  );
 }

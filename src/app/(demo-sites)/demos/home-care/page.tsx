@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { GracefulLivingHomeCare } from "@/components/demo/GracefulLivingHomeCare";
+import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
   title: "Graceful Living Home Care — Indianapolis Senior & Home Care Services",
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomeCareDemoPage() {
-  return <GracefulLivingHomeCare />;
+  return (
+    <>
+      <GracefulLivingHomeCare />
+      <ExploreMoreDemos currentHref="/demos/home-care" />
+    </>
+  );
 }
