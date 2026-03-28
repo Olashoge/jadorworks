@@ -3,9 +3,9 @@ import { CornerstoneRenovations } from "@/components/demo/CornerstoneRenovations
 import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
-  title: "Cornerstone Renovations — Indianapolis Remodeling & Home Improvement",
+  title: "Remodeling Contractor Website Demo | JadorWorks Web Studio",
   description:
-    "Full-service remodeling for Indianapolis-area homeowners. Kitchen, bathroom, basement, and whole-home renovations. Licensed, insured, and trusted for over 15 years.",
+    "A professional remodeling and home improvement website demo built by JadorWorks Web Studio. See how renovation contractors can showcase projects and win more clients online.",
 };
 
 export default function RemodelingDemoPage() {

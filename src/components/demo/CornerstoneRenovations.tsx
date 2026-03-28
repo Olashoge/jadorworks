@@ -635,7 +635,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL5b.png"
-              alt="Kitchen Remodeling"
+              alt="Modern kitchen remodel with updated cabinets and countertops"
               style={{
                 width: "100%",
                 height: 360,
@@ -690,7 +690,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL2.png"
-              alt="Basement Before & After"
+              alt="Basement renovation before and after comparison"
               style={{
                 width: "100%",
                 height: 480,
@@ -734,7 +734,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL3.png"
-              alt="Bathroom Renovation"
+              alt="Bathroom renovation with tiled walk-in shower and vanity"
               style={{
                 width: "100%",
                 height: 360,
@@ -778,7 +778,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL1.png"
-              alt="Basement Finishing"
+              alt="Finished basement with recessed lighting and built-in shelving"
               style={{
                 width: "100%",
                 height: 360,
@@ -822,7 +822,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL4a.png"
-              alt="Spa Bathroom"
+              alt="Luxury spa-style bathroom remodel with freestanding tub"
               style={{
                 width: "100%",
                 height: 360,
@@ -1052,7 +1052,7 @@ export function CornerstoneRenovations() {
           >
             <img
               src="/images/demos/remodeling/REMODEL4b.png"
-              alt="Cornerstone project manager reviewing plans"
+              alt="Remodeling project manager reviewing renovation plans with homeowner"
               style={{
                 position: "absolute",
                 left: 0,
@@ -1064,7 +1064,7 @@ export function CornerstoneRenovations() {
             />
             <img
               src="/images/demos/remodeling/REMODEL5a.png"
-              alt="Cornerstone craftsman at work"
+              alt="Skilled craftsman installing custom trim during home renovation"
               style={{
                 position: "absolute",
                 right: 0,
@@ -1650,7 +1650,7 @@ export function CornerstoneRenovations() {
           <div style={{ position: "relative", overflow: "hidden" }}>
             <img
               src="/images/demos/remodeling/REMODEL1.png"
-              alt="Completed renovation"
+              alt="Completed whole-home renovation with open-concept living space"
               style={{
                 width: "100%",
                 height: "100%",

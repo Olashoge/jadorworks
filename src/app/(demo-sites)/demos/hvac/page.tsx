@@ -3,9 +3,9 @@ import { SummitHVAC } from "@/components/demo/SummitHVAC";
 import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
-  title: "Summit Air & Plumbing — Indianapolis HVAC & Plumbing Experts",
+  title: "HVAC Website Demo for Indianapolis Businesses | JadorWorks",
   description:
-    "Licensed HVAC and plumbing professionals serving Indianapolis and surrounding areas. Fast response, honest pricing, no surprises. 24/7 Emergency Service.",
+    "A modern HVAC and plumbing website demo built by JadorWorks Web Studio. See how local service businesses build trust, showcase expertise, and generate leads online.",
 };
 
 export default function HVACDemoPage() {

@@ -3,9 +3,9 @@ import { GreenLineLandscaping } from "@/components/demo/GreenLineLandscaping";
 import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
-  title: "GreenLine Landscaping — Indianapolis Lawn Care & Landscape Design",
+  title: "Landscaping Website Demo | JadorWorks Web Studio",
   description:
-    "Professional landscaping, lawn care, and hardscaping serving Indianapolis, Hendricks & Marion Counties. Licensed & insured for over 10 years.",
+    "A modern landscaping and lawn care website demo built by JadorWorks Web Studio. See how landscaping companies can attract homeowners and grow their business online.",
 };
 
 export default function LandscapingDemoPage() {

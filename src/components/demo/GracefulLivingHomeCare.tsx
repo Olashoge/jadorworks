@@ -616,7 +616,7 @@ export function GracefulLivingHomeCare() {
         <div style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: "40%", overflow: "hidden" }}>
           <img
             src="/images/demos/home-care/HOMECARE2.png"
-            alt="Senior enjoying home"
+            alt="Senior woman relaxing comfortably at home with in-home care support"
             style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", opacity: 0.5 }}
           />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(28,43,60,1) 0%, transparent 50%)" }} />
@@ -660,7 +660,7 @@ export function GracefulLivingHomeCare() {
           <div ref={addReveal} className="reveal" style={{ position: "relative" }}>
             <img
               src="/images/demos/home-care/HOMECARE6.png"
-              alt="Caregiver with senior client"
+              alt="Professional caregiver assisting a senior client with daily activities"
               style={{ width: "100%", height: "480px", objectFit: "cover", display: "block" }}
             />
             <div style={{ position: "absolute", bottom: "-20px", right: "-20px", background: C.navy, padding: "28px 32px" }}>
@@ -795,12 +795,12 @@ export function GracefulLivingHomeCare() {
           <div ref={addReveal} className="reveal" style={{ position: "relative", height: "580px" }}>
             <img
               src="/images/demos/home-care/HOMECARE3.png"
-              alt="Graceful Living care team"
+              alt="Home care team of trained caregivers ready to serve families"
               style={{ position: "absolute", left: 0, top: 0, width: "68%", height: "78%", objectFit: "cover", borderRadius: "2px" }}
             />
             <img
               src="/images/demos/home-care/HOMECARE4.png"
-              alt="Compassionate caregiver holding hands"
+              alt="Compassionate caregiver holding hands with elderly client"
               style={{
                 position: "absolute",
                 right: 0,
@@ -1016,7 +1016,7 @@ export function GracefulLivingHomeCare() {
           <div ref={addReveal} className="reveal d2">
             <img
               src="/images/demos/home-care/HOMECARE5.png"
-              alt="Caregiver helping senior in kitchen"
+              alt="In-home caregiver helping senior prepare a meal in the kitchen"
               style={{ width: "100%", height: "520px", objectFit: "cover", borderRadius: "4px" }}
             />
           </div>
@@ -1196,7 +1196,7 @@ export function GracefulLivingHomeCare() {
           <div style={{ position: "relative", overflow: "hidden" }}>
             <img
               src="/images/demos/home-care/HOMECARE2.png"
-              alt="Senior at peace at home"
+              alt="Senior enjoying peaceful independent living with home care support"
               style={{ width: "100%", height: "100%", objectFit: "cover" }}
             />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(28,43,60,0.96) 0%, rgba(28,43,60,0.78) 55%, rgba(28,43,60,0.4) 100%)" }} />

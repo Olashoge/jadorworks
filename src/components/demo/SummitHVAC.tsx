@@ -225,7 +225,7 @@ export function SummitHVAC() {
         <div className="absolute inset-0">
           <img
             src="/images/demos/hvac/HVAC1.png"
-            alt=""
+            alt="HVAC technician servicing a residential heating system"
             className="w-full h-full object-cover"
             style={{ opacity: 0.35 }}
           />
@@ -244,7 +244,7 @@ export function SummitHVAC() {
         >
           <img
             src="/images/demos/hvac/HVAC2.png"
-            alt=""
+            alt="Professional plumber repairing residential plumbing"
             className="w-full h-full object-cover"
             style={{ opacity: 0.55 }}
           />
@@ -720,7 +720,7 @@ export function SummitHVAC() {
           <div className="relative reveal">
             <img
               src="/images/demos/hvac/HVAC4.png"
-              alt="Summit HVAC technician"
+              alt="HVAC technician inspecting a residential air conditioning unit"
               className="w-full object-cover"
               style={{ height: 540 }}
             />
@@ -796,13 +796,13 @@ export function SummitHVAC() {
           <div className="relative reveal" style={{ minHeight: 480 }}>
             <img
               src="/images/demos/hvac/HVAC3.png"
-              alt="Summit Air team"
+              alt="HVAC and plumbing service team ready for residential calls"
               className="relative z-10 object-cover"
               style={{ width: "72%", height: 420 }}
             />
             <img
               src="/images/demos/hvac/HVAC5.png"
-              alt="Summit Air work"
+              alt="Technician performing furnace maintenance in a home"
               className="absolute bottom-0 right-0 z-20 object-cover border-4 border-white"
               style={{ width: "55%", height: 300 }}
             />
@@ -1063,7 +1063,7 @@ export function SummitHVAC() {
         {/* bg image */}
         <img
           src="/images/demos/hvac/HVAC3.png"
-          alt=""
+          alt="HVAC service team providing emergency repair"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 0.15 }}
         />

@@ -3,9 +3,9 @@ import { GracefulLivingHomeCare } from "@/components/demo/GracefulLivingHomeCare
 import { ExploreMoreDemos } from "@/components/demo/ExploreMoreDemos";
 
 export const metadata: Metadata = {
-  title: "Graceful Living Home Care — Indianapolis Senior & Home Care Services",
+  title: "Home Care Website Demo | JadorWorks Web Studio",
   description:
-    "Compassionate, dependable in-home care for seniors and adults in Indianapolis. Background-checked caregivers, personalized care plans, and 7-day availability.",
+    "A compassionate home care website demo built by JadorWorks Web Studio. See how senior care and in-home service providers can build trust and connect with families online.",
 };
 
 export default function HomeCareDemoPage() {
