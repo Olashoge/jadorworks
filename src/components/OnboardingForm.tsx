@@ -846,6 +846,9 @@ export function OnboardingForm() {
               Your information is private and secure. We will never share your details with
               third parties.
             </p>
+            <p className="text-[10px] font-light text-navy/25 text-center mt-6 leading-relaxed">
+              This form is provided for active JadorWorks clients and project onboarding.
+            </p>
           </div>
         </form>
       </div>

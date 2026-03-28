@@ -42,11 +42,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.6,
     },
-    {
-      url: `${baseUrl}/onboarding`,
-      lastModified: LAST_UPDATED,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
   ];
 }
