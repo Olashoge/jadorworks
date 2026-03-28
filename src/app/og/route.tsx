@@ -7,101 +7,80 @@ export async function GET() {
     (
       <div
         style={{
-          width: "100%",
-          height: "100%",
+          width: "1200px",
+          height: "630px",
+          background: "#0D1B2A",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#0D1B2A",
-          padding: "60px",
+          alignItems: "flex-start",
+          justifyContent: "space-between",
+          padding: "80px 96px",
+          fontFamily: "Inter, sans-serif",
           position: "relative",
         }}
       >
-        {/* Subtle grid texture */}
-        <div
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            opacity: 0.04,
-            backgroundImage:
-              "linear-gradient(rgba(250,249,246,1) 1px, transparent 1px), linear-gradient(90deg, rgba(250,249,246,1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-            display: "flex",
-          }}
-        />
+        {/* Top row — Pixel J mark + label */}
+        <div style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "flex-start" }}>
 
-        {/* Pixel J Mark — correct 2-column, 5-square construction */}
-        <div style={{ display: "flex", gap: "16px", marginBottom: "32px" }}>
-          {/* Left column — top filled, middle empty, bottom filled */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
-            <div style={{ width: 40, height: 40, background: "transparent", display: "flex" }} />
-            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
+          {/* Pixel J Mark — correct construction */}
+          <div style={{ display: "flex", gap: "16px" }}>
+            {/* Left column — top filled, middle empty, bottom filled */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ width: 40, height: 40, background: "#FAF9F6" }} />
+              <div style={{ width: 40, height: 40, background: "transparent" }} />
+              <div style={{ width: 40, height: 40, background: "#FAF9F6" }} />
+            </div>
+            {/* Right column — all three filled */}
+            <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+              <div style={{ width: 40, height: 40, background: "#FAF9F6" }} />
+              <div style={{ width: 40, height: 40, background: "#FAF9F6" }} />
+              <div style={{ width: 40, height: 40, background: "#FAF9F6" }} />
+            </div>
           </div>
-          {/* Right column — all three filled */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
-            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
-            <div style={{ width: 40, height: 40, background: "#FAF9F6", display: "flex" }} />
+
+          <span style={{ fontSize: 14, fontWeight: 500, color: "rgba(250,249,246,0.28)", letterSpacing: "3px", textTransform: "uppercase" as const }}>
+            Web Studio
+          </span>
+        </div>
+
+        {/* Middle — wordmark + headline */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+          <div style={{ display: "flex", alignItems: "baseline" }}>
+            <span style={{ fontSize: 86, fontWeight: 200, color: "#FAF9F6", letterSpacing: "-3px", lineHeight: 1 }}>Jador</span>
+            <span style={{ fontSize: 86, fontWeight: 800, color: "#FAF9F6", letterSpacing: "-3px", lineHeight: 1 }}>Works</span>
           </div>
+          <span style={{ fontSize: 22, fontWeight: 300, color: "rgba(250,249,246,0.6)", maxWidth: "700px", lineHeight: 1.5 }}>
+            Websites, webapps &amp; digital solutions for Indiana&apos;s local service businesses.
+          </span>
         </div>
 
-        {/* Wordmark */}
-        <div
-          style={{
-            display: "flex",
-            fontSize: "48px",
-            color: "#FAF9F6",
-            letterSpacing: "-0.02em",
-            marginBottom: "16px",
-          }}
-        >
-          <span style={{ fontWeight: 300 }}>Jador</span>
-          <span style={{ fontWeight: 700 }}>Works</span>
-        </div>
-
-        {/* Tagline */}
-        <div
-          style={{
-            display: "flex",
-            fontSize: "20px",
-            color: "rgba(250,249,246,0.6)",
-            fontWeight: 300,
-            textAlign: "center",
-            maxWidth: "700px",
-            lineHeight: 1.5,
-          }}
-        >
-          Websites, webapps, and digital solutions for local service businesses — built in Indiana.
-        </div>
-
-        {/* URL + Location */}
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginTop: "40px",
-            fontSize: "14px",
-            color: "rgba(250,249,246,0.3)",
-            fontWeight: 400,
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
-          }}
-        >
-          <span style={{ display: "flex" }}>jadorworks.com</span>
-          <span style={{ display: "flex" }}>·</span>
-          <span style={{ display: "flex" }}>Indiana</span>
+        {/* Bottom row — CTA + URL + Indiana */}
+        <div style={{ display: "flex", justifyContent: "space-between", width: "100%", alignItems: "flex-end" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+            {/* CTA pill */}
+            <div style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "12px",
+              background: "rgba(250,249,246,0.10)",
+              border: "1.5px solid rgba(250,249,246,0.25)",
+              padding: "12px 24px",
+            }}>
+              <span style={{ fontSize: 15, fontWeight: 600, color: "#FAF9F6", letterSpacing: "2px", textTransform: "uppercase" as const }}>
+                Get a Free Consultation
+              </span>
+              <span style={{ fontSize: 15, color: "rgba(250,249,246,0.6)" }}>→</span>
+            </div>
+            <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(250,249,246,0.25)", letterSpacing: "3px", textTransform: "uppercase" as const }}>
+              jadorworks.com
+            </span>
+          </div>
+          <span style={{ fontSize: 13, fontWeight: 500, color: "rgba(250,249,246,0.25)", letterSpacing: "3px", textTransform: "uppercase" as const }}>
+            Indiana
+          </span>
         </div>
       </div>
     ),
-    {
-      width: 1200,
-      height: 630,
-    }
+    { width: 1200, height: 630 }
   );
 }
