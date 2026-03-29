@@ -73,6 +73,8 @@ export function DemoSites() {
                     ? `/demos/${demo.slug}`
                     : "/demos"
                 }
+                target={demo.status === "Live" ? "_blank" : undefined}
+                rel={demo.status === "Live" ? "noopener noreferrer" : undefined}
                 className={`group block rounded-xl overflow-hidden transition-all duration-300 ${
                   demo.status === "Live"
                     ? "hover:-translate-y-1 hover:shadow-lg"

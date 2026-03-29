@@ -200,6 +200,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block px-5 py-2.5 text-[13px] font-normal transition-colors duration-150"
                     style={{ color: "rgba(13,27,42,0.62)" }}
                     onMouseEnter={(e) => {
@@ -367,6 +369,8 @@ export function Navbar() {
                   <Link
                     key={link.href}
                     href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setMobileOpen(false)}
                     className="block py-2 text-[13px] font-light transition-colors"
                     style={{ color: "rgba(13,27,42,0.45)" }}

@@ -193,6 +193,17 @@ const industries = [
 
 const included = [
   {
+    title: "Professional Website",
+    description:
+      "Clean, fast, mobile-first. Designed for your specific industry — with the layout, copy, and trust signals that turn visitors into customers.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </svg>
+    ),
+  },
+  {
     title: "Google Business Profile",
     description:
       "Setup or cleanup so your business shows up in Google Maps and local search with accurate info, photos, and reviews.",
@@ -242,9 +253,15 @@ const steps = [
   },
   {
     number: "03",
-    title: "Launch and grow",
+    title: "Review and launch",
     description:
-      "Your site goes live in 1-2 weeks. We handle ongoing updates, performance monitoring, and support.",
+      "You review and approve everything before it goes live. Most sites launch in 1-2 weeks once we have your content.",
+  },
+  {
+    number: "04",
+    title: "Ongoing support",
+    description:
+      "After launch, we handle updates, monitoring, and maintenance. Your site stays fast, secure, and current.",
   },
 ];
 
@@ -327,6 +344,72 @@ export default function ServicesPage() {
               </div>
             </div>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* What We Build Strip */}
+      <section
+        className="px-6 md:px-12 lg:px-20 pb-16"
+        style={{ backgroundColor: "#FAF9F6" }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-px"
+            style={{ backgroundColor: "rgba(13,27,42,0.10)" }}
+          >
+            {[
+              {
+                label: "Website Design",
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+                    <rect x="2" y="3" width="20" height="14" rx="2" />
+                    <path d="M8 21h8M12 17v4" />
+                  </svg>
+                ),
+              },
+              {
+                label: "Google Business Profile",
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+                    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                ),
+              },
+              {
+                label: "Local SEO",
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="M21 21l-4.35-4.35" />
+                  </svg>
+                ),
+              },
+              {
+                label: "Ongoing Support",
+                icon: (
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+                    <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                ),
+              },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex items-center gap-3 px-6 py-5"
+                style={{ backgroundColor: "#FAF9F6" }}
+              >
+                <span style={{ color: "rgba(13,27,42,0.35)" }}>{item.icon}</span>
+                <span
+                  className="text-[13px] font-semibold tracking-[0.02em]"
+                  style={{ color: "rgba(13,27,42,0.62)" }}
+                >
+                  {item.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -447,7 +530,7 @@ export default function ServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {included.map((item, i) => (
               <ScrollReveal key={item.title}>
                 <div
@@ -527,6 +610,8 @@ export default function ServicesPage() {
               <ScrollReveal key={industry.slug}>
                 <Link
                   href={`/demos/${industry.slug}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group block overflow-hidden transition-all duration-300 hover:-translate-y-1"
                   style={{ border: "1px solid rgba(13,27,42,0.10)" }}
                 >
@@ -604,7 +689,7 @@ export default function ServicesPage() {
             </div>
           </ScrollReveal>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {steps.map((step) => (
               <ScrollReveal key={step.number}>
                 <div
@@ -670,7 +755,7 @@ export default function ServicesPage() {
                 fontFamily: "var(--font-inter), Inter, sans-serif",
               }}
             >
-              Ready to get your business online?
+              Ready to get your business found online?
             </h2>
             <p
               className="mt-5 text-[17px] font-light leading-[1.7] max-w-xl mx-auto"
