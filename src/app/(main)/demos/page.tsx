@@ -175,6 +175,16 @@ export default function DemosPage() {
                   )}
                 </div>
               </Link>
+
+              {/* Service page link — HVAC only */}
+              {demo.slug === "hvac" && (
+                <Link
+                  href="/services/hvac-website-design"
+                  className="inline-block mt-3 text-xs font-medium text-navy-42 hover:text-navy hover:underline underline-offset-4 transition-colors duration-200"
+                >
+                  See HVAC website packages →
+                </Link>
+              )}
             </ScrollReveal>
           ))}
         </div>
