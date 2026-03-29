@@ -239,6 +239,12 @@ export function Navbar() {
 
           {/* Simple Links */}
           <Link
+            href="/blog"
+            className="text-sm font-normal text-navy-62 hover:text-navy transition-colors"
+          >
+            Blog
+          </Link>
+          <Link
             href="/#process"
             className="text-sm font-normal text-navy-62 hover:text-navy transition-colors"
           >
@@ -390,6 +396,13 @@ export function Navbar() {
           </div>
 
           {/* Simple Links */}
+          <Link
+            href="/blog"
+            onClick={() => setMobileOpen(false)}
+            className="block py-2.5 text-sm font-light text-navy-45 hover:text-navy"
+          >
+            Blog
+          </Link>
           <Link
             href="/#process"
             onClick={() => setMobileOpen(false)}

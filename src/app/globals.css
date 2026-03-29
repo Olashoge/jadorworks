@@ -156,3 +156,47 @@
   display: inline-flex;
   animation: ticker 25s linear infinite;
 }
+
+/* Blog article prose */
+.blog-prose p {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: rgba(13,27,42,0.78);
+  margin-bottom: 1.25rem;
+}
+
+.blog-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.blog-prose strong {
+  color: #0D1B2A;
+  font-weight: 600;
+}
+
+.blog-prose ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.blog-prose ul li {
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  color: rgba(13,27,42,0.78);
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.blog-prose ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(13,27,42,0.25);
+}
