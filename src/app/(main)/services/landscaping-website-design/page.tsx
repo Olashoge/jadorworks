@@ -379,7 +379,7 @@ export default function LandscapingWebsiteDesignPage() {
       <div className="px-6 md:px-14 py-5 bg-navy flex flex-wrap items-center gap-8 md:gap-12">
         {[
           {
-            label: "4.9 — Google Verified",
+            label: "Google-Ready Setup",
             icon: (
               <svg viewBox="0 0 24 24" fill="rgba(250,249,246,0.6)" stroke="none" className="w-4 h-4 opacity-60 flex-shrink-0">
                 <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
