@@ -31,7 +31,7 @@ export function WhoItsFor() {
 
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-3xl">
-            Local service businesses ready to grow.
+            Website design for Indiana service businesses.
           </h2>
         </ScrollReveal>
 

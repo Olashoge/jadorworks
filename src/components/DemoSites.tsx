@@ -11,6 +11,7 @@ const demos = [
     color: "#1B3A5C",
     accent: "#1B6CA8",
     status: "Live",
+    linkText: "Explore the HVAC website demo",
   },
   {
     title: "Remodeling & Home Improvement",
@@ -21,6 +22,7 @@ const demos = [
     color: "#2C2C2C",
     accent: "#B8875A",
     status: "Live",
+    linkText: "Explore the remodeling website demo",
   },
   {
     title: "Landscaping & Lawn Care",
@@ -31,6 +33,7 @@ const demos = [
     color: "#2D5A3D",
     accent: "#8B6F47",
     status: "Live",
+    linkText: "Explore the landscaping website demo",
   },
   {
     title: "Home Care & Senior Services",
@@ -41,6 +44,7 @@ const demos = [
     color: "#2A3D54",
     accent: "#7FA868",
     status: "Live",
+    linkText: "Explore the home care website demo",
   },
 ];
 
@@ -54,7 +58,7 @@ export function DemoSites() {
 
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-4xl">
-            Real examples. Clean, modern sites built for local service businesses.
+            Website examples for HVAC, remodeling, landscaping, and home care businesses.
           </h2>
         </ScrollReveal>
 
@@ -147,7 +151,7 @@ export function DemoSites() {
                   </p>
                   {demo.status === "Live" ? (
                     <span className="inline-block mt-4 text-sm font-medium text-navy group-hover:underline underline-offset-4">
-                      Explore Demo →
+                      {demo.linkText} →
                     </span>
                   ) : (
                     <span

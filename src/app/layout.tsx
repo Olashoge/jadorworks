@@ -13,17 +13,17 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jadorworks.com"),
-  title: "JadorWorks Web Studio — Websites & Digital Solutions",
+  title: "Web Design for Small Businesses in Indiana | JadorWorks Web Studio",
   description:
-    "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
+    "Web design for local service businesses in Indiana. Professional websites with Google Business Profile setup, local SEO, and ongoing support. Built for HVAC, remodeling, landscaping, and home care companies.",
   icons: {
     icon: "/favicon.svg",
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "JadorWorks Web Studio — Websites & Digital Solutions",
+    title: "Web Design for Small Businesses in Indiana | JadorWorks Web Studio",
     description:
-      "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
+      "Web design for local service businesses in Indiana. Professional websites with Google Business Profile setup, local SEO, and ongoing support. Built for HVAC, remodeling, landscaping, and home care companies.",
     url: "https://jadorworks.com",
     siteName: "JadorWorks Web Studio",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "JadorWorks Web Studio — Websites & Digital Solutions · Indiana",
+        alt: "JadorWorks Web Studio — Web Design for Small Businesses in Indiana",
       },
     ],
     locale: "en_US",
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JadorWorks Web Studio — Websites & Digital Solutions",
+    title: "Web Design for Small Businesses in Indiana | JadorWorks Web Studio",
     description:
-      "Professional websites, webapps, and digital solutions for Indiana service businesses. Google Business Profile setup and ongoing support included.",
+      "Web design for local service businesses in Indiana. Professional websites with Google Business Profile setup, local SEO, and ongoing support. Built for HVAC, remodeling, landscaping, and home care companies.",
     images: ["/og-image.png"],
   },
 };

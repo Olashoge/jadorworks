@@ -29,7 +29,7 @@ export function Included() {
     <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20" id="included">
       <div className="max-w-6xl mx-auto">
         <ScrollReveal>
-          <p className="section-label mb-8">What&apos;s Included</p>
+          <p className="section-label mb-8">What&apos;s Included in a Small Business Website Package</p>
         </ScrollReveal>
 
         {/* Split layout */}

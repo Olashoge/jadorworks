@@ -33,7 +33,7 @@ export function Process() {
 
         <ScrollReveal>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-4xl">
-            From first call to live site in as little as two weeks.
+            How we build your website: first call to live site in two weeks.
           </h2>
         </ScrollReveal>
 

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { brand } from "@/lib/brand";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: `Demo Sites — ${brand.serviceLine}`,
+  title: "Small Business Website Examples | JadorWorks Web Studio",
   description:
-    "Explore real examples of clean, modern websites built for local service businesses.",
+    "Real website examples built for HVAC, remodeling, landscaping, and home care businesses. See how JadorWorks Web Studio designs professional sites for local service companies.",
 };
 
 const demos = [
@@ -19,6 +18,7 @@ const demos = [
     color: "#1B3A5C",
     accent: "#1B6CA8",
     status: "Live",
+    linkText: "Explore the HVAC website demo",
   },
   {
     title: "Remodeling & Home Improvement",
@@ -29,6 +29,7 @@ const demos = [
     color: "#2C2C2C",
     accent: "#B8875A",
     status: "Live",
+    linkText: "Explore the remodeling website demo",
   },
   {
     title: "Landscaping & Lawn Care",
@@ -39,6 +40,7 @@ const demos = [
     color: "#2D5A3D",
     accent: "#8B6F47",
     status: "Live",
+    linkText: "Explore the landscaping website demo",
   },
   {
     title: "Home Care & Senior Services",
@@ -49,6 +51,7 @@ const demos = [
     color: "#2A3D54",
     accent: "#7FA868",
     status: "Live",
+    linkText: "Explore the home care website demo",
   },
 ];
 
@@ -61,12 +64,12 @@ export default function DemosPage() {
           <div className="max-w-2xl mb-14">
             <p className="section-label mb-8">Demo Sites</p>
             <h1 className="text-3xl md:text-5xl font-bold text-navy leading-[1.1]">
-              See what we build.
+              Small business website examples.
             </h1>
             <p className="mt-4 text-base md:text-lg font-light text-navy-62 leading-relaxed">
-              Real examples of clean, modern websites built for local service
-              businesses. Each site is fully functional and designed for a
-              specific industry.
+              Real website demos built for local service businesses. Each site
+              is fully functional and designed for a specific industry — HVAC,
+              remodeling, landscaping, and home care.
             </p>
           </div>
         </ScrollReveal>
@@ -160,7 +163,7 @@ export default function DemosPage() {
                   </p>
                   {demo.status === "Live" ? (
                     <span className="inline-block mt-4 text-sm font-medium text-navy group-hover:underline underline-offset-4">
-                      Explore Demo →
+                      {demo.linkText} →
                     </span>
                   ) : (
                     <span
@@ -183,7 +186,7 @@ export default function DemosPage() {
               href="/#contact"
               className="inline-block px-8 py-3.5 bg-navy text-cream font-medium rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
             >
-              Book a Free Consultation
+              Book a Free Website Consultation
             </Link>
             <p className="mt-4 text-sm font-light text-navy-42">
               Want something similar for your business? Let&apos;s talk.

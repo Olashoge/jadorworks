@@ -29,7 +29,7 @@ export function Hero() {
 
           {/* Headline — staggered line reveal */}
           <h1 className="overflow-hidden">
-            {["Professional websites", "for local service", "businesses."].map(
+            {["Professional web design", "for local service businesses", "in Indiana."].map(
               (line, i) => (
                 <span
                   key={i}
@@ -67,7 +67,7 @@ export function Hero() {
               href="/demos"
               className="px-8 py-3.5 bg-navy text-cream text-sm font-medium rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300 text-center"
             >
-              View Demo Sites
+              View Website Examples
             </Link>
             <Link
               href="/#contact"
