@@ -250,8 +250,9 @@ export default function HVACWebsiteDesignPage() {
 
       {/* ===== BREADCRUMB ===== */}
       <div
-        className="px-6 md:px-14 py-3.5 flex items-center gap-2 text-xs"
+        className="px-6 md:px-14 pb-3.5 flex items-center gap-2 text-xs"
         style={{
+          paddingTop: 86,
           backgroundColor: "#EDEAE4",
           borderBottom: "1px solid rgba(13,27,42,0.10)",
           color: "rgba(13,27,42,0.45)",
