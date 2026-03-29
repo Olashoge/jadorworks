@@ -1,14 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
-import {
-  ComputerIcon,
-  GlobeIcon,
-  MagnifyingGlassIcon,
-  ShieldCheckIcon,
-  WrenchScrewdriverIcon,
-  BoltIcon,
-} from "@/components/Icons";
 import { PixelJMark } from "@/components/PixelJMark";
 
 export const metadata: Metadata = {
@@ -68,86 +60,166 @@ const jsonLd = {
   serviceType: "Website Design",
 };
 
-const trustAnchors = [
-  { label: "Mobile-first design", value: "Mobile" },
-  { label: "Google-ready setup", value: "Google" },
-  { label: "Launch in 2 weeks", value: "2 wk" },
-  { label: "Ongoing support", value: "Support" },
+const proofItems = [
+  {
+    label: "Professional Website",
+    note: "Clean, mobile-friendly, built to convert visitors into calls.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" />
+      </svg>
+    ),
+  },
+  {
+    label: "Google Business Profile",
+    note: "Setup or cleanup so customers can find and trust you.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 2s-4 4-4 10 4 10 4 10M12 2s4 4 4 10-4 10-4 10M2 12h20" />
+      </svg>
+    ),
+  },
+  {
+    label: "Local SEO Foundation",
+    note: "Built to rank for the services you offer in your area.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4">
+        <circle cx="11" cy="11" r="8" />
+        <path d="M21 21l-4.35-4.35" />
+      </svg>
+    ),
+  },
+  {
+    label: "Ongoing Support",
+    note: "Hosting, maintenance, and updates after launch.",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+  },
 ];
 
 const included = [
   {
+    num: "01",
     title: "Professional HVAC Website",
     description:
-      "Clean, fast-loading, mobile-friendly site designed specifically for heating, cooling, and plumbing businesses. Built to turn visitors into service calls.",
-    Icon: ComputerIcon,
+      "Clean, fast, mobile-first. Designed to show your services, build trust, and turn visitors into calls or quote requests.",
+    icon: (
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
+        <rect x="2" y="5" width="32" height="22" rx="2" />
+        <path d="M12 31h12M18 27v4" />
+      </svg>
+    ),
   },
   {
-    title: "Google Business Profile Setup",
+    num: "02",
+    title: "Google Business Profile",
     description:
-      "Complete GBP setup or cleanup so your HVAC business shows up correctly on Google Maps and Search with accurate service areas and categories.",
-    Icon: GlobeIcon,
+      "We set up or clean up your GBP so your business appears correctly on Google Search and Maps when local customers are looking.",
+    icon: (
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
+        <circle cx="18" cy="18" r="14" />
+        <path d="M18 4s-6 5-6 14 6 14 6 14M18 4s6 5 6 14-6 14-6 14M4 18h28" />
+      </svg>
+    ),
   },
   {
+    num: "03",
     title: "Local SEO Foundation",
     description:
-      "Page structure, meta tags, and schema markup designed to help your HVAC business rank for the services you offer in Indianapolis.",
-    Icon: MagnifyingGlassIcon,
+      "Your site is structured to rank for the services and service areas that matter to your business — from page titles to schema markup.",
+    icon: (
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
+        <circle cx="16" cy="16" r="10" />
+        <path d="M24 24l7 7" />
+      </svg>
+    ),
   },
   {
-    title: "Ongoing Maintenance & Support",
+    num: "04",
+    title: "Ongoing Support",
     description:
-      "Hosting, updates, performance monitoring, and content changes handled for you. Your site stays fast, secure, and current after launch.",
-    Icon: ShieldCheckIcon,
+      "Hosting, maintenance, content updates, and monitoring after your site goes live. We don't build and disappear.",
+    icon: (
+      <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
+        <path d="M18 3l2.5 7.5H28l-6.5 4.5 2.5 7.5L18 18l-6 4.5 2.5-7.5L8 10.5h7.5L18 3z" />
+      </svg>
+    ),
   },
 ];
 
 const whyReasons = [
   {
-    title: "Built for Service Businesses",
+    num: "01",
+    title: "We understand your industry",
     description:
-      "We specialize in websites for local service companies. Every design decision is made with your customers in mind — homeowners searching for HVAC help.",
-    Icon: WrenchScrewdriverIcon,
+      "We've built sites for HVAC businesses specifically. We know the trust signals, the service area dynamics, and what local customers look for before they call.",
   },
   {
-    title: "Speed Without Shortcuts",
+    num: "02",
+    title: "Everything is included from day one",
     description:
-      "Most sites launch in 1 to 2 weeks. Fast does not mean rushed — it means we have a proven process that eliminates unnecessary delays.",
-    Icon: BoltIcon,
+      "No add-ons, no hidden fees. Your website, GBP setup, local SEO foundation, and ongoing support are all part of every package.",
   },
+  {
+    num: "03",
+    title: "Live in 1-2 weeks",
+    description:
+      "Most Starter sites launch in 1-2 weeks once we have your content. You'll review and approve before anything goes live.",
+  },
+];
+
+const cities = [
+  "Indianapolis",
+  "Carmel",
+  "Fishers",
+  "Noblesville",
+  "Westfield",
+  "Zionsville",
+  "Brownsburg",
+  "Avon",
+  "Greenwood",
+  "Lawrence",
+  "Speedway",
+  "Beech Grove",
+  "Plainfield",
+  "Whitestown",
 ];
 
 const faqs = [
   {
     question: "How long does it take to build an HVAC website?",
     answer:
-      "Most HVAC websites launch in 1 to 2 weeks from the initial consultation. We handle design, content setup, and Google Business Profile configuration during that time.",
+      "Most Starter sites are live in 1-2 weeks once we receive your content. Growth sites typically take 2-3 weeks. We'll give you a clear timeline at the start.",
   },
   {
-    question: "What does a professional HVAC website cost?",
+    question: "Do I need to provide all the content?",
     answer:
-      "Our packages start with a Starter tier for straightforward builds and scale to Growth and Custom tiers for businesses that need more pages, features, or ongoing content. Contact us for a free quote.",
+      "We'll guide you through what we need — your services, service area, contact details, and photos if you have them. We handle the copywriting and structure.",
   },
   {
-    question:
-      "Will my HVAC website show up on Google?",
+    question: "What makes JadorWorks different from other web agencies?",
     answer:
-      "Every website we build includes a local SEO foundation — proper page structure, meta tags, schema markup, and Google Business Profile setup. This gives your site the best starting position for local search visibility.",
+      "We don't build and disappear. Every package includes ongoing support — hosting, maintenance, content updates, and Google Business Profile management after launch.",
   },
   {
-    question: "Do you handle Google Business Profile setup?",
+    question: "Will my site show up on Google?",
     answer:
-      "Yes. Every package includes Google Business Profile setup or cleanup. We make sure your business information, service areas, categories, and hours are correct and optimized.",
+      "We build a local SEO foundation into every site — correct page structure, schema markup, and GBP setup. Results build over time, but you start in the right position from day one.",
   },
   {
-    question: "What if I already have a website?",
+    question: "Do you have experience with HVAC businesses?",
     answer:
-      "We can redesign and rebuild your existing site on a modern, mobile-first platform. We will also audit your current Google Business Profile and fix any issues.",
+      "Yes — we've built a full HVAC demo site specifically so you can see what's possible. The structure, trust signals, and conversion flow are all tailored to how HVAC customers search and decide.",
   },
   {
-    question: "Do you offer ongoing support after launch?",
+    question: "What does it cost?",
     answer:
-      "Yes. Every package includes hosting, maintenance, updates, and support. Your site does not get abandoned after it goes live.",
+      "We offer Starter, Growth, and Custom packages. We'll recommend the right fit after a free consultation — no pressure, no commitment required to find out more.",
   },
 ];
 
@@ -176,56 +248,128 @@ export default function HVACWebsiteDesignPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
+      {/* ===== BREADCRUMB ===== */}
+      <div
+        className="px-6 md:px-14 py-3.5 flex items-center gap-2 text-xs"
+        style={{
+          backgroundColor: "#EDEAE4",
+          borderBottom: "1px solid rgba(13,27,42,0.10)",
+          color: "rgba(13,27,42,0.45)",
+        }}
+      >
+        <Link href="/" className="hover:text-navy transition-colors">
+          Home
+        </Link>
+        <span style={{ opacity: 0.4 }}>›</span>
+        <Link href="/services" className="hover:text-navy transition-colors">
+          Services
+        </Link>
+        <span style={{ opacity: 0.4 }}>›</span>
+        <span>HVAC Website Design</span>
+      </div>
+
       {/* ===== HERO ===== */}
-      <section className="pt-32 pb-20 px-6 md:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
-            <p className="section-label mb-8">HVAC Website Design</p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-navy leading-[1.1] max-w-4xl">
-              Website design for HVAC companies in Indianapolis.
-            </h1>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <p className="mt-6 text-lg md:text-xl font-light text-navy-62 max-w-2xl leading-relaxed">
-              Built to earn trust, drive calls, and turn traffic into booked
-              jobs. A professional HVAC website designed for the way homeowners
-              actually search for service.
-            </p>
-          </ScrollReveal>
-
-          {/* CTAs */}
-          <ScrollReveal>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Link
-                href="#quote"
-                className="px-8 py-3.5 bg-navy text-cream text-sm font-medium rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300 text-center"
+      <section
+        className="py-20 px-6 md:px-14"
+        style={{ borderBottom: "1px solid rgba(13,27,42,0.10)" }}
+      >
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_400px] gap-16 lg:gap-20 items-center">
+          {/* Hero left */}
+          <div>
+            <ScrollReveal>
+              <div
+                className="flex items-center gap-3 text-[11px] font-semibold tracking-[0.22em] uppercase mb-5"
+                style={{ color: "rgba(13,27,42,0.45)" }}
               >
-                Get a Free HVAC Website Quote
-              </Link>
-              <Link
-                href="/#contact"
-                className="px-8 py-3.5 text-navy text-sm font-medium rounded-lg border border-navy-10 hover:border-navy hover:bg-navy hover:text-cream transition-all duration-300 text-center"
-              >
-                Book a Free Consultation
-              </Link>
-            </div>
-          </ScrollReveal>
+                <span
+                  className="w-6 h-[1.5px] flex-shrink-0"
+                  style={{ backgroundColor: "rgba(13,27,42,0.45)" }}
+                />
+                Website Design · Indianapolis, IN
+              </div>
+            </ScrollReveal>
 
-          {/* Trust Anchors */}
+            <ScrollReveal>
+              <h1
+                className="font-extrabold leading-[1.05] tracking-[-0.03em]"
+                style={{ fontSize: "clamp(36px, 4.5vw, 58px)" }}
+              >
+                Website Design for
+                <br />
+                HVAC Companies
+                <br />
+                in Indianapolis.
+              </h1>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <p
+                className="mt-6 text-[17px] font-light leading-[1.7] max-w-[520px]"
+                style={{ color: "rgba(13,27,42,0.45)" }}
+              >
+                A professional website built specifically for{" "}
+                <strong className="font-semibold text-navy">
+                  HVAC businesses
+                </strong>{" "}
+                in Indianapolis and surrounding Indiana communities. Google-ready
+                from day one, live in 1-2 weeks.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <div className="mt-10 flex flex-wrap gap-3.5">
+                <Link
+                  href="#quote"
+                  className="px-8 py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream border-none hover:opacity-[0.82] transition-opacity"
+                >
+                  Get a Free HVAC Website Quote
+                </Link>
+                <Link
+                  href="/demos/hvac"
+                  className="px-7 py-4 text-sm font-medium text-navy border-[1.5px] hover:border-navy transition-colors"
+                  style={{ borderColor: "rgba(13,27,42,0.10)" }}
+                >
+                  See the HVAC Demo →
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Hero right — proof card */}
           <ScrollReveal>
-            <div className="mt-16 flex flex-wrap gap-10 md:gap-14">
-              {trustAnchors.map((anchor) => (
-                <div key={anchor.label} className="flex items-baseline gap-3">
-                  <span className="text-2xl md:text-3xl font-semibold text-navy">
-                    {anchor.value}
-                  </span>
-                  <span className="text-xs font-medium tracking-[0.12em] uppercase text-navy-42">
-                    {anchor.label.replace(anchor.value, "").trim()}
-                  </span>
+            <div
+              className="flex flex-col"
+              style={{ border: "1px solid rgba(13,27,42,0.10)" }}
+            >
+              <div
+                className="px-9 pt-10 pb-0 text-[10px] font-semibold tracking-[0.22em] uppercase"
+                style={{ color: "rgba(13,27,42,0.45)" }}
+              >
+                What you get
+              </div>
+              {proofItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="flex items-start gap-4 px-9 py-5"
+                  style={{ borderTop: "1px solid rgba(13,27,42,0.10)" }}
+                >
+                  <div
+                    className="w-8 h-8 flex items-center justify-center flex-shrink-0 text-navy"
+                    style={{ border: "1.5px solid rgba(13,27,42,0.10)" }}
+                  >
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-[13px] font-semibold text-navy mb-0.5">
+                      {item.label}
+                    </div>
+                    <div
+                      className="text-xs font-light leading-[1.5]"
+                      style={{ color: "rgba(13,27,42,0.45)" }}
+                    >
+                      {item.note}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -233,38 +377,133 @@ export default function HVACWebsiteDesignPage() {
         </div>
       </section>
 
+      {/* ===== TRUST STRIP ===== */}
+      <div className="px-6 md:px-14 py-5 bg-navy flex flex-wrap items-center gap-8 md:gap-12">
+        {[
+          {
+            label: "4.9 — Google Verified",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="rgba(250,249,246,0.6)" stroke="none" className="w-4 h-4 opacity-60 flex-shrink-0">
+                <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z" />
+              </svg>
+            ),
+          },
+          {
+            label: "Mobile-First Design",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(250,249,246,0.6)" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4 opacity-60 flex-shrink-0">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M9 7h6M9 11h4" />
+              </svg>
+            ),
+          },
+          {
+            label: "Live in 1-2 Weeks",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(250,249,246,0.6)" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4 opacity-60 flex-shrink-0">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v6l4 2" />
+              </svg>
+            ),
+          },
+          {
+            label: "Ongoing Support Included",
+            icon: (
+              <svg viewBox="0 0 24 24" fill="none" stroke="rgba(250,249,246,0.6)" strokeWidth="1.5" strokeLinecap="round" className="w-4 h-4 opacity-60 flex-shrink-0">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+            ),
+          },
+        ].map((item, i, arr) => (
+          <div key={item.label} className="contents">
+            <div
+              className="flex items-center gap-2.5 text-xs font-semibold tracking-[0.08em] uppercase"
+              style={{ color: "rgba(250,249,246,0.55)" }}
+            >
+              {item.icon}
+              {item.label}
+            </div>
+            {i < arr.length - 1 && (
+              <div
+                className="w-px h-5 flex-shrink-0 hidden md:block"
+                style={{ backgroundColor: "rgba(250,249,246,0.12)" }}
+              />
+            )}
+          </div>
+        ))}
+      </div>
+
       {/* ===== WHAT'S INCLUDED ===== */}
       <section
-        className="py-20 md:py-24 px-6 md:px-12 lg:px-20"
-        style={{ backgroundColor: "rgba(13,27,42,0.03)" }}
+        className="py-20 md:py-[88px] px-6 md:px-14"
+        style={{ borderBottom: "1px solid rgba(13,27,42,0.10)" }}
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <p className="section-label mb-8">
-              What You Get
-            </p>
+            <div
+              className="flex items-center gap-3 text-[10px] font-semibold tracking-[0.22em] uppercase mb-2"
+              style={{ color: "rgba(13,27,42,0.45)" }}
+            >
+              What&apos;s Included
+              <span
+                className="h-px flex-1 max-w-[56px]"
+                style={{ backgroundColor: "rgba(13,27,42,0.10)" }}
+              />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy leading-[1.1] max-w-3xl">
-              Everything an HVAC business needs to get found and get hired
-              online.
+            <h2
+              className="font-extrabold leading-[1.05] tracking-[-0.03em] mb-3.5"
+              style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
+            >
+              Everything an HVAC business
+              <br />
+              needs to get found online.
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="mt-12 grid md:grid-cols-2 gap-5">
+            <p
+              className="text-base font-light leading-[1.7] max-w-[560px]"
+              style={{ color: "rgba(13,27,42,0.45)" }}
+            >
+              Every package includes these four things. No add-ons, no surprises
+              — just a complete digital presence for your business.
+            </p>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <div
+              className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+              style={{
+                gap: "1px",
+                backgroundColor: "rgba(13,27,42,0.10)",
+                border: "1px solid rgba(13,27,42,0.10)",
+              }}
+            >
               {included.map((item) => (
                 <div
-                  key={item.title}
-                  className="p-8 md:p-10 rounded-xl bg-cream transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ border: "1px solid rgba(13,27,42,0.10)" }}
+                  key={item.num}
+                  className="relative overflow-hidden px-8 py-10 transition-colors group"
+                  style={{ backgroundColor: "#FAF9F6" }}
                 >
-                  <item.Icon className="w-7 h-7 text-navy-45" />
-                  <h3 className="mt-4 text-base font-semibold text-navy">
+                  {/* Bottom bar on hover */}
+                  <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-navy origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
+                  <div
+                    className="text-[11px] font-bold tracking-[0.18em] mb-7"
+                    style={{ color: "rgba(13,27,42,0.28)" }}
+                  >
+                    {item.num}
+                  </div>
+                  <div className="text-navy mb-[18px]">{item.icon}</div>
+                  <h3 className="text-[15px] font-bold tracking-[-0.01em] text-navy mb-2.5">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm font-light text-navy-62 leading-relaxed">
+                  <p
+                    className="text-[13px] font-light leading-[1.7]"
+                    style={{ color: "rgba(13,27,42,0.45)" }}
+                  >
                     {item.description}
                   </p>
                 </div>
@@ -275,40 +514,314 @@ export default function HVACWebsiteDesignPage() {
       </section>
 
       {/* ===== WHY JADORWORKS ===== */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto">
+      <section
+        className="py-20 md:py-[88px] px-6 md:px-14"
+        style={{
+          backgroundColor: "rgba(13,27,42,0.02)",
+          borderBottom: "1px solid rgba(13,27,42,0.10)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+          {/* Left — intro */}
+          <div className="pt-2">
+            <ScrollReveal>
+              <div
+                className="flex items-center gap-3 text-[10px] font-semibold tracking-[0.22em] uppercase mb-2"
+                style={{ color: "rgba(13,27,42,0.45)" }}
+              >
+                Why JadorWorks
+                <span
+                  className="h-px flex-1 max-w-[56px]"
+                  style={{ backgroundColor: "rgba(13,27,42,0.10)" }}
+                />
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <h2
+                className="font-extrabold leading-[1.05] tracking-[-0.03em] mb-3.5"
+                style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
+              >
+                Built for service businesses.
+                <br />
+                Not just websites.
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <p
+                className="text-base font-light leading-[1.7] max-w-[560px] mt-3.5"
+                style={{ color: "rgba(13,27,42,0.45)" }}
+              >
+                Most web agencies build a site and walk away. We build a
+                complete online presence — and stick around to make sure it
+                keeps working for you.
+              </p>
+            </ScrollReveal>
+
+            <ScrollReveal>
+              <div className="mt-10">
+                <Link
+                  href="#quote"
+                  className="inline-block px-8 py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream hover:opacity-[0.82] transition-opacity"
+                >
+                  Get a Free Quote
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+
+          {/* Right — cards */}
+          <div className="flex flex-col" style={{ gap: "1px" }}>
+            {whyReasons.map((reason) => (
+              <ScrollReveal key={reason.num}>
+                <div
+                  className="flex gap-5 items-start p-8 md:px-9 md:py-8 transition-all duration-200 hover:translate-x-1"
+                  style={{
+                    backgroundColor: "#FAF9F6",
+                    border: "1px solid rgba(13,27,42,0.10)",
+                    borderColor: "rgba(13,27,42,0.10)",
+                  }}
+                >
+                  <div
+                    className="text-[11px] font-extrabold tracking-[0.1em] flex-shrink-0 w-7 mt-0.5"
+                    style={{ color: "rgba(13,27,42,0.28)" }}
+                  >
+                    {reason.num}
+                  </div>
+                  <div>
+                    <h3 className="text-[15px] font-bold tracking-[-0.01em] text-navy mb-1.5">
+                      {reason.title}
+                    </h3>
+                    <p
+                      className="text-[13px] font-light leading-[1.7]"
+                      style={{ color: "rgba(13,27,42,0.45)" }}
+                    >
+                      {reason.description}
+                    </p>
+                  </div>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== DEMO CALLOUT ===== */}
+      <ScrollReveal>
+        <div className="py-[72px] px-6 md:px-14 bg-navy">
+          <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_auto] gap-16 items-center">
+            {/* Left — mark + text */}
+            <div className="flex items-start gap-7">
+              <div className="flex-shrink-0 mt-1">
+                <PixelJMark size={22} color="rgba(250,249,246,0.35)" />
+              </div>
+              <div>
+                <div
+                  className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-3"
+                  style={{ color: "rgba(250,249,246,0.35)" }}
+                >
+                  Live Demo · JadorWorks Web Studio
+                </div>
+                <h2
+                  className="font-extrabold tracking-[-0.02em] leading-[1.1] mb-3"
+                  style={{
+                    fontSize: "clamp(24px, 3vw, 36px)",
+                    color: "#FAF9F6",
+                  }}
+                >
+                  See what an HVAC
+                  <br />
+                  website looks like.
+                </h2>
+                <p
+                  className="text-[15px] font-light leading-[1.65]"
+                  style={{ color: "rgba(250,249,246,0.55)" }}
+                >
+                  We built a full demo site for a fictional HVAC business so you
+                  can see exactly what your site could look and feel like before
+                  you commit to anything.
+                </p>
+              </div>
+            </div>
+
+            {/* Right — action */}
+            <div className="flex flex-col gap-3 lg:items-end flex-shrink-0">
+              <Link
+                href="/demos/hvac"
+                className="inline-block px-8 py-4 text-[13px] font-bold tracking-[0.06em] uppercase bg-cream text-navy hover:opacity-[0.88] transition-opacity text-center"
+              >
+                View the HVAC Demo →
+              </Link>
+              <span
+                className="text-[11px] font-light tracking-[0.04em]"
+                style={{ color: "rgba(250,249,246,0.3)" }}
+              >
+                No account needed · Opens in browser
+              </span>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      {/* ===== SERVICE AREA ===== */}
+      <section
+        className="py-20 md:py-[88px] px-6 md:px-14"
+        style={{ borderBottom: "1px solid rgba(13,27,42,0.10)" }}
+      >
+        <div className="max-w-6xl mx-auto">
           <ScrollReveal>
-            <p className="section-label mb-8">Why JadorWorks</p>
+            <div
+              className="flex items-center gap-3 text-[10px] font-semibold tracking-[0.22em] uppercase mb-2"
+              style={{ color: "rgba(13,27,42,0.45)" }}
+            >
+              Service Area
+              <span
+                className="h-px flex-1 max-w-[56px]"
+                style={{ backgroundColor: "rgba(13,27,42,0.10)" }}
+              />
+            </div>
           </ScrollReveal>
 
           <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy leading-[1.1] max-w-3xl">
-              We build websites for businesses like yours every day.
+            <h2
+              className="font-extrabold leading-[1.05] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
+            >
+              Serving Indianapolis
+              <br />
+              and surrounding Indiana.
+            </h2>
+          </ScrollReveal>
+
+          <div className="mt-12 grid lg:grid-cols-2 gap-16 lg:gap-20 items-start">
+            {/* Left — city tags */}
+            <div>
+              <ScrollReveal>
+                <div className="flex flex-wrap gap-2">
+                  {cities.map((city) => (
+                    <span
+                      key={city}
+                      className="text-xs font-semibold tracking-[0.06em] uppercase px-4 py-2 transition-all duration-200 cursor-default hover:bg-navy hover:text-cream hover:border-navy"
+                      style={{
+                        color: "rgba(13,27,42,0.45)",
+                        backgroundColor: "#EDEAE4",
+                        border: "1px solid rgba(13,27,42,0.10)",
+                      }}
+                    >
+                      {city}
+                    </span>
+                  ))}
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal>
+                <p
+                  className="mt-6 text-[13px] font-light leading-[1.65]"
+                  style={{ color: "rgba(13,27,42,0.45)" }}
+                >
+                  We work with HVAC businesses across Indiana.{" "}
+                  <strong className="font-semibold text-navy">
+                    Not sure if we serve your area?
+                  </strong>{" "}
+                  Reach out — we&apos;ll let you know right away.
+                </p>
+              </ScrollReveal>
+            </div>
+
+            {/* Right — CTA block */}
+            <ScrollReveal>
+              <div
+                className="p-9 md:p-10"
+                style={{
+                  backgroundColor: "#EDEAE4",
+                  border: "1px solid rgba(13,27,42,0.10)",
+                }}
+              >
+                <div
+                  className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-3.5"
+                  style={{ color: "rgba(13,27,42,0.45)" }}
+                >
+                  Ready to start?
+                </div>
+                <h3 className="text-[22px] font-extrabold tracking-[-0.02em] text-navy mb-2.5 leading-[1.2]">
+                  Get a free quote for your HVAC website.
+                </h3>
+                <p
+                  className="text-sm font-light leading-[1.65] mb-7"
+                  style={{ color: "rgba(13,27,42,0.45)" }}
+                >
+                  No pressure. No commitment. We&apos;ll talk through what your
+                  business needs and map out the right package.
+                </p>
+                <Link
+                  href="/#contact"
+                  className="block w-full py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream hover:opacity-[0.82] transition-opacity text-center"
+                >
+                  Get a Free Quote
+                </Link>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FAQ ===== */}
+      <section
+        className="py-20 md:py-[88px] px-6 md:px-14"
+        style={{
+          backgroundColor: "rgba(13,27,42,0.02)",
+          borderBottom: "1px solid rgba(13,27,42,0.10)",
+        }}
+      >
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div
+              className="flex items-center gap-3 text-[10px] font-semibold tracking-[0.22em] uppercase mb-2"
+              style={{ color: "rgba(13,27,42,0.45)" }}
+            >
+              Questions
+              <span
+                className="h-px flex-1 max-w-[56px]"
+                style={{ backgroundColor: "rgba(13,27,42,0.10)" }}
+              />
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal>
+            <h2
+              className="font-extrabold leading-[1.05] tracking-[-0.03em]"
+              style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
+            >
+              Common questions about
+              <br />
+              HVAC website design.
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
-            <p className="mt-6 text-lg font-light text-navy-62 max-w-xl leading-relaxed">
-              JadorWorks Web Studio specializes in websites for local service
-              businesses in Indiana. We understand what HVAC customers look for
-              and how to build sites that convert.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-12 grid md:grid-cols-2 gap-5">
-              {whyReasons.map((reason) => (
+            <div
+              className="mt-12 grid grid-cols-1 md:grid-cols-2"
+              style={{
+                gap: "2px",
+                backgroundColor: "rgba(13,27,42,0.10)",
+                border: "1px solid rgba(13,27,42,0.10)",
+              }}
+            >
+              {faqs.map((faq, i) => (
                 <div
-                  key={reason.title}
-                  className="p-8 md:p-10 rounded-xl bg-cream transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ border: "1px solid rgba(13,27,42,0.10)" }}
+                  key={i}
+                  className="p-9 md:p-10 transition-colors hover:bg-[rgba(13,27,42,0.03)]"
+                  style={{ backgroundColor: "#FAF9F6" }}
                 >
-                  <reason.Icon className="w-7 h-7 text-navy-45" />
-                  <h3 className="mt-4 text-base font-semibold text-navy">
-                    {reason.title}
+                  <h3 className="text-[15px] font-bold tracking-[-0.01em] text-navy mb-3 leading-[1.3]">
+                    {faq.question}
                   </h3>
-                  <p className="mt-2 text-sm font-light text-navy-62 leading-relaxed">
-                    {reason.description}
+                  <p
+                    className="text-[13px] font-light leading-[1.75]"
+                    style={{ color: "rgba(13,27,42,0.45)" }}
+                  >
+                    {faq.answer}
                   </p>
                 </div>
               ))}
@@ -317,180 +830,75 @@ export default function HVACWebsiteDesignPage() {
         </div>
       </section>
 
-      {/* ===== DEMO CALLOUT ===== */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-navy">
-        <div className="max-w-5xl mx-auto text-center">
-          <ScrollReveal>
-            <div className="flex justify-center mb-8">
-              <PixelJMark size={32} color="#FAF9F6" />
-            </div>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <h2
-              className="text-3xl md:text-5xl font-bold leading-[1.1] max-w-3xl mx-auto"
-              style={{ color: "rgba(250,249,246,0.85)" }}
-            >
-              See what an HVAC website from JadorWorks looks like.
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <p
-              className="mt-6 text-lg font-light max-w-xl mx-auto leading-relaxed"
-              style={{ color: "rgba(250,249,246,0.65)" }}
-            >
-              Summit Air & Plumbing is a fully functional HVAC demo site —
-              designed, built, and hosted by JadorWorks Web Studio. Explore it to
-              see exactly what your business could have.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="mt-10">
-              <Link
-                href="/demos/hvac"
-                className="inline-block px-8 py-3.5 text-sm font-medium rounded-lg border transition-all duration-300 text-center"
-                style={{
-                  color: "#FAF9F6",
-                  borderColor: "rgba(250,249,246,0.25)",
-                  backgroundColor: "rgba(250,249,246,0.06)",
-                }}
-              >
-                See the HVAC demo site →
-              </Link>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===== SERVICE AREA ===== */}
-      <section
-        className="py-20 md:py-24 px-6 md:px-12 lg:px-20"
-        style={{ backgroundColor: "rgba(13,27,42,0.03)" }}
-      >
-        <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
-            <p className="section-label mb-8">
-              Built for HVAC Businesses in Indianapolis
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy leading-[1.1] max-w-3xl">
-              Serving HVAC companies across Indianapolis and Indiana.
-            </h2>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <p className="mt-6 text-lg font-light text-navy-62 max-w-2xl leading-relaxed">
-              Whether your HVAC company serves Indianapolis, Carmel, Fishers,
-              Greenwood, or anywhere across Indiana — we build websites that
-              target your specific service areas and help local homeowners find
-              you.
-            </p>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* ===== FAQ ===== */}
-      <section className="py-20 md:py-24 px-6 md:px-12 lg:px-20">
-        <div className="max-w-5xl mx-auto">
-          <ScrollReveal>
-            <p className="section-label mb-8">
-              Common Questions About HVAC Website Design
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal>
-            <h2 className="text-3xl md:text-5xl font-bold text-navy leading-[1.1] max-w-3xl mb-12">
-              Frequently asked questions.
-            </h2>
-          </ScrollReveal>
-
-          <div className="space-y-0">
-            {faqs.map((faq, i) => (
-              <ScrollReveal key={i}>
-                <div
-                  className="py-8"
-                  style={{
-                    borderBottom: "1px solid rgba(13,27,42,0.10)",
-                  }}
-                >
-                  <h3 className="text-base md:text-lg font-semibold text-navy">
-                    {faq.question}
-                  </h3>
-                  <p className="mt-3 text-sm font-light text-navy-62 leading-relaxed max-w-3xl">
-                    {faq.answer}
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ===== BOTTOM CTA ===== */}
-      <section
-        className="py-20 md:py-24 px-6 md:px-12 lg:px-20 bg-navy"
-        id="quote"
-      >
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="py-20 md:py-[88px] px-6 md:px-14 bg-navy" id="quote">
+        <div className="max-w-[680px] mx-auto text-center">
           <ScrollReveal>
-            <p
-              className="text-[11px] font-medium tracking-[0.22em] uppercase mb-8"
-              style={{ color: "rgba(250,249,246,0.30)" }}
+            <div
+              className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-5"
+              style={{ color: "rgba(250,249,246,0.3)" }}
             >
-              Ready to get started?
-            </p>
+              Get Started · JadorWorks Web Studio
+            </div>
           </ScrollReveal>
 
           <ScrollReveal>
             <h2
-              className="text-3xl md:text-5xl font-bold leading-[1.1] max-w-3xl mx-auto"
-              style={{ color: "rgba(250,249,246,0.85)" }}
+              className="font-extrabold tracking-[-0.03em] leading-[1.05] mb-4"
+              style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                color: "#FAF9F6",
+              }}
             >
-              Get a professional HVAC website that works as hard as you do.
+              Ready to get your HVAC
+              <br />
+              business online?
             </h2>
           </ScrollReveal>
 
           <ScrollReveal>
             <p
-              className="mt-6 text-lg font-light max-w-xl mx-auto leading-relaxed"
-              style={{ color: "rgba(250,249,246,0.65)" }}
+              className="text-base font-light leading-[1.7] mb-10"
+              style={{ color: "rgba(250,249,246,0.55)" }}
             >
-              Tell us about your HVAC business and we will put together a free,
-              no-pressure quote for a website built specifically for your
-              company.
+              Book a free 15-minute consultation. We&apos;ll talk through what
+              your business needs and map out the right package — no pressure,
+              no commitment.
             </p>
           </ScrollReveal>
 
           <ScrollReveal>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3.5 justify-center">
               <Link
                 href="/#contact"
-                className="inline-block px-8 py-3.5 text-sm font-medium rounded-lg transition-all duration-300 text-center"
-                style={{
-                  backgroundColor: "#FAF9F6",
-                  color: "#0D1B2A",
-                }}
+                className="inline-block px-10 py-[18px] text-sm font-bold tracking-[0.06em] uppercase bg-cream text-navy hover:opacity-[0.88] transition-opacity text-center"
               >
                 Get a Free HVAC Website Quote
               </Link>
               <Link
                 href="/demos/hvac"
-                className="inline-block px-8 py-3.5 text-sm font-medium rounded-lg border transition-all duration-300 text-center"
+                className="inline-block px-8 py-[17px] text-sm font-medium border-[1.5px] transition-colors text-center"
                 style={{
-                  color: "rgba(250,249,246,0.85)",
-                  borderColor: "rgba(250,249,246,0.20)",
+                  color: "rgba(250,249,246,0.65)",
+                  borderColor: "rgba(250,249,246,0.2)",
                 }}
               >
-                See the HVAC demo site →
+                See the HVAC Demo →
               </Link>
             </div>
           </ScrollReveal>
+
+          <ScrollReveal>
+            <p
+              className="mt-5 text-[11px] font-light tracking-[0.04em]"
+              style={{ color: "rgba(250,249,246,0.25)" }}
+            >
+              No pressure · No commitment · We&apos;ll get back to you within
+              one business day
+            </p>
+          </ScrollReveal>
         </div>
-      </section>
+      </div>
     </>
   );
 }
