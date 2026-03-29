@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -119,46 +120,20 @@ export default function DemosPage() {
               >
                 {/* Preview area */}
                 <div
-                  className="aspect-[16/10] flex flex-col items-center justify-center relative"
+                  className="aspect-[16/10] relative overflow-hidden"
                   style={{ backgroundColor: demo.color }}
                 >
-                  {/* Wireframe mockup */}
-                  <div className="w-3/4 max-w-xs">
-                    <div className="flex gap-1 mb-3">
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
-                      />
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
-                      />
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: "rgba(255,255,255,0.20)" }}
-                      />
-                    </div>
-                    <div
-                      className="h-2 w-2/3 rounded mb-2"
-                      style={{ backgroundColor: "rgba(255,255,255,0.12)" }}
-                    />
-                    <div
-                      className="h-1.5 w-full rounded mb-1.5"
-                      style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-                    />
-                    <div
-                      className="h-1.5 w-4/5 rounded mb-3"
-                      style={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-                    />
-                    <div
-                      className="h-6 w-24 rounded"
-                      style={{ backgroundColor: demo.accent }}
-                    />
-                  </div>
+                  <Image
+                    src={`/images/demos/${demo.slug}-preview.jpg`}
+                    alt={`${demo.business} website demo — ${demo.title} website example built by JadorWorks`}
+                    fill
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
 
                   {/* Status badge */}
                   <div
-                    className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium"
+                    className="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-medium z-10"
                     style={{
                       backgroundColor:
                         demo.status === "Live"
@@ -168,6 +143,7 @@ export default function DemosPage() {
                         demo.status === "Live"
                           ? "rgba(255,255,255,0.85)"
                           : "rgba(255,255,255,0.35)",
+                      backdropFilter: "blur(8px)",
                     }}
                   >
                     {demo.status}
