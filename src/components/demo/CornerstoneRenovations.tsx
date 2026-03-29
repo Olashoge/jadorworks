@@ -191,7 +191,7 @@ export function CornerstoneRenovations() {
           }}
         >
           <svg width="10" height="16" viewBox="0 0 28 44" fill="none"><rect x="0" y="0" width="12" height="12" fill={C.wood}/><rect x="16" y="0" width="12" height="12" fill={C.wood}/><rect x="16" y="16" width="12" height="12" fill={C.wood}/><rect x="16" y="32" width="12" height="12" fill={C.wood}/><rect x="0" y="32" width="12" height="12" fill={C.wood}/></svg>
-          <span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span>{" "}Web Studio
+          <span><span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span> Web Studio</span>
         </a>
       </div>
 

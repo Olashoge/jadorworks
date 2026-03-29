@@ -119,7 +119,7 @@ const included = [
     num: "02",
     title: "Google Business Profile",
     description:
-      "We set up or clean up your GBP so your business appears correctly on Google Search and Maps when local customers are looking.",
+      "We set up or clean up your GBP with service area coverage, seasonal service categories, and project photos so homeowners find your landscaping business on Google Maps.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="18" cy="18" r="14" />
@@ -131,7 +131,7 @@ const included = [
     num: "03",
     title: "Local SEO Foundation",
     description:
-      "Your site is structured to rank for the services and service areas that matter to your business — from page titles to schema markup.",
+      "Your site is built to rank for searches like 'landscaping company Carmel IN' and 'lawn care near me' — with service-area targeting and proper schema markup.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="16" cy="16" r="10" />
@@ -143,7 +143,7 @@ const included = [
     num: "04",
     title: "Ongoing Support",
     description:
-      "Hosting, maintenance, content updates, and monitoring after your site goes live. We don't build and disappear.",
+      "Seasonal service updates, new project photos, spring/fall promotion banners, and technical maintenance — we keep your landscaping site current all year.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <path d="M18 3l2.5 7.5H28l-6.5 4.5 2.5 7.5L18 18l-6 4.5 2.5-7.5L8 10.5h7.5L18 3z" />
@@ -161,15 +161,15 @@ const whyReasons = [
   },
   {
     num: "02",
-    title: "Everything is included from day one",
+    title: "No add-ons for portfolio pages or service areas",
     description:
-      "No add-ons, no hidden fees. Your website, GBP setup, local SEO foundation, and ongoing support are all part of every package.",
+      "Website, photo gallery, GBP setup, local SEO, and ongoing support are all included. No extra charges for seasonal service pages or city targeting.",
   },
   {
     num: "03",
-    title: "Live in 1-2 weeks",
+    title: "Live before the season starts",
     description:
-      "Most Starter sites launch in 1-2 weeks once we have your content. You'll review and approve before anything goes live.",
+      "Most landscaping sites launch in 1-2 weeks. We work fast so your business is online and visible before your busiest months hit.",
   },
 ];
 

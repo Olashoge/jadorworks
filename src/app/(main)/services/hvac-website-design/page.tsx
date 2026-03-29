@@ -119,7 +119,7 @@ const included = [
     num: "02",
     title: "Google Business Profile",
     description:
-      "We set up or clean up your GBP so your business appears correctly on Google Search and Maps when local customers are looking.",
+      "We set up or clean up your GBP so homeowners searching for HVAC repair or installation in your area find your business first on Google Maps.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="18" cy="18" r="14" />
@@ -131,7 +131,7 @@ const included = [
     num: "03",
     title: "Local SEO Foundation",
     description:
-      "Your site is structured to rank for the services and service areas that matter to your business — from page titles to schema markup.",
+      "Your site is structured to rank for searches like 'HVAC repair Indianapolis' and 'AC installation near me' — from page titles to schema markup.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="16" cy="16" r="10" />
@@ -143,7 +143,7 @@ const included = [
     num: "04",
     title: "Ongoing Support",
     description:
-      "Hosting, maintenance, content updates, and monitoring after your site goes live. We don't build and disappear.",
+      "Seasonal service updates, new technician bios, promotion banners, and technical maintenance — we keep your HVAC site current year-round.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <path d="M18 3l2.5 7.5H28l-6.5 4.5 2.5 7.5L18 18l-6 4.5 2.5-7.5L8 10.5h7.5L18 3z" />
@@ -161,15 +161,15 @@ const whyReasons = [
   },
   {
     num: "02",
-    title: "Everything is included from day one",
+    title: "No surprise fees — ever",
     description:
-      "No add-ons, no hidden fees. Your website, GBP setup, local SEO foundation, and ongoing support are all part of every package.",
+      "Website, GBP setup, local SEO foundation, and ongoing support are all included. No upsells for 'emergency service' pages or 'service area' add-ons.",
   },
   {
     num: "03",
-    title: "Live in 1-2 weeks",
+    title: "Live before your next busy season",
     description:
-      "Most Starter sites launch in 1-2 weeks once we have your content. You'll review and approve before anything goes live.",
+      "Most sites launch in 1-2 weeks. We work fast so your HVAC business is online and generating leads before demand peaks.",
   },
 ];
 

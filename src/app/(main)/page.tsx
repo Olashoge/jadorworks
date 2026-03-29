@@ -3,6 +3,7 @@ import { Ticker } from "@/components/Ticker";
 import { AboutSnippet } from "@/components/AboutSnippet";
 import { Problem } from "@/components/Problem";
 import { DemoSites } from "@/components/DemoSites";
+import { ServicesPathway } from "@/components/ServicesPathway";
 import { Included } from "@/components/Included";
 import { Packages } from "@/components/Packages";
 import { WhoItsFor } from "@/components/WhoItsFor";
@@ -17,6 +18,7 @@ export default function Home() {
       <AboutSnippet />
       <Problem />
       <DemoSites />
+      <ServicesPathway />
       <Included />
       <Packages />
       <WhoItsFor />

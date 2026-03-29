@@ -119,7 +119,7 @@ const included = [
     num: "02",
     title: "Google Business Profile",
     description:
-      "We set up or clean up your GBP so your business appears correctly on Google Search and Maps when local customers are looking.",
+      "We set up or clean up your GBP with project photos, service categories, and accurate details so homeowners searching for remodelers find you on Google Maps.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="18" cy="18" r="14" />
@@ -131,7 +131,7 @@ const included = [
     num: "03",
     title: "Local SEO Foundation",
     description:
-      "Your site is structured to rank for the services and service areas that matter to your business — from page titles to schema markup.",
+      "Your site is built to rank for searches like 'kitchen remodel Indianapolis' and 'bathroom renovation near me' — with proper page structure and schema markup.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <circle cx="16" cy="16" r="10" />
@@ -143,7 +143,7 @@ const included = [
     num: "04",
     title: "Ongoing Support",
     description:
-      "Hosting, maintenance, content updates, and monitoring after your site goes live. We don't build and disappear.",
+      "New project photos, gallery updates, seasonal promotions, and technical maintenance — we keep your remodeling site fresh as your portfolio grows.",
     icon: (
       <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <path d="M18 3l2.5 7.5H28l-6.5 4.5 2.5 7.5L18 18l-6 4.5 2.5-7.5L8 10.5h7.5L18 3z" />
@@ -161,15 +161,15 @@ const whyReasons = [
   },
   {
     num: "02",
-    title: "Everything is included from day one",
+    title: "No hidden fees for galleries or extra pages",
     description:
-      "No add-ons, no hidden fees. Your website, GBP setup, local SEO foundation, and ongoing support are all part of every package.",
+      "Website, project gallery, GBP setup, local SEO foundation, and ongoing support are all included. No upsells for before/after sections or service pages.",
   },
   {
     num: "03",
-    title: "Live in 1-2 weeks",
+    title: "Live in 1-2 weeks with your best work featured",
     description:
-      "Most Starter sites launch in 1-2 weeks once we have your content. You'll review and approve before anything goes live.",
+      "Send us your project photos and we handle the rest. Most remodeling sites launch in 1-2 weeks, ready to impress homeowners from day one.",
   },
 ];
 
