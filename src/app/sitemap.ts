@@ -66,5 +66,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/services/remodeling-website-design`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/landscaping-website-design`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/services/home-care-website-design`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }

@@ -96,6 +96,71 @@ const services = [
       </svg>
     ),
   },
+  {
+    title: "Remodeling Website Design",
+    tag: "Website Design",
+    description:
+      "Showcase your projects, earn trust from homeowners, and turn browsers into booked consultations with a website built specifically for remodeling contractors.",
+    href: "/services/remodeling-website-design",
+    linkText: "View remodeling website packages",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="w-5 h-5"
+      >
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <path d="M9 22V12h6v10" />
+      </svg>
+    ),
+  },
+  {
+    title: "Landscaping Website Design",
+    tag: "Website Design",
+    description:
+      "A visual, mobile-friendly website for your landscaping company — designed to showcase your work, target your service area, and turn homeowners into paying clients.",
+    href: "/services/landscaping-website-design",
+    linkText: "View landscaping website packages",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        className="w-5 h-5"
+      >
+        <path d="M12 22V8" />
+        <path d="M5 12s2-5 7-5 7 5 7 5" />
+        <path d="M7 17s1.5-3 5-3 5 3 5 3" />
+        <path d="M2 22h20" />
+      </svg>
+    ),
+  },
+  {
+    title: "Home Care Website Design",
+    tag: "Website Design",
+    description:
+      "A warm, trustworthy website for your home care business — built to earn the trust of families searching for care and make it easy for them to reach out.",
+    href: "/services/home-care-website-design",
+    linkText: "View home care website packages",
+    icon: (
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        className="w-5 h-5"
+      >
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function ServicesPage() {
@@ -174,7 +239,7 @@ export default function ServicesPage() {
         style={{ backgroundColor: "#FAF9F6" }}
       >
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service, i) => (
               <ScrollReveal key={service.href}>
                 <Link
