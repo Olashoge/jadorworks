@@ -5,7 +5,7 @@ import Link from "next/link";
 import { LogoLockup } from "@/components/PixelJMark";
 
 const navLinks = [
-  { label: "What\u2019s Included", href: "/#included" },
+  { label: "Services", href: "/services" },
   { label: "Demo Sites", href: "/demos" },
   { label: "How It Works", href: "/#process" },
   { label: "Contact", href: "/#contact" },
