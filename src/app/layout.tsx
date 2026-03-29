@@ -110,44 +110,6 @@ const jsonLd = {
   sameAs: ["https://jadorworks.com"],
 };
 
-const faqJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What does JadorWorks Web Studio build?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "JadorWorks Web Studio builds professional websites, webapps, and digital solutions for local service businesses in Indiana. Every project includes Google Business Profile setup and ongoing support.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does it take to launch a website?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most websites built by JadorWorks Web Studio go live in 1 to 2 weeks from the initial consultation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does JadorWorks Web Studio serve businesses outside Indianapolis?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. JadorWorks Web Studio serves local service businesses across Indiana, with roots in Indianapolis and the surrounding areas.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is included in a JadorWorks website package?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Every package includes a professional website, Google Business Profile setup or cleanup, local SEO foundation, and ongoing hosting and support. Starter, Growth, and Custom tiers are available.",
-      },
-    },
-  ],
-};
 
 export default function RootLayout({
   children,
@@ -165,10 +127,6 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
         <CustomCursor />
         {children}

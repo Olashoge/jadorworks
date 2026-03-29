@@ -15,8 +15,8 @@ export const brand = {
 export const nav = {
   links: [
     { label: "Home", href: "/" },
+    { label: "Services", href: "/services" },
     { label: "Demo Sites", href: "/demos" },
-    { label: "What's Included", href: "/#included" },
     { label: "Contact", href: "/#contact" },
   ],
 } as const;

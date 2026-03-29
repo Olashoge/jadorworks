@@ -6,6 +6,30 @@ export const metadata: Metadata = {
   title: "Small Business Website Examples | JadorWorks Web Studio",
   description:
     "Real website examples built for HVAC, remodeling, landscaping, and home care businesses. See how JadorWorks Web Studio designs professional sites for local service companies.",
+  openGraph: {
+    title: "Small Business Website Examples | JadorWorks Web Studio",
+    description:
+      "Real website examples built for HVAC, remodeling, landscaping, and home care businesses. See how JadorWorks Web Studio designs professional sites for local service companies.",
+    url: "https://jadorworks.com/demos",
+    siteName: "JadorWorks Web Studio",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Small Business Website Examples — JadorWorks Web Studio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Small Business Website Examples | JadorWorks Web Studio",
+    description:
+      "Real website examples built for HVAC, remodeling, landscaping, and home care businesses. See how JadorWorks Web Studio designs professional sites for local service companies.",
+    images: ["/og-image.png"],
+  },
 };
 
 const demos = [
@@ -176,13 +200,37 @@ export default function DemosPage() {
                 </div>
               </Link>
 
-              {/* Service page link — HVAC only */}
+              {/* Service page links */}
               {demo.slug === "hvac" && (
                 <Link
                   href="/services/hvac-website-design"
                   className="inline-block mt-3 text-xs font-medium text-navy-42 hover:text-navy hover:underline underline-offset-4 transition-colors duration-200"
                 >
                   See HVAC website packages →
+                </Link>
+              )}
+              {demo.slug === "remodeling" && (
+                <Link
+                  href="/services/remodeling-website-design"
+                  className="inline-block mt-3 text-xs font-medium text-navy-42 hover:text-navy hover:underline underline-offset-4 transition-colors duration-200"
+                >
+                  See remodeling website packages →
+                </Link>
+              )}
+              {demo.slug === "landscaping" && (
+                <Link
+                  href="/services/landscaping-website-design"
+                  className="inline-block mt-3 text-xs font-medium text-navy-42 hover:text-navy hover:underline underline-offset-4 transition-colors duration-200"
+                >
+                  See landscaping website packages →
+                </Link>
+              )}
+              {demo.slug === "home-care" && (
+                <Link
+                  href="/services/home-care-website-design"
+                  className="inline-block mt-3 text-xs font-medium text-navy-42 hover:text-navy hover:underline underline-offset-4 transition-colors duration-200"
+                >
+                  See home care website packages →
                 </Link>
               )}
             </ScrollReveal>
