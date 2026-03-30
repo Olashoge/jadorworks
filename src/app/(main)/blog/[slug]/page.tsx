@@ -308,7 +308,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     Talk to us about your project. No commitment required.
                   </p>
                   <Link
-                    href="/#contact"
+                    href="/book"
                     className="block text-[13px] font-medium bg-cream text-navy px-4 py-2.5 rounded-lg text-center hover:bg-navy hover:text-cream border border-cream hover:border-cream-28 transition-all duration-300"
                   >
                     Book a Consultation
@@ -455,7 +455,7 @@ export default async function BlogArticlePage({ params }: Props) {
               your business needs and how we can help.
             </p>
             <Link
-              href="/#contact"
+              href="/book"
               className="inline-block text-sm font-medium bg-cream text-navy px-6 py-3 rounded-lg hover:bg-navy hover:text-cream border border-cream hover:border-cream-28 transition-all duration-300"
             >
               Book a Consultation

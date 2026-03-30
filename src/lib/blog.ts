@@ -89,7 +89,7 @@ export const blogArticles: BlogArticle[] = [
         headline: "Want a website built specifically for your HVAC business?",
         body: "We build professional websites for HVAC and plumbing companies in Indianapolis — with Google Business Profile setup and local SEO built in from day one. Free consultation, no commitment.",
         primaryLabel: "Book a Free Consultation",
-        primaryHref: "/#contact",
+        primaryHref: "/book",
       },
       {
         position: "bottom",
@@ -177,7 +177,7 @@ export const blogArticles: BlogArticle[] = [
         primaryLabel: "GBP Setup service",
         primaryHref: "/services/gbp-setup",
         secondaryLabel: "Book a consultation",
-        secondaryHref: "/#contact",
+        secondaryHref: "/book",
       },
     ],
     relatedService: { label: "GBP Setup", href: "/services/gbp-setup" },
@@ -253,7 +253,7 @@ export const blogArticles: BlogArticle[] = [
         headline: "Ready to find out what's right for your business?",
         body: "We work with Indiana service businesses to build websites that get found and get calls — with Google Business Profile setup and local SEO included. Free consultation, no commitment.",
         primaryLabel: "Book a Free Consultation",
-        primaryHref: "/#contact",
+        primaryHref: "/book",
       },
       {
         position: "bottom",

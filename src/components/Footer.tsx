@@ -68,7 +68,7 @@ export function Footer() {
             reserved.
           </p>
           <Link
-            href="/#contact"
+            href="/book"
             className="text-xs font-light text-navy-62 hover:text-navy transition-colors"
           >
             Book a Free Consultation →

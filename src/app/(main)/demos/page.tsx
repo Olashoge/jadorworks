@@ -219,7 +219,7 @@ export default function DemosPage() {
         <ScrollReveal>
           <div className="mt-14 text-center">
             <Link
-              href="/#contact"
+              href="/book"
               className="inline-block px-8 py-3.5 bg-navy text-cream font-medium rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
             >
               Book a Free Website Consultation

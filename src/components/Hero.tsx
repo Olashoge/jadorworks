@@ -70,7 +70,7 @@ export function Hero() {
               View Website Examples
             </Link>
             <Link
-              href="/#contact"
+              href="/book"
               className="px-8 py-3.5 text-navy text-sm font-medium rounded-lg border border-navy-10 hover:border-navy hover:bg-navy hover:text-cream transition-all duration-300 text-center"
             >
               Book a Free Consultation

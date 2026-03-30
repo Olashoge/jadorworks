@@ -743,7 +743,7 @@ export default function LocalSEOPage() {
                   business needs and map out the right package.
                 </p>
                 <Link
-                  href="/#contact"
+                  href="/book"
                   className="block w-full py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream hover:opacity-[0.82] transition-opacity text-center"
                 >
                   Get a Free Quote
@@ -858,7 +858,7 @@ export default function LocalSEOPage() {
           <ScrollReveal>
             <div className="flex flex-col sm:flex-row gap-3.5 justify-center">
               <Link
-                href="/#contact"
+                href="/book"
                 className="inline-block px-10 py-[18px] text-sm font-bold tracking-[0.06em] uppercase bg-cream text-navy hover:opacity-[0.88] transition-opacity text-center"
               >
                 Get a Free Local SEO Quote

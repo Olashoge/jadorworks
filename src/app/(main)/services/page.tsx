@@ -238,7 +238,7 @@ export default function ServicesPage() {
             </ScrollReveal>
             <ScrollReveal>
               <Link
-                href="/#contact"
+                href="/book"
                 className="inline-block text-[13px] font-bold tracking-[0.06em] uppercase bg-cream text-navy px-8 py-4 hover:opacity-90 transition-opacity"
               >
                 Book a Free Consultation
@@ -426,7 +426,7 @@ export default function ServicesPage() {
                     <strong className="font-bold text-navy">Not in the list?</strong> We also work with cleaning companies, electricians, salons, barbershops, local shops, solo operators, and more. Let&apos;s talk about what your business needs.
                   </p>
                   <Link
-                    href="/#contact"
+                    href="/book"
                     className="flex-shrink-0 text-[13px] font-bold tracking-[0.06em] uppercase text-navy px-7 py-3.5 bg-transparent hover:border-navy transition-colors whitespace-nowrap"
                     style={{ border: "1.5px solid rgba(13,27,42,0.20)" }}
                   >
@@ -516,7 +516,7 @@ export default function ServicesPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-3.5">
               <Link
-                href="/#contact"
+                href="/book"
                 className="text-[14px] font-bold tracking-[0.06em] uppercase text-navy bg-cream px-10 py-[18px] hover:opacity-90 transition-opacity"
               >
                 Book a Free Consultation

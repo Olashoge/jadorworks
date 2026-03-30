@@ -400,7 +400,7 @@ export default function OngoingSupportPage() {
             <ScrollReveal>
               <div className="mt-10 flex flex-wrap gap-3.5">
                 <Link
-                  href="/#contact"
+                  href="/book"
                   className="px-8 py-4 text-sm font-bold tracking-[0.04em] uppercase bg-cream text-navy border-none hover:opacity-[0.88] transition-opacity"
                 >
                   Ask About a Care Plan
@@ -708,7 +708,7 @@ export default function OngoingSupportPage() {
             <ScrollReveal>
               <div className="mt-10">
                 <Link
-                  href="/#contact"
+                  href="/book"
                   className="inline-block px-8 py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream hover:opacity-[0.82] transition-opacity"
                 >
                   Ask About a Care Plan
@@ -843,7 +843,7 @@ export default function OngoingSupportPage() {
                   business.
                 </p>
                 <Link
-                  href="/#contact"
+                  href="/book"
                   className="block w-full py-4 text-sm font-bold tracking-[0.04em] uppercase bg-navy text-cream hover:opacity-[0.82] transition-opacity text-center"
                 >
                   Ask About a Care Plan
@@ -958,7 +958,7 @@ export default function OngoingSupportPage() {
           <ScrollReveal>
             <div className="flex flex-col sm:flex-row gap-3.5 justify-center">
               <Link
-                href="/#contact"
+                href="/book"
                 className="inline-block px-10 py-[18px] text-sm font-bold tracking-[0.06em] uppercase bg-cream text-navy hover:opacity-[0.88] transition-opacity text-center"
               >
                 Ask About a Care Plan

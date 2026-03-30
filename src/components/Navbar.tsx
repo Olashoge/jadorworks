@@ -320,13 +320,12 @@ export function Navbar() {
             How It Works
           </a>
           {/* CTA */}
-          <a
-            href="/#contact"
-            onClick={(e) => handleAnchorClick(e, "contact")}
+          <Link
+            href="/book"
             className="text-sm font-medium bg-navy text-cream px-5 py-2.5 rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
           >
             Book a Consultation
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -490,13 +489,13 @@ export function Navbar() {
           </a>
           {/* CTA */}
           <div className="pt-3">
-            <a
-              href="/#contact"
-              onClick={(e) => handleAnchorClick(e, "contact")}
+            <Link
+              href="/book"
+              onClick={() => setMobileOpen(false)}
               className="block text-sm font-medium bg-navy text-cream px-5 py-3 rounded-lg text-center hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
             >
               Book a Consultation
-            </a>
+            </Link>
           </div>
         </div>
       </div>
