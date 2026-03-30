@@ -184,13 +184,14 @@ export function GreenLineLandscaping() {
           .gl-nav-cta-desktop{display:none!important}
           .gl-topbar{display:none!important}
           .gl-nav{padding:0 20px!important}
-          .gl-hero-content{padding:0 20px!important;max-width:100%!important}
+          .gl-hero-section{height:auto!important;min-height:auto!important;display:flex!important;flex-direction:column!important}
+          .gl-hero-content{padding:60px 20px 48px!important;max-width:100%!important;flex:1!important}
           .gl-hero-phone-text{font-size:22px!important}
-          .gl-hero-stats{padding:14px 20px!important;flex-direction:column!important;gap:12px!important;align-items:flex-start!important}
+          .gl-hero-stats{position:relative!important;bottom:auto!important;padding:14px 20px!important;flex-direction:column!important;gap:12px!important;align-items:flex-start!important}
           .gl-hero-stats .gl-stat-divider{display:none!important}
           .gl-hero-stats .gl-stat-item{gap:12px!important}
           .gl-hero-stats .gl-stat-num{font-size:24px!important}
-          .gl-trust-bar{padding:14px 20px!important;gap:16px!important;justify-content:flex-start!important}
+          .gl-trust-bar{padding:14px 20px!important;gap:16px!important;justify-content:flex-start!important;flex-wrap:wrap!important}
           .gl-trust-bar .gl-trust-divider{display:none!important}
           .gl-portfolio-header{padding:40px 20px 32px!important;grid-template-columns:1fr!important;gap:20px!important}
           .gl-portfolio-grid{grid-template-columns:1fr!important}
@@ -225,8 +226,12 @@ export function GreenLineLandscaping() {
         @media(min-width:769px) and (max-width:1024px){
           .gl-topbar{padding:9px 28px!important}
           .gl-nav{padding:0 28px!important}
-          .gl-hero-content{padding:0 28px!important}
-          .gl-hero-stats{padding:16px 28px!important}
+          .gl-hamburger{display:flex}
+          .gl-nav-links{display:none!important}
+          .gl-nav-cta-desktop{display:none!important}
+          .gl-hero-section{height:auto!important;min-height:auto!important;display:flex!important;flex-direction:column!important}
+          .gl-hero-content{padding:60px 28px 48px!important;flex:1!important}
+          .gl-hero-stats{position:relative!important;bottom:auto!important;padding:16px 28px!important}
           .gl-trust-bar{padding:16px 28px!important}
           .gl-portfolio-header{padding:60px 28px 40px!important}
           .gl-portfolio-btn{padding:32px 28px!important}
@@ -243,8 +248,8 @@ export function GreenLineLandscaping() {
           .gl-footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}
         }
         @media(max-width:480px){
-          .gl-hero-section{min-height:500px!important;height:auto!important}
           .gl-hero-h1{font-size:clamp(36px,10vw,50px)!important}
+          .gl-hero-content{padding:48px 20px 40px!important}
           .gl-area-cta-box{padding:28px 20px!important}
           .gl-area-phone-text{font-size:24px!important}
         }
