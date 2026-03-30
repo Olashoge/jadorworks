@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* ------------------------------------------------------------------ */
 /*  GreenLine Landscaping — Full One-Page Landscaping Demo             */
@@ -52,6 +52,7 @@ const STAR_D = "M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2
 export function GreenLineLandscaping() {
   const mainRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // -- scroll reveal via IntersectionObserver --
   useEffect(() => {
@@ -162,6 +163,91 @@ export function GreenLineLandscaping() {
         .gl-footer-link:hover{color:${C.white}!important}
         .gl-footer-built a{transition:color .2s}
         .gl-footer-built a:hover{color:${C.brownLt}!important}
+
+        /* ===== MOBILE NAV ===== */
+        .gl-nav-links{display:flex;gap:32;list-style:none;margin:0;padding:0}
+        .gl-nav-cta-desktop{display:block}
+        .gl-hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;justify-content:center;align-items:center}
+        .gl-hamburger span{display:block;width:24px;height:2px;background:${C.green2};transition:transform .25s,opacity .25s}
+        .gl-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .gl-hamburger.open span:nth-child(2){opacity:0}
+        .gl-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .gl-mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:${C.white};border-bottom:1px solid ${C.lightgray};box-shadow:0 8px 30px rgba(30,61,42,.12);padding:24px;flex-direction:column;gap:16px;z-index:99}
+        .gl-mobile-menu.open{display:flex}
+        .gl-mobile-menu a{font-size:14px;color:${C.green2};text-decoration:none;letter-spacing:.04em;text-transform:uppercase;padding:8px 0;border-bottom:1px solid ${C.stone2}}
+        .gl-mobile-menu button{width:100%;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:${C.white};background:${C.green};border:none;padding:14px;cursor:pointer;margin-top:8px}
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+        @media(max-width:768px){
+          .gl-hamburger{display:flex}
+          .gl-nav-links{display:none!important}
+          .gl-nav-cta-desktop{display:none!important}
+          .gl-topbar{display:none!important}
+          .gl-nav{padding:0 20px!important}
+          .gl-hero-content{padding:0 20px!important;max-width:100%!important}
+          .gl-hero-phone-text{font-size:22px!important}
+          .gl-hero-stats{padding:14px 20px!important;flex-direction:column!important;gap:12px!important;align-items:flex-start!important}
+          .gl-hero-stats .gl-stat-divider{display:none!important}
+          .gl-hero-stats .gl-stat-item{gap:12px!important}
+          .gl-hero-stats .gl-stat-num{font-size:24px!important}
+          .gl-trust-bar{padding:14px 20px!important;gap:16px!important;justify-content:flex-start!important}
+          .gl-trust-bar .gl-trust-divider{display:none!important}
+          .gl-portfolio-header{padding:40px 20px 32px!important;grid-template-columns:1fr!important;gap:20px!important}
+          .gl-portfolio-grid{grid-template-columns:1fr!important}
+          .gl-portfolio-grid .gl-port-wide{grid-column:span 1!important}
+          .gl-portfolio-btn{padding:28px 20px!important}
+          .gl-services-section{padding:56px 20px!important}
+          .gl-services-header{grid-template-columns:1fr!important;gap:20px!important}
+          .gl-services-grid{grid-template-columns:1fr!important}
+          .gl-about-section{padding:56px 20px!important}
+          .gl-about-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .gl-about-images{height:320px!important}
+          .gl-seasonal-section{padding:56px 20px!important}
+          .gl-seasonal-header{grid-template-columns:1fr!important;gap:20px!important}
+          .gl-seasonal-grid{grid-template-columns:1fr!important}
+          .gl-area-section{padding:56px 20px!important}
+          .gl-area-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .gl-area-phone-text{font-size:28px!important}
+          .gl-testimonials-section{padding:56px 20px!important}
+          .gl-testimonials-header{flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
+          .gl-testimonials-rating{text-align:left!important}
+          .gl-testimonials-grid{grid-template-columns:1fr!important}
+          .gl-contact-grid{grid-template-columns:1fr!important}
+          .gl-contact-left{min-height:380px!important}
+          .gl-contact-left-inner{padding:40px 20px!important}
+          .gl-contact-right{padding:40px 20px!important}
+          .gl-contact-form-row{grid-template-columns:1fr!important}
+          .gl-footer{padding:40px 20px 24px!important}
+          .gl-footer-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .gl-footer-bottom{flex-direction:column!important;text-align:center!important}
+          .gl-hero-buttons .gl-btn-primary,.gl-hero-buttons .gl-btn-ghost{width:100%!important;justify-content:center!important;text-align:center!important}
+        }
+        @media(min-width:769px) and (max-width:1024px){
+          .gl-topbar{padding:9px 28px!important}
+          .gl-nav{padding:0 28px!important}
+          .gl-hero-content{padding:0 28px!important}
+          .gl-hero-stats{padding:16px 28px!important}
+          .gl-trust-bar{padding:16px 28px!important}
+          .gl-portfolio-header{padding:60px 28px 40px!important}
+          .gl-portfolio-btn{padding:32px 28px!important}
+          .gl-services-section{padding:72px 28px!important}
+          .gl-services-grid{grid-template-columns:repeat(3,1fr)!important}
+          .gl-about-section{padding:72px 28px!important}
+          .gl-seasonal-section{padding:72px 28px!important}
+          .gl-seasonal-grid{grid-template-columns:repeat(2,1fr)!important}
+          .gl-area-section{padding:72px 28px!important}
+          .gl-testimonials-section{padding:72px 28px!important}
+          .gl-contact-left-inner{padding:48px 28px!important}
+          .gl-contact-right{padding:48px 28px!important}
+          .gl-footer{padding:48px 28px 28px!important}
+          .gl-footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}
+        }
+        @media(max-width:480px){
+          .gl-hero-section{min-height:500px!important;height:auto!important}
+          .gl-hero-h1{font-size:clamp(36px,10vw,50px)!important}
+          .gl-area-cta-box{padding:28px 20px!important}
+          .gl-area-phone-text{font-size:24px!important}
+        }
       `}</style>
 
       {/* =========== 1. DEMO BANNER =========== */}
@@ -174,7 +260,7 @@ export function GreenLineLandscaping() {
       </div>
 
       {/* =========== 2. TOP BAR =========== */}
-      <div style={{ background: C.stone2, padding: "9px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${C.lightgray}` }}>
+      <div className="gl-topbar" style={{ background: C.stone2, padding: "9px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", borderBottom: `1px solid ${C.lightgray}` }}>
         <div style={{ display: "flex", gap: 28 }}>
           <span style={{ fontSize: 12, color: C.gray }}>Indianapolis, IN &middot; Hendricks &amp; Marion Counties</span>
           <span style={{ fontSize: 12, color: C.gray }}>Mon&ndash;Sat 7am&ndash;6pm &middot; Seasonal Hours May Vary</span>
@@ -186,7 +272,7 @@ export function GreenLineLandscaping() {
       </div>
 
       {/* =========== 3. NAV =========== */}
-      <nav ref={navRef} style={{ background: C.white, padding: "0 56px", height: 74, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100, borderBottom: `1px solid ${C.lightgray}`, transition: "box-shadow .25s" }}>
+      <nav ref={navRef} className="gl-nav" style={{ background: C.white, padding: "0 56px", height: 74, display: "flex", alignItems: "center", justifyContent: "space-between", position: "sticky", top: 0, zIndex: 100, borderBottom: `1px solid ${C.lightgray}`, transition: "box-shadow .25s" }}>
         <a href="#" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 12 }}>
           <div style={{ width: 40, height: 40, background: C.green, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
             <svg viewBox="0 0 24 24" style={{ width: 22, height: 22, fill: "white" }}><path d="M17 8C8 10 5.9 16.17 3.82 21H5.71c.51-1.2 1.06-2.38 1.7-3.47 1.56.02 3.12.26 4.59.89 2.85 1.22 5.07 3.78 5.39 6.84l2-.22c-.31-2.82-1.79-5.27-3.86-7.06C18.77 17.07 21 16 21 16c0-6-4.18-8-4-8z"/></svg>
@@ -196,7 +282,7 @@ export function GreenLineLandscaping() {
             <div style={{ fontSize: 9, letterSpacing: ".2em", textTransform: "uppercase", color: C.brown, ...outfit(600) }}>Landscaping &middot; Est. 2014</div>
           </div>
         </a>
-        <ul style={{ display: "flex", gap: 32, listStyle: "none", margin: 0, padding: 0 }}>
+        <ul className="gl-nav-links" style={{ display: "flex", gap: 32, listStyle: "none", margin: 0, padding: 0 }}>
           {[
             { label: "Services", href: "#services" },
             { label: "Our Work", href: "#portfolio" },
@@ -209,25 +295,40 @@ export function GreenLineLandscaping() {
             </li>
           ))}
         </ul>
-        <button className="gl-nav-cta" style={{ fontSize: 12, letterSpacing: ".1em", textTransform: "uppercase", color: C.white, background: C.green, border: "none", padding: "13px 26px", cursor: "pointer", ...outfit(700) }}>Request a Quote</button>
+        <button className="gl-nav-cta gl-nav-cta-desktop" style={{ fontSize: 12, letterSpacing: ".1em", textTransform: "uppercase", color: C.white, background: C.green, border: "none", padding: "13px 26px", cursor: "pointer", ...outfit(700) }}>Request a Quote</button>
+        <button className={`gl-hamburger${mobileNavOpen ? " open" : ""}`} onClick={() => setMobileNavOpen(!mobileNavOpen)} aria-label="Toggle menu">
+          <span /><span /><span />
+        </button>
+        <div className={`gl-mobile-menu${mobileNavOpen ? " open" : ""}`} style={outfit(600)}>
+          {[
+            { label: "Services", href: "#services" },
+            { label: "Our Work", href: "#portfolio" },
+            { label: "About", href: "#about" },
+            { label: "Reviews", href: "#testimonials" },
+            { label: "Contact", href: "#contact" },
+          ].map((l) => (
+            <a key={l.label} href={l.href} onClick={() => setMobileNavOpen(false)}>{l.label}</a>
+          ))}
+          <button onClick={() => setMobileNavOpen(false)} style={outfit(700)}>Request a Quote</button>
+        </div>
       </nav>
 
       {/* =========== 4. HERO =========== */}
-      <section style={{ position: "relative", height: "94vh", minHeight: 640, overflow: "hidden", display: "flex", alignItems: "center", padding: 0 }}>
+      <section className="gl-hero-section" style={{ position: "relative", height: "94vh", minHeight: 640, overflow: "hidden", display: "flex", alignItems: "center", padding: 0 }}>
         <div style={{ position: "absolute", inset: 0, backgroundImage: `url(${IMG}/LANDSCAPE7.png)`, backgroundSize: "cover", backgroundPosition: "center 30%" }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(110deg, rgba(30,61,42,.93) 0%, rgba(30,61,42,.78) 45%, rgba(30,61,42,.35) 100%)" }} />
-        <div style={{ position: "relative", zIndex: 2, padding: "0 56px", maxWidth: 680 }}>
+        <div className="gl-hero-content" style={{ position: "relative", zIndex: 2, padding: "0 56px", maxWidth: 680 }}>
           <div style={{ fontSize: 11, letterSpacing: ".28em", textTransform: "uppercase", color: C.brownLt, marginBottom: 22, display: "flex", alignItems: "center", gap: 14, ...outfit(700) }}>
             <span style={{ width: 28, height: 2, background: C.brownLt, flexShrink: 0, display: "inline-block" }} />
             Indianapolis Landscaping Experts
           </div>
-          <h1 style={{ fontSize: "clamp(50px,6.5vw,84px)", lineHeight: .95, letterSpacing: "-.02em", color: C.white, textTransform: "uppercase", marginBottom: 20, ...outfit(900) }}>
+          <h1 className="gl-hero-h1" style={{ fontSize: "clamp(50px,6.5vw,84px)", lineHeight: .95, letterSpacing: "-.02em", color: C.white, textTransform: "uppercase", marginBottom: 20, ...outfit(900) }}>
             A Landscape That<br />Works As <span style={{ color: C.brownLt }}>Hard</span><br />As You Do.
           </h1>
           <p style={{ fontSize: 17, lineHeight: 1.7, color: "rgba(255,255,255,.7)", maxWidth: 500, marginBottom: 40, ...outfit(300) }}>
             Professional landscaping, lawn care, and hardscaping for homeowners who want to look their best — year-round, every season.
           </p>
-          <div style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 56, flexWrap: "wrap" as const }}>
+          <div className="gl-hero-buttons" style={{ display: "flex", gap: 16, alignItems: "center", marginBottom: 56, flexWrap: "wrap" as const }}>
             <button className="gl-btn-primary" style={{ fontSize: 13, letterSpacing: ".1em", textTransform: "uppercase", color: C.white, background: C.greenLt, border: "none", padding: "18px 36px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, ...outfit(700) }}>
               <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
               Request a Free Quote
@@ -237,12 +338,12 @@ export function GreenLineLandscaping() {
           <div style={{ display: "flex", alignItems: "center", gap: 24, paddingTop: 24, borderTop: "1px solid rgba(255,255,255,.15)" }}>
             <div>
               <div style={{ fontSize: 10, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", ...outfit(700) }}>Call or Text Anytime</div>
-              <a href="tel:5552749600" className="gl-hero-phone" style={{ fontSize: 28, color: C.white, textDecoration: "none", letterSpacing: ".02em", ...outfit(900) }}>(555) 274-9600</a>
+              <a href="tel:5552749600" className="gl-hero-phone gl-hero-phone-text" style={{ fontSize: 28, color: C.white, textDecoration: "none", letterSpacing: ".02em", ...outfit(900) }}>(555) 274-9600</a>
             </div>
           </div>
         </div>
         {/* Hero bottom stats bar */}
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 3, background: "rgba(30,61,42,.92)", backdropFilter: "blur(8px)", padding: "18px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" as const }}>
+        <div className="gl-hero-stats" style={{ position: "absolute", bottom: 0, left: 0, right: 0, zIndex: 3, background: "rgba(30,61,42,.92)", backdropFilter: "blur(8px)", padding: "18px 56px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 24, flexWrap: "wrap" as const }}>
           {[
             { num: "10+", label: "Years Serving Indianapolis" },
             { num: "600+", label: "Properties Maintained" },
@@ -250,9 +351,9 @@ export function GreenLineLandscaping() {
             { num: "52", label: "Weeks of Service" },
           ].map((s, i) => (
             <div key={s.label} style={{ display: "contents" }}>
-              {i > 0 && <div style={{ width: 1, height: 32, background: "rgba(255,255,255,.15)" }} />}
-              <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-                <div style={{ fontSize: 32, color: C.white, lineHeight: 1, ...outfit(900) }}>{s.num}</div>
+              {i > 0 && <div className="gl-stat-divider" style={{ width: 1, height: 32, background: "rgba(255,255,255,.15)" }} />}
+              <div className="gl-stat-item" style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                <div className="gl-stat-num" style={{ fontSize: 32, color: C.white, lineHeight: 1, ...outfit(900) }}>{s.num}</div>
                 <div style={{ fontSize: 11, letterSpacing: ".1em", textTransform: "uppercase", color: "rgba(255,255,255,.5)", ...outfit(600) }}>{s.label}</div>
               </div>
             </div>
@@ -261,7 +362,7 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 5. TRUST BAR =========== */}
-      <div style={{ background: C.brown, padding: "18px 56px", display: "flex", alignItems: "center", justifyContent: "center", gap: 40, flexWrap: "wrap" as const }}>
+      <div className="gl-trust-bar" style={{ background: C.brown, padding: "18px 56px", display: "flex", alignItems: "center", justifyContent: "center", gap: 40, flexWrap: "wrap" as const }}>
         {[
           { icon: <svg viewBox="0 0 24 24" style={{ width: 18, height: 18, fill: "rgba(255,255,255,.85)", flexShrink: 0 }}><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z"/></svg>, label: "Seasonal Service Plans" },
           { icon: <svg viewBox="0 0 24 24" style={{ width: 18, height: 18, fill: "rgba(255,255,255,.85)", flexShrink: 0 }}><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>, label: "Design + Install" },
@@ -269,7 +370,7 @@ export function GreenLineLandscaping() {
           { icon: <svg viewBox="0 0 24 24" style={{ width: 18, height: 18, fill: "rgba(255,255,255,.85)", flexShrink: 0 }}><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>, label: "Licensed & Insured" },
         ].map((t, i) => (
           <div key={t.label} style={{ display: "contents" }}>
-            {i > 0 && <div style={{ width: 1, height: 18, background: "rgba(255,255,255,.3)" }} />}
+            {i > 0 && <div className="gl-trust-divider" style={{ width: 1, height: 18, background: "rgba(255,255,255,.3)" }} />}
             <div style={{ fontSize: 12, letterSpacing: ".12em", textTransform: "uppercase", color: C.white, display: "flex", alignItems: "center", gap: 10, ...outfit(700) }}>
               {t.icon}
               {t.label}
@@ -280,7 +381,7 @@ export function GreenLineLandscaping() {
 
       {/* =========== 6. PORTFOLIO / GALLERY =========== */}
       <section id="portfolio" style={{ background: C.stone, padding: 0 }}>
-        <div style={{ padding: "80px 56px 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "end" }}>
+        <div className="gl-portfolio-header" style={{ padding: "80px 56px 56px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "end" }}>
           <div>
             <div className="reveal" style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brown, marginBottom: 12, display: "flex", alignItems: "center", gap: 12, ...outfit(700) }}>
               <span style={{ width: 24, height: 2, background: C.brown, flexShrink: 0, display: "inline-block" }} />
@@ -294,7 +395,7 @@ export function GreenLineLandscaping() {
             Every project starts with a conversation and ends with a yard that turns heads. Here&apos;s a sample of what we&apos;ve built across Indianapolis and surrounding communities.
           </p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 3 }}>
+        <div className="gl-portfolio-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 3 }}>
           {/* Row 1: wide + single */}
           <PortfolioItem wide src={`${IMG}/LANDSCAPE7.png`} alt="Full landscape design aerial" type="Full Design" name="Complete Landscape Installation" cls="reveal d1" h={440} />
           <PortfolioItem src={`${IMG}/LANDSCAPE1.png`} alt="Night landscape lighting water feature" type="Lighting & Water" name="Evening Garden Feature" cls="reveal d2" h={340} />
@@ -303,14 +404,14 @@ export function GreenLineLandscaping() {
           <PortfolioItem src={`${IMG}/LANDSCAPE3.png`} alt="Flower bed installation" type="Planting" name="Perennial Garden Design" cls="reveal d2" h={340} />
           <PortfolioItem wide src={`${IMG}/LANDSCAPE6.png`} alt="Before and after backyard" type="Before & After" name="Full Backyard Transformation" cls="reveal d3" h={440} />
         </div>
-        <div style={{ padding: "40px 56px", display: "flex", justifyContent: "center" }}>
+        <div className="gl-portfolio-btn" style={{ padding: "40px 56px", display: "flex", justifyContent: "center" }}>
           <button className="gl-btn-primary" style={{ fontSize: 12, letterSpacing: ".1em", textTransform: "uppercase", color: C.white, background: C.greenLt, border: "none", padding: "18px 36px", cursor: "pointer", display: "flex", alignItems: "center", gap: 10, ...outfit(700) }}>View Full Portfolio</button>
         </div>
       </section>
 
       {/* =========== 7. SERVICES =========== */}
-      <section id="services" style={{ background: C.white, padding: "96px 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 60 }}>
+      <section id="services" className="gl-services-section" style={{ background: C.white, padding: "96px 56px" }}>
+        <div className="gl-services-header" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 60 }}>
           <div>
             <div className="reveal" style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brown, marginBottom: 12, display: "flex", alignItems: "center", gap: 12, ...outfit(700) }}>
               <span style={{ width: 24, height: 2, background: C.brown, flexShrink: 0, display: "inline-block" }} />
@@ -324,7 +425,7 @@ export function GreenLineLandscaping() {
             From weekly mowing to full landscape design and hardscaping — we handle every aspect of your outdoor space so you don&apos;t have to.
           </p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 3, background: C.stone2, border: `3px solid ${C.stone2}` }}>
+        <div className="gl-services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(5,1fr)", gap: 3, background: C.stone2, border: `3px solid ${C.stone2}` }}>
           {[
             { num: "01", title: "Lawn Maintenance & Mowing", body: "Consistent, professional mowing, edging, trimming, and cleanup. Your lawn looking sharp every single week.", icon: <svg viewBox="0 0 48 48" style={svcIcoStyle}><path d="M8 36 Q24 20 40 36"/><path d="M16 28 Q24 16 32 28"/><line x1="24" y1="36" x2="24" y2="44"/><line x1="16" y1="44" x2="32" y2="44"/></svg>, d: "d1" },
             { num: "02", title: "Landscape Design & Installation", body: "Custom designs using plants, trees, shrubs, and beds that thrive in Indiana's climate and enhance your curb appeal.", icon: <svg viewBox="0 0 48 48" style={svcIcoStyle}><path d="M12 38 L24 14 L36 38"/><path d="M8 38 L40 38"/><path d="M18 26 Q24 18 30 26"/></svg>, d: "d2" },
@@ -344,9 +445,9 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 8. ABOUT =========== */}
-      <section id="about" style={{ background: C.stone, padding: "96px 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
-          <div className="reveal" style={{ position: "relative", height: 580 }}>
+      <section id="about" className="gl-about-section" style={{ background: C.stone, padding: "96px 56px" }}>
+        <div className="gl-about-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+          <div className="reveal gl-about-images" style={{ position: "relative", height: 580 }}>
             <img src={`${IMG}/LANDSCAPE2.png`} alt="Perfect front yard lawn" style={{ position: "absolute", left: 0, top: 0, width: "68%", height: "76%", objectFit: "cover", objectPosition: "center" }} />
             <img src={`${IMG}/LANDSCAPE4.png`} alt="GreenLine crew at work" style={{ position: "absolute", right: 0, bottom: 0, width: "54%", height: "54%", objectFit: "cover", border: `8px solid ${C.stone}`, boxShadow: "0 8px 40px rgba(30,61,42,.12)" }} />
             <div style={{ position: "absolute", left: 0, bottom: 0, background: C.green, padding: "24px 28px", textAlign: "center" }}>
@@ -385,8 +486,8 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 9. SEASONAL PLANS =========== */}
-      <section style={{ background: C.green2, padding: "96px 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "end", marginBottom: 56 }}>
+      <section className="gl-seasonal-section" style={{ background: C.green2, padding: "96px 56px" }}>
+        <div className="gl-seasonal-header" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "end", marginBottom: 56 }}>
           <div>
             <div className="reveal" style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brownLt, marginBottom: 12, display: "flex", alignItems: "center", gap: 12, ...outfit(700) }}>
               <span style={{ width: 24, height: 2, background: C.brownLt, flexShrink: 0, display: "inline-block" }} />
@@ -400,7 +501,7 @@ export function GreenLineLandscaping() {
             Indiana yards need attention in every season. We provide consistent, reliable service all year long — so your property always looks its best.
           </p>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 3, background: "rgba(255,255,255,.08)", border: "3px solid rgba(255,255,255,.08)" }}>
+        <div className="gl-seasonal-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 3, background: "rgba(255,255,255,.08)", border: "3px solid rgba(255,255,255,.08)" }}>
           {[
             { season: "Spring", title: "Spring Startup", items: ["Spring cleanup & bed prep", "Mulch installation", "Fertilization program start", "Irrigation startup & check", "Mowing season begins"], d: "d1" },
             { season: "Summer", title: "Summer Maintenance", items: ["Weekly mowing & edging", "Fertilization treatments", "Weed control", "Irrigation monitoring", "Pruning & trimming"], d: "d2" },
@@ -424,8 +525,8 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 10. SERVICE AREA =========== */}
-      <section style={{ background: C.stone2, padding: "96px 56px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+      <section className="gl-area-section" style={{ background: C.stone2, padding: "96px 56px" }}>
+        <div className="gl-area-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
           <div>
             <div className="reveal" style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brown, marginBottom: 12, display: "flex", alignItems: "center", gap: 12, ...outfit(700) }}>
               <span style={{ width: 24, height: 2, background: C.brown, flexShrink: 0, display: "inline-block" }} />
@@ -444,10 +545,10 @@ export function GreenLineLandscaping() {
             </div>
           </div>
           <div>
-            <div className="reveal d2" style={{ background: C.green, padding: 44 }}>
+            <div className="reveal d2 gl-area-cta-box" style={{ background: C.green, padding: 44 }}>
               <div style={{ fontSize: 28, textTransform: "uppercase", color: C.white, marginBottom: 12, letterSpacing: "-.01em", ...outfit(900) }}>Ready to Get Started?</div>
               <div style={{ fontSize: 14, color: "rgba(255,255,255,.6)", lineHeight: 1.7, marginBottom: 28, ...outfit(300) }}>Free estimates with no pressure and no commitment. We come to your property, assess what&apos;s needed, and give you a clear quote.</div>
-              <a href="tel:5552749600" className="gl-area-phone" style={{ fontSize: 38, color: C.white, textDecoration: "none", display: "block", marginBottom: 6, ...outfit(900) }}>(555) 274-9600</a>
+              <a href="tel:5552749600" className="gl-area-phone gl-area-phone-text" style={{ fontSize: 38, color: C.white, textDecoration: "none", display: "block", marginBottom: 6, ...outfit(900) }}>(555) 274-9600</a>
               <div style={{ fontSize: 11, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", ...outfit(600) }}>Call or text &middot; Mon&ndash;Sat 7am&ndash;6pm</div>
             </div>
             <div className="reveal d3" style={{ background: C.white, padding: 32, marginTop: 20 }}>
@@ -461,8 +562,8 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 11. TESTIMONIALS =========== */}
-      <section id="testimonials" style={{ background: C.white, padding: "96px 56px" }}>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56 }}>
+      <section id="testimonials" className="gl-testimonials-section" style={{ background: C.white, padding: "96px 56px" }}>
+        <div className="gl-testimonials-header" style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 56 }}>
           <div>
             <div className="reveal" style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brown, marginBottom: 12, display: "flex", alignItems: "center", gap: 12, ...outfit(700) }}>
               <span style={{ width: 24, height: 2, background: C.brown, flexShrink: 0, display: "inline-block" }} />
@@ -472,12 +573,12 @@ export function GreenLineLandscaping() {
               What Our Customers<br /><span style={{ color: C.greenLt }}>Say.</span>
             </h2>
           </div>
-          <div className="reveal d2" style={{ textAlign: "right" }}>
+          <div className="reveal d2 gl-testimonials-rating" style={{ textAlign: "right" }}>
             <div style={{ fontSize: 48, color: C.green2, lineHeight: 1, ...outfit(900) }}>4.9 &#9733;</div>
             <div style={{ fontSize: 13, color: C.gray, marginTop: 4 }}>Based on 500+ verified reviews</div>
           </div>
         </div>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
+        <div className="gl-testimonials-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 20 }}>
           {[
             { quote: "GreenLine completely transformed our backyard from an overgrown mess into something we actually use every weekend. They were on time, communicated clearly, and the quality of their hardscaping work is exceptional. Our neighbors keep asking who did it.", initials: "C", name: "Chris & Amy F.", loc: "Brownsburg, IN \u00b7 Hardscaping & Design" },
             { quote: "I've had three different lawn services over the years and GreenLine is the only one that shows up exactly when they say they will, every single week. My lawn has never looked better. The mowing patterns alone make my yard the nicest on the street.", initials: "P", name: "Patricia H.", loc: "Avon, IN \u00b7 Weekly Lawn Maintenance" },
@@ -507,12 +608,12 @@ export function GreenLineLandscaping() {
 
       {/* =========== 12. CTA / CONTACT =========== */}
       <section id="contact" style={{ padding: 0 }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 520 }}>
+        <div className="gl-contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: 520 }}>
           {/* Left: image + overlay */}
-          <div style={{ position: "relative", overflow: "hidden" }}>
+          <div className="gl-contact-left" style={{ position: "relative", overflow: "hidden" }}>
             <img src={`${IMG}/LANDSCAPE1.png`} alt="Beautiful night landscape" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
             <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(30,61,42,.96) 0%, rgba(30,61,42,.78) 55%, rgba(30,61,42,.4) 100%)" }} />
-            <div style={{ position: "absolute", inset: 0, padding: "64px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <div className="gl-contact-left-inner" style={{ position: "absolute", inset: 0, padding: "64px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
               <div style={{ fontSize: 11, letterSpacing: ".24em", textTransform: "uppercase", color: C.brownLt, marginBottom: 14, ...outfit(700) }}>Start Your Project</div>
               <div style={{ fontSize: "clamp(32px,4vw,52px)", textTransform: "uppercase", lineHeight: .95, color: C.white, marginBottom: 16, letterSpacing: "-.02em", ...outfit(900) }}>
                 Ready for a Yard<br />You&apos;re <span style={{ color: C.brownLt }}>Proud Of?</span>
@@ -537,11 +638,11 @@ export function GreenLineLandscaping() {
             </div>
           </div>
           {/* Right: form */}
-          <div style={{ background: C.stone, padding: "64px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <div className="gl-contact-right" style={{ background: C.stone, padding: "64px 56px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
             <div style={{ fontSize: 26, textTransform: "uppercase", color: C.green2, marginBottom: 6, letterSpacing: "-.01em", ...outfit(900) }}>Request a Free Quote</div>
             <div style={{ fontSize: 13, color: C.gray, marginBottom: 28 }}>We&apos;ll respond within one business day.</div>
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="gl-contact-form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 <input type="text" className="gl-input" placeholder="Your Name" style={inputStyle} />
                 <input type="tel" className="gl-input" placeholder="Phone Number" style={inputStyle} />
               </div>
@@ -565,8 +666,8 @@ export function GreenLineLandscaping() {
       </section>
 
       {/* =========== 13. FOOTER =========== */}
-      <footer style={{ background: C.green2, padding: "64px 56px 32px" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
+      <footer className="gl-footer" style={{ background: C.green2, padding: "64px 56px 32px" }}>
+        <div className="gl-footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
           <div>
             <div style={{ fontSize: 20, color: C.white, textTransform: "uppercase", letterSpacing: "-.01em", marginBottom: 4, ...outfit(900) }}>GreenLine Landscaping</div>
             <div style={{ fontSize: 10, letterSpacing: ".2em", textTransform: "uppercase", color: C.brownLt, marginBottom: 16, ...outfit(700) }}>Indianapolis &middot; Est. 2014</div>
@@ -598,7 +699,7 @@ export function GreenLineLandscaping() {
             </ul>
           </div>
         </div>
-        <div style={{ borderTop: "1px solid rgba(255,255,255,.1)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" as const, gap: 12 }}>
+        <div className="gl-footer-bottom" style={{ borderTop: "1px solid rgba(255,255,255,.1)", paddingTop: 24, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap" as const, gap: 12 }}>
           <div style={{ fontSize: 12, color: "rgba(255,255,255,.28)" }}>&copy; 2026 GreenLine Landscaping. All rights reserved. &middot; Licensed &amp; Insured</div>
           <div className="gl-footer-built" style={{ fontSize: 12, color: "rgba(255,255,255,.2)" }}>
             Built by <a href="https://jadorworks.com" target="_blank" rel="noopener noreferrer" style={{ color: "rgba(255,255,255,.35)", textDecoration: "none" }}><span style={{ fontWeight: 300 }}>Jador</span><span style={{ fontWeight: 700 }}>Works</span> Web Studio &rarr;</a>
@@ -614,7 +715,7 @@ export function GreenLineLandscaping() {
 /* ================================================================== */
 function PortfolioItem({ src, alt, type, name, wide, cls, h }: { src: string; alt: string; type: string; name: string; wide?: boolean; cls: string; h: number }) {
   return (
-    <div className={`port-item ${cls}`} style={{ position: "relative", overflow: "hidden", cursor: "pointer", ...(wide ? { gridColumn: "span 2" } : {}) }}>
+    <div className={`port-item ${cls}${wide ? " gl-port-wide" : ""}`} style={{ position: "relative", overflow: "hidden", cursor: "pointer", ...(wide ? { gridColumn: "span 2" } : {}) }}>
       <img src={src} alt={alt} style={{ width: "100%", height: h, objectFit: "cover", display: "block" }} />
       <div className="port-overlay" style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(30,61,42,.85) 0%, transparent 55%)" }} />
       <div className="port-label" style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px 22px" }}>

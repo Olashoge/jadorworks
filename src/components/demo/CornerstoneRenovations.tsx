@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* ------------------------------------------------------------------ */
 /*  Cornerstone Renovations — Full One-Page Remodeling Demo            */
@@ -121,6 +121,7 @@ function StarGroup() {
 /* ==================================================================== */
 export function CornerstoneRenovations() {
   const mainRef = useRef<HTMLDivElement>(null);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   // -- scroll-reveal via Intersection Observer -------------------------
   useEffect(() => {
@@ -163,6 +164,102 @@ export function CornerstoneRenovations() {
         .gallery-item:hover img{transform:scale(1.05)}
         .process-step:hover{background:rgba(255,255,255,.05)!important}
         .area-city:hover{background:${C.charcoal}!important;color:${C.white}!important;border-color:${C.charcoal}!important}
+
+        /* ---- RESPONSIVE / MOBILE ---- */
+        @media(max-width:767px){
+          .cs-topbar{display:none!important}
+          .cs-nav{padding:0 20px!important;height:62px!important}
+          .cs-nav-links{display:none!important}
+          .cs-nav-cta-desktop{display:none!important}
+          .cs-hamburger{display:flex!important}
+          .cs-mobile-menu{display:flex!important}
+          .cs-hero{min-height:auto!important;height:auto!important}
+          .cs-hero-inner{grid-template-columns:1fr!important;padding:0 20px 40px!important;gap:32px!important}
+          .cs-hero-stats{justify-content:flex-start!important;gap:24px!important}
+          .cs-hero-stats .cs-stat-num{font-size:36px!important}
+          .cs-hero-stats .cs-stat-divider{display:none!important}
+          .cs-hero-stats > div{gap:24px!important}
+          .cs-hero-stat-wrap{text-align:left!important}
+          .cs-hero-btns{flex-direction:column!important}
+          .cs-hero-btns button{width:100%!important;text-align:center!important}
+          .cs-trust{padding:16px 20px!important;gap:16px!important;justify-content:center!important}
+          .cs-trust .cs-trust-sep{display:none!important}
+          .cs-trust > div{gap:16px!important}
+          .cs-gallery-header{grid-template-columns:1fr!important;padding:48px 20px 32px!important;gap:24px!important}
+          .cs-gallery-grid{grid-template-columns:1fr!important}
+          .cs-gallery-grid .cs-gallery-span2{grid-column:span 1!important}
+          .cs-gallery-grid img{height:240px!important}
+          .cs-gallery-cta{padding:28px 20px!important}
+          .cs-services{padding:56px 20px!important}
+          .cs-services-header{grid-template-columns:1fr!important;gap:24px!important}
+          .cs-services-grid{grid-template-columns:1fr!important}
+          .cs-about{padding:56px 20px!important}
+          .cs-about-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .cs-about-images{height:320px!important}
+          .cs-about-stats{grid-template-columns:1fr 1fr!important}
+          .cs-process{padding:56px 20px!important}
+          .cs-process-header{grid-template-columns:1fr!important;gap:24px!important}
+          .cs-process-grid{grid-template-columns:1fr!important}
+          .cs-area{padding:56px 20px!important}
+          .cs-area-grid{grid-template-columns:1fr!important;gap:40px!important}
+          .cs-testi{padding:56px 20px!important}
+          .cs-testi-header{flex-direction:column!important;align-items:flex-start!important;gap:16px!important}
+          .cs-testi-header > div:last-child{text-align:left!important}
+          .cs-testi-grid{grid-template-columns:1fr!important}
+          .cs-contact-grid{grid-template-columns:1fr!important}
+          .cs-contact-left{min-height:420px!important}
+          .cs-contact-left-inner{padding:40px 20px!important}
+          .cs-contact-right{padding:40px 20px!important}
+          .cs-contact-form-row{grid-template-columns:1fr!important}
+          .cs-footer{padding:40px 20px 24px!important}
+          .cs-footer-grid{grid-template-columns:1fr!important;gap:32px!important}
+          .cs-footer-bottom{flex-direction:column!important;text-align:center!important}
+        }
+        @media(min-width:768px) and (max-width:1023px){
+          .cs-topbar{padding:10px 28px!important}
+          .cs-nav{padding:0 28px!important}
+          .cs-nav-links{display:none!important}
+          .cs-nav-cta-desktop{display:none!important}
+          .cs-hamburger{display:flex!important}
+          .cs-mobile-menu{display:flex!important}
+          .cs-hero-inner{grid-template-columns:1fr!important;padding:0 28px 56px!important;gap:48px!important}
+          .cs-hero-stats > div{gap:32px!important}
+          .cs-trust{padding:20px 28px!important}
+          .cs-gallery-header{padding:64px 28px 40px!important}
+          .cs-gallery-grid{grid-template-columns:1fr 1fr!important}
+          .cs-gallery-grid .cs-gallery-span2{grid-column:span 2!important}
+          .cs-gallery-cta{padding:36px 28px!important}
+          .cs-services{padding:72px 28px!important}
+          .cs-services-header{grid-template-columns:1fr!important;gap:24px!important}
+          .cs-services-grid{grid-template-columns:repeat(3,1fr)!important}
+          .cs-about{padding:72px 28px!important}
+          .cs-about-grid{grid-template-columns:1fr!important;gap:48px!important}
+          .cs-about-images{height:400px!important}
+          .cs-process{padding:72px 28px!important}
+          .cs-process-header{grid-template-columns:1fr!important;gap:24px!important}
+          .cs-process-grid{grid-template-columns:repeat(2,1fr)!important}
+          .cs-area{padding:72px 28px!important}
+          .cs-area-grid{grid-template-columns:1fr!important;gap:48px!important}
+          .cs-testi{padding:72px 28px!important}
+          .cs-testi-grid{grid-template-columns:1fr 1fr!important}
+          .cs-contact-grid{grid-template-columns:1fr!important}
+          .cs-contact-left-inner{padding:48px 28px!important}
+          .cs-contact-right{padding:48px 28px!important}
+          .cs-footer{padding:48px 28px 28px!important}
+          .cs-footer-grid{grid-template-columns:1fr 1fr!important;gap:32px!important}
+        }
+        @media(min-width:480px) and (max-width:767px){
+          .cs-services-grid{grid-template-columns:repeat(2,1fr)!important}
+          .cs-testi-grid{grid-template-columns:1fr!important}
+          .cs-gallery-grid{grid-template-columns:1fr 1fr!important}
+          .cs-gallery-grid .cs-gallery-span2{grid-column:span 2!important}
+          .cs-process-grid{grid-template-columns:repeat(2,1fr)!important}
+        }
+        .cs-hamburger{display:none;align-items:center;justify-content:center;width:40px;height:40px;background:none;border:none;cursor:pointer;padding:0}
+        .cs-mobile-menu{display:none;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:${C.white};border-bottom:1px solid ${C.lightgray};box-shadow:0 8px 32px rgba(0,0,0,.1);padding:16px 20px;gap:0;z-index:100}
+        .cs-mobile-menu a{padding:14px 0;border-bottom:1px solid ${C.lightgray};text-decoration:none;display:block}
+        .cs-mobile-menu a:last-child{border-bottom:none}
+        .cs-mobile-menu .cs-mobile-cta{margin-top:12px;text-align:center;border-bottom:none}
       `}</style>
 
       {/* ============================================================ */}
@@ -199,6 +296,7 @@ export function CornerstoneRenovations() {
       {/* TOP BAR                                                       */}
       {/* ============================================================ */}
       <div
+        className="cs-topbar"
         style={{
           background: C.cream2,
           padding: "10px 56px",
@@ -236,6 +334,7 @@ export function CornerstoneRenovations() {
       {/* NAV                                                           */}
       {/* ============================================================ */}
       <nav
+        className="cs-nav"
         style={{
           background: C.white,
           padding: "0 56px",
@@ -281,7 +380,7 @@ export function CornerstoneRenovations() {
             Indianapolis &middot; Est. 2009
           </div>
         </a>
-        <ul className="flex gap-9 list-none">
+        <ul className="cs-nav-links flex gap-9 list-none">
           {["Services", "Our Work", "About", "Reviews", "Contact"].map(
             (label) => (
               <li key={label}>
@@ -304,7 +403,7 @@ export function CornerstoneRenovations() {
           )}
         </ul>
         <button
-          className="hover:bg-[#B8875A] transition-colors"
+          className="cs-nav-cta-desktop hover:bg-[#B8875A] transition-colors"
           style={{
             ...sans(600),
             fontSize: 12,
@@ -319,12 +418,74 @@ export function CornerstoneRenovations() {
         >
           Get a Free Estimate
         </button>
+        {/* Hamburger button */}
+        <button
+          className="cs-hamburger"
+          onClick={() => setMobileNavOpen(!mobileNavOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={C.charcoal} strokeWidth="2" strokeLinecap="round">
+            {mobileNavOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </>
+            )}
+          </svg>
+        </button>
+        {/* Mobile menu */}
+        {mobileNavOpen && (
+          <div className="cs-mobile-menu">
+            {["Services", "Our Work", "About", "Reviews", "Contact"].map(
+              (label) => (
+                <a
+                  key={label}
+                  href={`#${label.toLowerCase().replace(/\s/g, "")}`}
+                  onClick={() => setMobileNavOpen(false)}
+                  style={{
+                    ...sans(500),
+                    fontSize: 14,
+                    color: C.charcoal,
+                    letterSpacing: ".04em",
+                    textTransform: "uppercase",
+                  }}
+                >
+                  {label}
+                </a>
+              )
+            )}
+            <a
+              href="#contact"
+              className="cs-mobile-cta"
+              onClick={() => setMobileNavOpen(false)}
+              style={{
+                ...sans(600),
+                fontSize: 12,
+                letterSpacing: ".1em",
+                textTransform: "uppercase",
+                color: C.white,
+                background: C.charcoal,
+                padding: "14px 28px",
+                textDecoration: "none",
+              }}
+            >
+              Get a Free Estimate
+            </a>
+          </div>
+        )}
       </nav>
 
       {/* ============================================================ */}
       {/* HERO                                                          */}
       {/* ============================================================ */}
       <section
+        className="cs-hero"
         style={{
           position: "relative",
           height: "92vh",
@@ -356,6 +517,7 @@ export function CornerstoneRenovations() {
         />
         {/* Content */}
         <div
+          className="cs-hero-inner"
           style={{
             position: "relative",
             zIndex: 2,
@@ -422,7 +584,7 @@ export function CornerstoneRenovations() {
               Full-service remodeling for homeowners who want it done right the
               first time. Design, build, and finish &mdash; all under one roof.
             </p>
-            <div className="flex gap-4 items-center">
+            <div className="cs-hero-btns flex gap-4 items-center">
               <button
                 className="hover:bg-[#CFA070] hover:-translate-y-0.5 transition-all"
                 style={{
@@ -457,8 +619,8 @@ export function CornerstoneRenovations() {
               </button>
             </div>
           </div>
-          <div style={{ textAlign: "right" }}>
-            <div className="flex gap-12 justify-end">
+          <div className="cs-hero-stat-wrap" style={{ textAlign: "right" }}>
+            <div className="cs-hero-stats flex gap-12 justify-end">
               {[
                 { num: "15+", label: "Years of Craftsmanship" },
                 { num: "400+", label: "Projects Completed" },
@@ -467,6 +629,7 @@ export function CornerstoneRenovations() {
                 <div key={stat.label} className="flex gap-12">
                   {i > 0 && (
                     <div
+                      className="cs-stat-divider"
                       style={{
                         width: 1,
                         background: "rgba(255,255,255,.15)",
@@ -474,8 +637,9 @@ export function CornerstoneRenovations() {
                       }}
                     />
                   )}
-                  <div style={{ textAlign: "right" }}>
+                  <div style={{ textAlign: "inherit" }}>
                     <div
+                      className="cs-stat-num"
                       style={{
                         ...serif(300),
                         fontSize: 56,
@@ -510,6 +674,7 @@ export function CornerstoneRenovations() {
       {/* TRUST BAR                                                     */}
       {/* ============================================================ */}
       <div
+        className="cs-trust"
         style={{
           background: C.wood,
           padding: "20px 56px",
@@ -549,6 +714,7 @@ export function CornerstoneRenovations() {
           <div key={item.label} className="flex items-center gap-10">
             {i > 0 && (
               <div
+                className="cs-trust-sep"
                 style={{
                   width: 1,
                   height: 20,
@@ -589,6 +755,7 @@ export function CornerstoneRenovations() {
         style={{ background: C.charcoal2, padding: 0 }}
       >
         <div
+          className="cs-gallery-header"
           style={{
             padding: "80px 56px 56px",
             display: "grid",
@@ -622,6 +789,7 @@ export function CornerstoneRenovations() {
           </p>
         </div>
         <div
+          className="cs-gallery-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr 1fr",
@@ -680,7 +848,7 @@ export function CornerstoneRenovations() {
 
           {/* Gallery Item 2 - Before/After (spans 2 cols) */}
           <div
-            className="gallery-item reveal d2"
+            className="gallery-item reveal d2 cs-gallery-span2"
             style={{
               position: "relative",
               overflow: "hidden",
@@ -860,6 +1028,7 @@ export function CornerstoneRenovations() {
           </div>
         </div>
         <div
+          className="cs-gallery-cta"
           style={{
             padding: "40px 56px",
             display: "flex",
@@ -888,8 +1057,9 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       {/* SERVICES                                                      */}
       {/* ============================================================ */}
-      <section id="services" style={{ background: C.cream, padding: "100px 56px" }}>
+      <section id="services" className="cs-services" style={{ background: C.cream, padding: "100px 56px" }}>
         <div
+          className="cs-services-header"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -924,6 +1094,7 @@ export function CornerstoneRenovations() {
           </p>
         </div>
         <div
+          className="cs-services-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(5, 1fr)",
@@ -1037,8 +1208,9 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       {/* ABOUT                                                         */}
       {/* ============================================================ */}
-      <section id="about" style={{ background: C.white, padding: "100px 56px" }}>
+      <section id="about" className="cs-about" style={{ background: C.white, padding: "100px 56px" }}>
         <div
+          className="cs-about-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1047,7 +1219,7 @@ export function CornerstoneRenovations() {
           }}
         >
           <div
-            className="reveal"
+            className="reveal cs-about-images"
             style={{ position: "relative", height: 600 }}
           >
             <img
@@ -1120,7 +1292,7 @@ export function CornerstoneRenovations() {
               right.
             </blockquote>
             <div
-              className="reveal d4"
+              className="reveal d4 cs-about-stats"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
@@ -1170,8 +1342,9 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       {/* PROCESS                                                       */}
       {/* ============================================================ */}
-      <section style={{ background: C.charcoal, padding: "100px 56px" }}>
+      <section className="cs-process" style={{ background: C.charcoal, padding: "100px 56px" }}>
         <div
+          className="cs-process-header"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1205,6 +1378,7 @@ export function CornerstoneRenovations() {
           </p>
         </div>
         <div
+          className="cs-process-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(4, 1fr)",
@@ -1285,8 +1459,9 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       {/* SERVICE AREA                                                  */}
       {/* ============================================================ */}
-      <section style={{ background: C.cream2, padding: "100px 56px" }}>
+      <section className="cs-area" style={{ background: C.cream2, padding: "100px 56px" }}>
         <div
+          className="cs-area-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1464,9 +1639,11 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       <section
         id="testimonials"
+        className="cs-testi"
         style={{ background: C.white, padding: "100px 56px" }}
       >
         <div
+          className="cs-testi-header"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -1508,6 +1685,7 @@ export function CornerstoneRenovations() {
           </div>
         </div>
         <div
+          className="cs-testi-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(3, 1fr)",
@@ -1640,6 +1818,7 @@ export function CornerstoneRenovations() {
         style={{ background: C.charcoal2, padding: 0 }}
       >
         <div
+          className="cs-contact-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.1fr 1fr",
@@ -1647,7 +1826,7 @@ export function CornerstoneRenovations() {
           }}
         >
           {/* Left - image with overlay */}
-          <div style={{ position: "relative", overflow: "hidden" }}>
+          <div className="cs-contact-left" style={{ position: "relative", overflow: "hidden" }}>
             <img
               src="/images/demos/remodeling/REMODEL1.png"
               alt="Completed whole-home renovation with open-concept living space"
@@ -1667,6 +1846,7 @@ export function CornerstoneRenovations() {
               }}
             />
             <div
+              className="cs-contact-left-inner"
               style={{
                 position: "absolute",
                 inset: 0,
@@ -1780,6 +1960,7 @@ export function CornerstoneRenovations() {
 
           {/* Right - form */}
           <div
+            className="cs-contact-right"
             style={{
               padding: "64px 56px",
               display: "flex",
@@ -1808,7 +1989,7 @@ export function CornerstoneRenovations() {
               We&apos;ll respond within one business day.
             </div>
             <div className="flex flex-col gap-3">
-              <div className="grid grid-cols-2 gap-3">
+              <div className="cs-contact-form-row grid grid-cols-2 gap-3">
                 <input
                   type="text"
                   placeholder="First Name"
@@ -1836,7 +2017,7 @@ export function CornerstoneRenovations() {
                   }}
                 />
               </div>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="cs-contact-form-row grid grid-cols-2 gap-3">
                 <input
                   type="tel"
                   placeholder="Phone Number"
@@ -1954,8 +2135,9 @@ export function CornerstoneRenovations() {
       {/* ============================================================ */}
       {/* FOOTER                                                        */}
       {/* ============================================================ */}
-      <footer style={{ background: "#111111", padding: "64px 56px 32px" }}>
+      <footer className="cs-footer" style={{ background: "#111111", padding: "64px 56px 32px" }}>
         <div
+          className="cs-footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "2fr 1fr 1fr 1fr",
@@ -2075,6 +2257,7 @@ export function CornerstoneRenovations() {
           ))}
         </div>
         <div
+          className="cs-footer-bottom"
           style={{
             borderTop: "1px solid rgba(255,255,255,.08)",
             paddingTop: 24,
