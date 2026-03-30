@@ -134,7 +134,7 @@ export function DemoSites() {
                   ) : (
                     <span
                       className="inline-block mt-4 text-sm font-light"
-                      style={{ color: "rgba(13,27,42,0.30)" }}
+                      style={{ color: "rgba(13,27,42,0.42)" }}
                     >
                       Coming soon
                     </span>

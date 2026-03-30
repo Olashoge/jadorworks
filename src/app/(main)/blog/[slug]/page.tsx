@@ -180,7 +180,7 @@ export default async function BlogArticlePage({ params }: Props) {
                           viewBox="0 0 16 16"
                           fill="none"
                           className="w-4 h-4 mt-1 flex-shrink-0"
-                          style={{ color: "rgba(13,27,42,0.35)" }}
+                          style={{ color: "rgba(13,27,42,0.42)" }}
                         >
                           <path
                             d="M3 8h10M9 4l4 4-4 4"

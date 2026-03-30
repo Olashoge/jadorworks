@@ -400,7 +400,7 @@ export default function ServicesPage() {
                 className="flex items-center gap-3 px-6 py-5"
                 style={{ backgroundColor: "#FAF9F6" }}
               >
-                <span style={{ color: "rgba(13,27,42,0.35)" }}>{item.icon}</span>
+                <span style={{ color: "rgba(13,27,42,0.42)" }}>{item.icon}</span>
                 <span
                   className="text-[13px] font-semibold tracking-[0.02em]"
                   style={{ color: "rgba(13,27,42,0.62)" }}
@@ -435,7 +435,7 @@ export default function ServicesPage() {
                     <div className="flex items-center justify-between mb-6">
                       <span
                         className="text-[11px] font-bold tracking-[0.18em]"
-                        style={{ color: "rgba(13,27,42,0.28)" }}
+                        style={{ color: "rgba(13,27,42,0.42)" }}
                       >
                         {String(i + 1).padStart(2, "0")}
                       </span>
@@ -543,7 +543,7 @@ export default function ServicesPage() {
                   <div className="flex items-center justify-between mb-6">
                     <span
                       className="text-[11px] font-bold tracking-[0.18em]"
-                      style={{ color: "rgba(13,27,42,0.28)" }}
+                      style={{ color: "rgba(13,27,42,0.42)" }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -788,7 +788,7 @@ export default function ServicesPage() {
             </div>
             <p
               className="mt-8 text-[12px] font-light"
-              style={{ color: "rgba(250,249,246,0.25)" }}
+              style={{ color: "rgba(250,249,246,0.40)" }}
             >
               Free consultation. No contracts required. Cancel anytime.
             </p>

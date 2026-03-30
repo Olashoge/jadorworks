@@ -63,7 +63,7 @@ export function Footer() {
       {/* Bottom bar */}
       <div style={{ borderTop: "1px solid rgba(13,27,42,0.10)" }}>
         <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs font-light" style={{ color: "rgba(13,27,42,0.30)" }}>
+          <p className="text-xs font-light" style={{ color: "rgba(13,27,42,0.42)" }}>
             &copy; {new Date().getFullYear()} {brand.serviceLine}. All rights
             reserved.
           </p>

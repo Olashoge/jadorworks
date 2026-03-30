@@ -109,7 +109,7 @@ export function ServicesPathway() {
               >
                 <span
                   className="flex-shrink-0"
-                  style={{ color: "rgba(250,249,246,0.35)" }}
+                  style={{ color: "rgba(250,249,246,0.45)" }}
                 >
                   {service.icon}
                 </span>

@@ -121,7 +121,7 @@ export function Packages() {
                         style={{
                           backgroundColor: pkg.highlighted
                             ? "rgba(250,249,246,0.40)"
-                            : "rgba(13,27,42,0.25)",
+                            : "rgba(13,27,42,0.42)",
                         }}
                       />
                       {feature}

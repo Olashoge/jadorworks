@@ -85,7 +85,7 @@ export function Navbar() {
           >
             <Link
               href="/services"
-              className="text-sm font-normal text-navy-62 hover:text-navy transition-colors flex items-center gap-1"
+              className="text-sm font-normal text-navy-68 hover:text-navy transition-colors flex items-center gap-1"
             >
               Services
               <svg
@@ -164,7 +164,7 @@ export function Navbar() {
           >
             <Link
               href="/demos"
-              className="text-sm font-normal text-navy-62 hover:text-navy transition-colors flex items-center gap-1"
+              className="text-sm font-normal text-navy-68 hover:text-navy transition-colors flex items-center gap-1"
             >
               Demo Sites
               <svg
@@ -240,13 +240,13 @@ export function Navbar() {
           {/* Simple Links */}
           <Link
             href="/blog"
-            className="text-sm font-normal text-navy-62 hover:text-navy transition-colors"
+            className="text-sm font-normal text-navy-68 hover:text-navy transition-colors"
           >
             Blog
           </Link>
           <Link
             href="/#process"
-            className="text-sm font-normal text-navy-62 hover:text-navy transition-colors"
+            className="text-sm font-normal text-navy-68 hover:text-navy transition-colors"
           >
             How It Works
           </Link>
@@ -296,7 +296,7 @@ export function Navbar() {
           <div>
             <button
               onClick={() => setServicesOpen(!servicesOpen)}
-              className="w-full flex items-center justify-between py-2.5 text-sm font-light text-navy-45 hover:text-navy transition-colors"
+              className="w-full flex items-center justify-between py-2.5 text-sm font-light text-navy-68 hover:text-navy transition-colors"
             >
               <span>Services</span>
               <svg
@@ -323,7 +323,7 @@ export function Navbar() {
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
                     className="block py-2 text-[13px] font-light transition-colors"
-                    style={{ color: "rgba(13,27,42,0.45)" }}
+                    style={{ color: "rgba(13,27,42,0.62)" }}
                   >
                     {link.label}
                   </Link>
@@ -343,7 +343,7 @@ export function Navbar() {
           <div>
             <button
               onClick={() => setDemosOpen(!demosOpen)}
-              className="w-full flex items-center justify-between py-2.5 text-sm font-light text-navy-45 hover:text-navy transition-colors"
+              className="w-full flex items-center justify-between py-2.5 text-sm font-light text-navy-68 hover:text-navy transition-colors"
             >
               <span>Demo Sites</span>
               <svg
@@ -372,7 +372,7 @@ export function Navbar() {
                     rel="noopener noreferrer"
                     onClick={() => setMobileOpen(false)}
                     className="block py-2 text-[13px] font-light transition-colors"
-                    style={{ color: "rgba(13,27,42,0.45)" }}
+                    style={{ color: "rgba(13,27,42,0.62)" }}
                   >
                     {link.label}
                   </Link>
@@ -392,14 +392,14 @@ export function Navbar() {
           <Link
             href="/blog"
             onClick={() => setMobileOpen(false)}
-            className="block py-2.5 text-sm font-light text-navy-45 hover:text-navy"
+            className="block py-2.5 text-sm font-light text-navy-68 hover:text-navy"
           >
             Blog
           </Link>
           <Link
             href="/#process"
             onClick={() => setMobileOpen(false)}
-            className="block py-2.5 text-sm font-light text-navy-45 hover:text-navy"
+            className="block py-2.5 text-sm font-light text-navy-68 hover:text-navy"
           >
             How It Works
           </Link>

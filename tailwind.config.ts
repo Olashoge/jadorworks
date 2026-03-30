@@ -12,6 +12,7 @@ const config: Config = {
         cream: "#FAF9F6",
         navy: "#0D1B2A",
         // Opacity variants for light backgrounds
+        "navy-68": "rgba(13,27,42,0.68)",
         "navy-62": "rgba(13,27,42,0.62)",
         "navy-45": "rgba(13,27,42,0.45)",
         "navy-42": "rgba(13,27,42,0.42)",

@@ -489,7 +489,7 @@ export default function GBPSetupPage() {
                   <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-navy origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-400" />
                   <div
                     className="text-[11px] font-bold tracking-[0.18em] mb-7"
-                    style={{ color: "rgba(13,27,42,0.28)" }}
+                    style={{ color: "rgba(13,27,42,0.42)" }}
                   >
                     {item.num}
                   </div>
@@ -579,7 +579,7 @@ export default function GBPSetupPage() {
                 >
                   <div
                     className="text-[11px] font-extrabold tracking-[0.1em] flex-shrink-0 w-7 mt-0.5"
-                    style={{ color: "rgba(13,27,42,0.28)" }}
+                    style={{ color: "rgba(13,27,42,0.42)" }}
                   >
                     {reason.num}
                   </div>
@@ -607,12 +607,12 @@ export default function GBPSetupPage() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-[1fr_auto] gap-16 items-center">
             <div className="flex items-start gap-7">
               <div className="flex-shrink-0 mt-1">
-                <PixelJMark size={22} color="rgba(250,249,246,0.35)" />
+                <PixelJMark size={22} color="rgba(250,249,246,0.45)" />
               </div>
               <div>
                 <div
                   className="text-[10px] font-semibold tracking-[0.22em] uppercase mb-3"
-                  style={{ color: "rgba(250,249,246,0.35)" }}
+                  style={{ color: "rgba(250,249,246,0.45)" }}
                 >
                   Live Demo · JadorWorks Web Studio
                 </div>
@@ -881,7 +881,7 @@ export default function GBPSetupPage() {
           <ScrollReveal>
             <p
               className="mt-5 text-[11px] font-light tracking-[0.04em]"
-              style={{ color: "rgba(250,249,246,0.25)" }}
+              style={{ color: "rgba(250,249,246,0.40)" }}
             >
               No pressure · No commitment · We&apos;ll get back to you within
               one business day
