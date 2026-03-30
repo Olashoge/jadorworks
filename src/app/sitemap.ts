@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const LAST_UPDATED = new Date("2026-03-29");
+const LAST_UPDATED = new Date("2026-03-30");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://jadorworks.com";
@@ -105,6 +105,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/blog/website-cost-small-business-indiana`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/local-seo-home-service-business-indiana`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/remodeling-website-design-indianapolis`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/home-care-website-trust-signals-indiana`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/landscaping-website-design-indiana`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog/signs-your-small-business-website-is-costing-you-leads`,
       lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.7,
