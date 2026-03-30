@@ -3,8 +3,8 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const services = [
   {
-    title: "HVAC Website Design",
-    href: "/services/hvac-website-design",
+    title: "Website Design & Development",
+    href: "/services/website-design",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
         <rect x="2" y="3" width="20" height="14" rx="2" />
@@ -13,33 +13,13 @@ const services = [
     ),
   },
   {
-    title: "Remodeling Website Design",
-    href: "/services/remodeling-website-design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <path d="M9 22V12h6v10" />
-      </svg>
-    ),
-  },
-  {
-    title: "Landscaping Website Design",
-    href: "/services/landscaping-website-design",
+    title: "Website Audit & Redesign",
+    href: "/services/website-audit",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
-        <path d="M12 22V8" />
-        <path d="M5 12s2-5 7-5 7 5 7 5" />
-        <path d="M7 17s1.5-3 5-3 5 3 5 3" />
-        <path d="M2 22h20" />
-      </svg>
-    ),
-  },
-  {
-    title: "Home Care Website Design",
-    href: "/services/home-care-website-design",
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 6v6l4 2" />
+        <path d="M5 5l2 2M19 5l-2 2" />
       </svg>
     ),
   },
@@ -54,12 +34,21 @@ const services = [
     ),
   },
   {
-    title: "Local SEO",
+    title: "Local SEO & Search Visibility",
     href: "/services/local-seo",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
         <circle cx="11" cy="11" r="8" />
         <path d="M21 21l-4.35-4.35" />
+      </svg>
+    ),
+  },
+  {
+    title: "Ongoing Maintenance & Support",
+    href: "/services/ongoing-support",
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="w-5 h-5">
+        <path d="M12 2l2 6h6l-5 3.5 2 6.5L12 14l-5 4 2-6.5L4 8h6z" />
       </svg>
     ),
   },
@@ -83,7 +72,7 @@ export function ServicesPathway() {
                 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-[1.1]"
                 style={{ color: "rgba(250,249,246,0.85)" }}
               >
-                Website design, GBP setup, and local SEO for home service businesses.
+                Website design, local SEO, and ongoing support for any local service business in Indiana.
               </h2>
             </div>
             <Link

@@ -157,6 +157,10 @@
   animation: ticker 25s linear infinite;
 }
 
+.ghost-cta-btn:hover {
+  border-color: rgba(250,249,246,0.50) !important;
+}
+
 /* Blog article prose */
 .blog-prose p {
   font-size: 0.9375rem;

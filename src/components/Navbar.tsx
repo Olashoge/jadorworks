@@ -5,12 +5,16 @@ import Link from "next/link";
 import { LogoLockup } from "@/components/PixelJMark";
 
 const serviceLinks = [
-  { label: "HVAC Website Design", href: "/services/hvac-website-design" },
-  { label: "Remodeling Website Design", href: "/services/remodeling-website-design" },
-  { label: "Landscaping Website Design", href: "/services/landscaping-website-design" },
-  { label: "Home Care Website Design", href: "/services/home-care-website-design" },
+  { label: "Website Design & Development", href: "/services/website-design" },
+  { label: "Website Audit & Redesign", href: "/services/website-audit" },
   { label: "Google Business Profile Setup", href: "/services/gbp-setup" },
-  { label: "Local SEO", href: "/services/local-seo" },
+  { label: "Local SEO & Search Visibility", href: "/services/local-seo" },
+  { label: "Ongoing Maintenance & Support", href: "/services/ongoing-support" },
+];
+
+const comingSoonLinks = [
+  { label: "AI Integrations" },
+  { label: "Reporting & Analytics" },
 ];
 
 const demoLinks = [
@@ -110,13 +114,14 @@ export function Navbar() {
               }`}
             >
               <div
-                className="w-[280px] py-2"
+                className="w-[300px] py-2"
                 style={{
                   backgroundColor: "#FAF9F6",
                   border: "1px solid rgba(13,27,42,0.10)",
                   boxShadow: "0 8px 24px rgba(13,27,42,0.08)",
                 }}
               >
+                {/* Live service links */}
                 {serviceLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -135,10 +140,32 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+
+                {/* Divider */}
                 <div
                   className="mx-4 my-2"
                   style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }}
                 />
+
+                {/* Coming Soon items — not clickable */}
+                {comingSoonLinks.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center justify-between px-5 py-2.5 text-[13px] font-normal select-none"
+                    style={{ color: "rgba(13,27,42,0.35)", cursor: "default" }}
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
+                  </div>
+                ))}
+
+                {/* Divider */}
+                <div
+                  className="mx-4 my-2"
+                  style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }}
+                />
+
+                {/* View all */}
                 <Link
                   href="/services"
                   className="block px-5 py-2.5 text-[13px] font-semibold transition-colors duration-150"
@@ -288,7 +315,7 @@ export function Navbar() {
       {/* Mobile Nav */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ${
-          mobileOpen ? "max-h-[600px]" : "max-h-0"
+          mobileOpen ? "max-h-[700px]" : "max-h-0"
         }`}
       >
         <div className="bg-cream/95 backdrop-blur-sm px-6 py-6 space-y-1" style={{ borderTop: "1px solid rgba(13,27,42,0.10)" }}>
@@ -313,7 +340,7 @@ export function Navbar() {
             </button>
             <div
               className={`overflow-hidden transition-all duration-300 ${
-                servicesOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+                servicesOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
               }`}
             >
               <div className="pl-4 pb-2 space-y-0.5">
@@ -328,6 +355,21 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
+                {/* Divider */}
+                <div className="my-1.5" style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }} />
+                {/* Coming Soon */}
+                {comingSoonLinks.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex items-center justify-between py-2 text-[13px] font-light"
+                    style={{ color: "rgba(13,27,42,0.35)" }}
+                  >
+                    <span>{item.label}</span>
+                    <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
+                  </div>
+                ))}
+                {/* Divider */}
+                <div className="my-1.5" style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }} />
                 <Link
                   href="/services"
                   onClick={() => setMobileOpen(false)}

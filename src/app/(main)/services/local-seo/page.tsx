@@ -5,14 +5,14 @@ import { PixelJMark } from "@/components/PixelJMark";
 
 export const metadata: Metadata = {
   title:
-    "Local SEO for Home Service Businesses in Indiana | JadorWorks Web Studio",
+    "Local SEO & Search Visibility for Indiana Small Businesses | JadorWorks Web Studio",
   description:
-    "Local SEO services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
+    "Local SEO and search visibility services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
   openGraph: {
     title:
-      "Local SEO for Home Service Businesses in Indiana | JadorWorks Web Studio",
+      "Local SEO & Search Visibility for Indiana Small Businesses | JadorWorks Web Studio",
     description:
-      "Local SEO services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
+      "Local SEO and search visibility services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
     url: "https://jadorworks.com/services/local-seo",
     siteName: "JadorWorks Web Studio",
     images: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Local SEO for Home Service Businesses in Indiana — JadorWorks Web Studio",
+        alt: "Local SEO & Search Visibility for Indiana Small Businesses — JadorWorks Web Studio",
       },
     ],
     locale: "en_US",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Local SEO for Home Service Businesses in Indiana | JadorWorks Web Studio",
+      "Local SEO & Search Visibility for Indiana Small Businesses | JadorWorks Web Studio",
     description:
-      "Local SEO services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
+      "Local SEO and search visibility services for home service businesses in Indiana. We build search visibility into your website from day one — page structure, schema markup, service area signals, and Google Business Profile setup included.",
     images: ["/og-image.png"],
   },
 };
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "Local SEO for Home Service Businesses",
+  name: "Local SEO & Search Visibility",
   provider: {
     "@type": "ProfessionalService",
     name: "JadorWorks Web Studio",
@@ -264,7 +264,7 @@ export default function LocalSEOPage() {
           Services
         </Link>
         <span style={{ opacity: 0.4 }}>›</span>
-        <span>Local SEO</span>
+        <span>Local SEO & Search Visibility</span>
       </div>
 
       {/* ===== HERO ===== */}
@@ -283,7 +283,7 @@ export default function LocalSEOPage() {
                   className="w-6 h-[1.5px] flex-shrink-0"
                   style={{ backgroundColor: "rgba(13,27,42,0.45)" }}
                 />
-                Local SEO · Indiana
+                Local SEO & Search Visibility · Indiana
               </div>
             </ScrollReveal>
 
