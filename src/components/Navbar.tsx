@@ -250,13 +250,6 @@ export function Navbar() {
           >
             How It Works
           </Link>
-          <Link
-            href="/#contact"
-            className="text-sm font-normal text-navy-62 hover:text-navy transition-colors"
-          >
-            Contact
-          </Link>
-
           {/* CTA */}
           <Link
             href="/#contact"
@@ -410,14 +403,6 @@ export function Navbar() {
           >
             How It Works
           </Link>
-          <Link
-            href="/#contact"
-            onClick={() => setMobileOpen(false)}
-            className="block py-2.5 text-sm font-light text-navy-45 hover:text-navy"
-          >
-            Contact
-          </Link>
-
           {/* CTA */}
           <div className="pt-3">
             <Link
