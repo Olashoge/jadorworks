@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { LogoLockup } from "@/components/PixelJMark";
 
 const serviceLinks = [
@@ -31,6 +32,46 @@ export function Navbar() {
   const [demosOpen, setDemosOpen] = useState(false);
   const servicesTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
   const demosTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  // Handle anchor links (/#process, /#contact) without blue flash
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
+      e.preventDefault();
+      setMobileOpen(false);
+
+      if (pathname === "/") {
+        // Already on homepage — smooth scroll directly
+        const el = document.getElementById(hash);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // On another page — navigate home, then instant-scroll after load
+        // Temporarily disable smooth scroll so there is no visible pan
+        const html = document.documentElement;
+        html.style.scrollBehavior = "auto";
+        router.push("/#" + hash);
+
+        // After Next.js finishes navigation and the DOM updates, scroll instantly
+        const scrollAfterNav = () => {
+          const el = document.getElementById(hash);
+          if (el) {
+            el.scrollIntoView({ behavior: "auto" });
+            // Restore smooth scroll after a tick so future in-page scrolls stay smooth
+            requestAnimationFrame(() => {
+              html.style.scrollBehavior = "";
+            });
+          } else {
+            // Element not found yet — retry briefly
+            requestAnimationFrame(scrollAfterNav);
+          }
+        };
+        // Start checking once the navigation begins
+        requestAnimationFrame(scrollAfterNav);
+      }
+    },
+    [pathname, router]
+  );
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -271,19 +312,21 @@ export function Navbar() {
           >
             Blog
           </Link>
-          <Link
+          <a
             href="/#process"
+            onClick={(e) => handleAnchorClick(e, "process")}
             className="text-sm font-normal text-navy-68 hover:text-navy transition-colors"
           >
             How It Works
-          </Link>
+          </a>
           {/* CTA */}
-          <Link
+          <a
             href="/#contact"
+            onClick={(e) => handleAnchorClick(e, "contact")}
             className="text-sm font-medium bg-navy text-cream px-5 py-2.5 rounded-lg hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
           >
             Book a Consultation
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -438,22 +481,22 @@ export function Navbar() {
           >
             Blog
           </Link>
-          <Link
+          <a
             href="/#process"
-            onClick={() => setMobileOpen(false)}
+            onClick={(e) => handleAnchorClick(e, "process")}
             className="block py-2.5 text-sm font-light text-navy-68 hover:text-navy"
           >
             How It Works
-          </Link>
+          </a>
           {/* CTA */}
           <div className="pt-3">
-            <Link
+            <a
               href="/#contact"
-              onClick={() => setMobileOpen(false)}
+              onClick={(e) => handleAnchorClick(e, "contact")}
               className="block text-sm font-medium bg-navy text-cream px-5 py-3 rounded-lg text-center hover:bg-cream hover:text-navy border border-navy transition-all duration-300"
             >
               Book a Consultation
-            </Link>
+            </a>
           </div>
         </div>
       </div>
