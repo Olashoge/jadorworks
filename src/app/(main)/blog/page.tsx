@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ScrollReveal } from "@/components/ScrollReveal";
+import { BlogList } from "@/components/BlogList";
 import { blogArticles } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -37,9 +38,6 @@ export const metadata: Metadata = {
 const categories = Array.from(new Set(blogArticles.map((a) => a.category)));
 
 export default function BlogPage() {
-  const featured = blogArticles[0];
-  const rest = blogArticles.slice(1);
-
   return (
     <>
       {/* Hero */}
@@ -70,141 +68,8 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="bg-cream">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-          <ScrollReveal>
-            <div
-              className="flex items-center gap-2 pb-8"
-              style={{ borderBottom: "1px solid rgba(13,27,42,0.08)" }}
-            >
-              <span
-                className="text-xs font-medium px-3 py-1.5 rounded-full bg-navy text-cream"
-              >
-                All
-              </span>
-              {categories.map((cat) => (
-                <span
-                  key={cat}
-                  className="text-xs font-medium px-3 py-1.5 rounded-full transition-colors"
-                  style={{
-                    backgroundColor: "rgba(13,27,42,0.05)",
-                    color: "rgba(13,27,42,0.62)",
-                  }}
-                >
-                  {cat}
-                </span>
-              ))}
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Featured Article */}
-      <section className="py-12 md:py-16 bg-cream">
-        <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-          <ScrollReveal>
-            <Link
-              href={`/blog/${featured.slug}`}
-              className="block group"
-            >
-              <div
-                className="p-8 md:p-10 rounded-lg transition-all duration-300"
-                style={{
-                  backgroundColor: "rgba(13,27,42,0.03)",
-                  border: "1px solid rgba(13,27,42,0.06)",
-                }}
-              >
-                <div className="flex items-center gap-3 mb-4">
-                  <span
-                    className="text-xs font-medium tracking-wide uppercase px-3 py-1 rounded-full"
-                    style={{
-                      backgroundColor: "rgba(13,27,42,0.06)",
-                      color: "rgba(13,27,42,0.62)",
-                    }}
-                  >
-                    {featured.category}
-                  </span>
-                  <span
-                    className="text-xs"
-                    style={{ color: "rgba(13,27,42,0.42)" }}
-                  >
-                    {featured.readTime} read · {featured.dateLabel}
-                  </span>
-                </div>
-                <h2 className="text-2xl md:text-3xl font-light tracking-tight text-navy mb-3 group-hover:translate-x-0.5 transition-transform duration-200">
-                  {featured.headline}
-                </h2>
-                <p
-                  className="text-sm md:text-base leading-relaxed max-w-2xl"
-                  style={{ color: "rgba(13,27,42,0.62)" }}
-                >
-                  {featured.description}
-                </p>
-                <span className="inline-block mt-5 text-sm font-medium text-navy group-hover:translate-x-1 transition-transform duration-200">
-                  Read article →
-                </span>
-              </div>
-            </Link>
-          </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Article Grid */}
-      {rest.length > 0 && (
-        <section className="pb-16 md:pb-24 bg-cream">
-          <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-            <div className="grid md:grid-cols-2 gap-6">
-              {rest.map((article, i) => (
-                <ScrollReveal key={article.slug}>
-                  <Link
-                    href={`/blog/${article.slug}`}
-                    className="block group h-full"
-                  >
-                    <div
-                      className="p-6 md:p-8 rounded-lg h-full transition-all duration-300"
-                      style={{
-                        backgroundColor: "rgba(13,27,42,0.03)",
-                        border: "1px solid rgba(13,27,42,0.06)",
-                      }}
-                    >
-                      <div className="flex items-center gap-3 mb-3">
-                        <span
-                          className="text-xs font-medium tracking-wide uppercase px-3 py-1 rounded-full"
-                          style={{
-                            backgroundColor: "rgba(13,27,42,0.06)",
-                            color: "rgba(13,27,42,0.62)",
-                          }}
-                        >
-                          {article.category}
-                        </span>
-                        <span
-                          className="text-xs"
-                          style={{ color: "rgba(13,27,42,0.42)" }}
-                        >
-                          {article.readTime}
-                        </span>
-                      </div>
-                      <h3 className="text-lg md:text-xl font-light tracking-tight text-navy mb-2 group-hover:translate-x-0.5 transition-transform duration-200">
-                        {article.headline}
-                      </h3>
-                      <p
-                        className="text-sm leading-relaxed"
-                        style={{ color: "rgba(13,27,42,0.62)" }}
-                      >
-                        {article.description}
-                      </p>
-                      <span className="inline-block mt-4 text-sm font-medium text-navy group-hover:translate-x-1 transition-transform duration-200">
-                        Read article →
-                      </span>
-                    </div>
-                  </Link>
-                </ScrollReveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Filter + Articles (client component) */}
+      <BlogList articles={blogArticles} categories={categories} />
 
       {/* Newsletter CTA */}
       <section
