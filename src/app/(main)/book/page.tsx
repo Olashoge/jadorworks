@@ -327,6 +327,10 @@ export default function BookPage() {
       <style
         dangerouslySetInnerHTML={{
           __html: `
+            .calendly-inline-widget,
+            .calendly-inline-widget iframe {
+              width: 100% !important;
+            }
             @media (max-width: 900px) {
               .book-breadcrumb {
                 padding-left: 24px !important;
@@ -350,7 +354,7 @@ export default function BookPage() {
               .book-calendly-col > div:first-child {
                 padding: 20px 24px 16px !important;
               }
-              .book-calendly-col > div:last-child {
+              .book-calendly-wrap {
                 padding: 0 24px 32px !important;
               }
               .book-intake-col {

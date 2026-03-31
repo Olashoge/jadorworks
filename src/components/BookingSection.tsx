@@ -60,11 +60,11 @@ export function BookingSection() {
             }}
           />
         </div>
-        <div style={{ padding: "32px 40px 40px 56px" }}>
+        <div className="book-calendly-wrap" style={{ padding: "0 0 0 0" }}>
           <div
             className="calendly-inline-widget"
             data-url="https://calendly.com/jadorworks/consultations?hide_event_type_details=1&hide_gdpr_banner=1"
-            style={{ minWidth: 320, height: 700 }}
+            style={{ width: "100%", minWidth: 320, height: 700 }}
           />
         </div>
       </div>
