@@ -314,7 +314,7 @@ export default function BookPage() {
         />
       </div>
 
-      {/* Side-by-side Booking Layout */}
+      {/* Stacked Booking Layout */}
       <BookingSection />
 
       {/* Calendly Widget Script -- loaded only on this page */}
@@ -331,36 +331,24 @@ export default function BookPage() {
             .calendly-inline-widget iframe {
               width: 100% !important;
             }
-            @media (max-width: 900px) {
+            @media (max-width: 768px) {
               .book-breadcrumb {
                 padding-left: 24px !important;
                 padding-right: 24px !important;
               }
               .book-header {
                 grid-template-columns: 1fr !important;
-                gap: 32px !important;
-                padding: 40px 24px !important;
+                gap: 28px !important;
+                padding: 36px 24px !important;
               }
               .book-trust-strip {
-                padding: 16px 24px !important;
+                padding: 12px 24px !important;
               }
-              .book-layout {
-                grid-template-columns: 1fr !important;
+              .book-calendly-section {
+                padding: 0 24px 48px !important;
               }
-              .book-calendly-col {
-                border-right: none !important;
-                border-bottom: 1px solid rgba(13,27,42,0.10) !important;
-              }
-              .book-calendly-col > div:first-child {
-                padding: 20px 24px 16px !important;
-              }
-              .book-calendly-wrap {
-                padding: 0 24px 32px !important;
-              }
-              .book-intake-col {
-                position: static !important;
-                min-height: auto !important;
-                padding: 48px 24px !important;
+              .book-intake-section {
+                padding: 64px 24px !important;
               }
             }
           `,
