@@ -1424,7 +1424,7 @@ export function GracefulLivingHomeCare() {
                   placeholder="Your Name"
                   style={{
                     ...nunito(400, {
-                      fontSize: "13px",
+                      fontSize: "16px",
                       background: C.white,
                       border: `1.5px solid ${C.lightgray}`,
                       color: C.navy2,
@@ -1439,7 +1439,7 @@ export function GracefulLivingHomeCare() {
                   placeholder="Phone Number"
                   style={{
                     ...nunito(400, {
-                      fontSize: "13px",
+                      fontSize: "16px",
                       background: C.white,
                       border: `1.5px solid ${C.lightgray}`,
                       color: C.navy2,
@@ -1455,7 +1455,7 @@ export function GracefulLivingHomeCare() {
                 placeholder="Email Address"
                 style={{
                   ...nunito(400, {
-                    fontSize: "13px",
+                    fontSize: "16px",
                     background: C.white,
                     border: `1.5px solid ${C.lightgray}`,
                     color: C.navy2,
@@ -1470,7 +1470,7 @@ export function GracefulLivingHomeCare() {
                 placeholder="Your Location (City)"
                 style={{
                   ...nunito(400, {
-                    fontSize: "13px",
+                    fontSize: "16px",
                     background: C.white,
                     border: `1.5px solid ${C.lightgray}`,
                     color: C.navy2,
@@ -1484,7 +1484,7 @@ export function GracefulLivingHomeCare() {
                 defaultValue=""
                 style={{
                   ...nunito(400, {
-                    fontSize: "13px",
+                    fontSize: "16px",
                     background: C.white,
                     border: `1.5px solid ${C.lightgray}`,
                     color: C.navy2,
@@ -1508,7 +1508,7 @@ export function GracefulLivingHomeCare() {
                 placeholder="Tell us a little about your loved one and their situation..."
                 style={{
                   ...nunito(400, {
-                    fontSize: "13px",
+                    fontSize: "16px",
                     background: C.white,
                     border: `1.5px solid ${C.lightgray}`,
                     color: C.navy2,

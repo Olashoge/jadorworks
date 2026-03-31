@@ -747,7 +747,7 @@ const svcIcoStyle: React.CSSProperties = {
 
 const inputStyle: React.CSSProperties = {
   fontFamily: "var(--font-outfit), 'Outfit', sans-serif",
-  fontSize: 13,
+  fontSize: 16,
   fontWeight: 400,
   background: C.white,
   border: `1.5px solid ${C.lightgray}`,

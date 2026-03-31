@@ -1996,7 +1996,7 @@ export function CornerstoneRenovations() {
                   className="focus:border-[#B8875A] transition-colors outline-none"
                   style={{
                     ...sans(300),
-                    fontSize: 13,
+                    fontSize: 16,
                     background: "rgba(255,255,255,.06)",
                     border: "1px solid rgba(255,255,255,.12)",
                     color: C.white,
@@ -2009,7 +2009,7 @@ export function CornerstoneRenovations() {
                   className="focus:border-[#B8875A] transition-colors outline-none"
                   style={{
                     ...sans(300),
-                    fontSize: 13,
+                    fontSize: 16,
                     background: "rgba(255,255,255,.06)",
                     border: "1px solid rgba(255,255,255,.12)",
                     color: C.white,
@@ -2024,7 +2024,7 @@ export function CornerstoneRenovations() {
                   className="focus:border-[#B8875A] transition-colors outline-none"
                   style={{
                     ...sans(300),
-                    fontSize: 13,
+                    fontSize: 16,
                     background: "rgba(255,255,255,.06)",
                     border: "1px solid rgba(255,255,255,.12)",
                     color: C.white,
@@ -2037,7 +2037,7 @@ export function CornerstoneRenovations() {
                   className="focus:border-[#B8875A] transition-colors outline-none"
                   style={{
                     ...sans(300),
-                    fontSize: 13,
+                    fontSize: 16,
                     background: "rgba(255,255,255,.06)",
                     border: "1px solid rgba(255,255,255,.12)",
                     color: C.white,
@@ -2049,7 +2049,7 @@ export function CornerstoneRenovations() {
                 className="focus:border-[#B8875A] transition-colors outline-none"
                 style={{
                   ...sans(300),
-                  fontSize: 13,
+                  fontSize: 16,
                   background: "rgba(255,255,255,.06)",
                   border: "1px solid rgba(255,255,255,.12)",
                   color: "rgba(255,255,255,.28)",
@@ -2077,7 +2077,7 @@ export function CornerstoneRenovations() {
                 className="focus:border-[#B8875A] transition-colors outline-none"
                 style={{
                   ...sans(300),
-                  fontSize: 13,
+                  fontSize: 16,
                   background: "rgba(255,255,255,.06)",
                   border: "1px solid rgba(255,255,255,.12)",
                   color: C.white,
@@ -2089,7 +2089,7 @@ export function CornerstoneRenovations() {
                 className="focus:border-[#B8875A] transition-colors outline-none"
                 style={{
                   ...sans(300),
-                  fontSize: 13,
+                  fontSize: 16,
                   background: "rgba(255,255,255,.06)",
                   border: "1px solid rgba(255,255,255,.12)",
                   color: C.white,

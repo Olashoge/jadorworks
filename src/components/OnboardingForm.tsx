@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { LogoLockup } from "./PixelJMark";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -124,10 +125,10 @@ function CheckboxOption({
 
 /* ── Shared input styles ── */
 const inputClass =
-  "w-full font-[family-name:var(--font-inter)] text-sm text-navy bg-cream border-[1.5px] border-[rgba(13,27,42,0.1)] px-4 py-[13px] outline-none transition-colors focus:border-navy placeholder:text-[rgba(13,27,42,0.28)] disabled:opacity-50";
+  "w-full font-[family-name:var(--font-inter)] text-base text-navy bg-cream border-[1.5px] border-[rgba(13,27,42,0.1)] px-4 py-[13px] outline-none transition-colors focus:border-navy placeholder:text-[rgba(13,27,42,0.28)] disabled:opacity-50";
 
 const selectClass =
-  "w-full font-[family-name:var(--font-inter)] text-sm text-navy bg-cream border-[1.5px] border-[rgba(13,27,42,0.1)] px-4 py-[13px] outline-none transition-colors focus:border-navy appearance-none cursor-pointer disabled:opacity-50 bg-no-repeat bg-[right_16px_center]";
+  "w-full font-[family-name:var(--font-inter)] text-base text-navy bg-cream border-[1.5px] border-[rgba(13,27,42,0.1)] px-4 py-[13px] outline-none transition-colors focus:border-navy appearance-none cursor-pointer disabled:opacity-50 bg-no-repeat bg-[right_16px_center]";
 
 /* ============================= */
 /* MAIN COMPONENT                */
@@ -146,7 +147,7 @@ export function OnboardingForm() {
   const [existingGBP, setExistingGBP] = useState("");
   const [services, setServices] = useState("");
   const [serviceArea, setServiceArea] = useState("");
-  const [mainGoal, setMainGoal] = useState("");
+  const [mainGoals, setMainGoals] = useState<string[]>([]);
   const [idealCustomer, setIdealCustomer] = useState("");
   const [visualStyle, setVisualStyle] = useState("");
   const [brandColors, setBrandColors] = useState("");
@@ -157,6 +158,14 @@ export function OnboardingForm() {
   const [contactMethod, setContactMethod] = useState("");
 
   const isSubmitting = status === "submitting";
+
+  function toggleGoal(goal: string) {
+    setMainGoals((prev) =>
+      prev.includes(goal)
+        ? prev.filter((g) => g !== goal)
+        : [...prev, goal]
+    );
+  }
 
   function toggleFeature(feature: string) {
     setFeaturesWanted((prev) =>
@@ -184,7 +193,7 @@ export function OnboardingForm() {
       existingGBP: existingGBP || undefined,
       services,
       serviceArea,
-      mainGoal,
+      mainGoal: mainGoals.join(", "),
       idealCustomer: idealCustomer || undefined,
       visualStyle: visualStyle || undefined,
       brandColors: brandColors || undefined,
@@ -234,7 +243,9 @@ export function OnboardingForm() {
 
         {/* Thank you content */}
         <div className="max-w-[760px] mx-auto px-6 md:px-14 py-24 text-center">
-          <PixelMark size={18} className="text-navy mx-auto mb-8" />
+          <div className="flex justify-center mb-8">
+            <LogoLockup size={18} color="#0D1B2A" />
+          </div>
           <h2 className="text-4xl font-extrabold tracking-tight text-navy mb-3.5">
             You&apos;re all set.
           </h2>
@@ -535,13 +546,12 @@ export function OnboardingForm() {
                   { id: "g5", label: "Replace an old website" },
                   { id: "g6", label: "All of the above" },
                 ].map((opt) => (
-                  <RadioOption
+                  <CheckboxOption
                     key={opt.id}
-                    name="goal"
                     id={opt.id}
                     label={opt.label}
-                    checked={mainGoal === opt.label}
-                    onChange={() => setMainGoal(opt.label)}
+                    checked={mainGoals.includes(opt.label)}
+                    onChange={() => toggleGoal(opt.label)}
                     disabled={isSubmitting}
                   />
                 ))}

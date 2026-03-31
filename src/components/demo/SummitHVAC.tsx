@@ -1144,13 +1144,13 @@ export function SummitHVAC() {
                   <input
                     type="text"
                     placeholder="Full Name"
-                    className="w-full px-4 py-3 text-sm border border-gray-200 outline-none focus:border-orange-400 transition"
+                    className="w-full px-4 py-3 text-base border border-gray-200 outline-none focus:border-orange-400 transition"
                     style={barlow(400)}
                   />
                   <input
                     type="tel"
                     placeholder="Phone Number"
-                    className="w-full px-4 py-3 text-sm border border-gray-200 outline-none focus:border-orange-400 transition"
+                    className="w-full px-4 py-3 text-base border border-gray-200 outline-none focus:border-orange-400 transition"
                     style={barlow(400)}
                   />
                 </div>
@@ -1158,12 +1158,12 @@ export function SummitHVAC() {
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 text-sm border border-gray-200 outline-none focus:border-orange-400 transition"
+                  className="w-full px-4 py-3 text-base border border-gray-200 outline-none focus:border-orange-400 transition"
                   style={barlow(400)}
                 />
 
                 <select
-                  className="w-full px-4 py-3 text-sm border border-gray-200 outline-none focus:border-orange-400 transition text-gray-500"
+                  className="w-full px-4 py-3 text-base border border-gray-200 outline-none focus:border-orange-400 transition text-gray-500"
                   style={barlow(400)}
                   defaultValue=""
                 >
@@ -1182,7 +1182,7 @@ export function SummitHVAC() {
                 <textarea
                   rows={4}
                   placeholder="Tell us about the issue..."
-                  className="w-full px-4 py-3 text-sm border border-gray-200 outline-none focus:border-orange-400 transition resize-none"
+                  className="w-full px-4 py-3 text-base border border-gray-200 outline-none focus:border-orange-400 transition resize-none"
                   style={barlow(400)}
                 />
 

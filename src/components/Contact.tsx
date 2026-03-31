@@ -122,7 +122,7 @@ export function Contact() {
                   placeholder="Name"
                   required
                   disabled={status === "submitting"}
-                  className="w-full px-5 py-4 rounded-lg text-cream text-sm font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
+                  className="w-full px-5 py-4 rounded-lg text-cream text-base font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
                   style={inputStyle}
                 />
                 <input
@@ -131,7 +131,7 @@ export function Contact() {
                   placeholder="Business Name"
                   required
                   disabled={status === "submitting"}
-                  className="w-full px-5 py-4 rounded-lg text-cream text-sm font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
+                  className="w-full px-5 py-4 rounded-lg text-cream text-base font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
                   style={inputStyle}
                 />
               </div>
@@ -142,7 +142,7 @@ export function Contact() {
                   placeholder="Email"
                   required
                   disabled={status === "submitting"}
-                  className="w-full px-5 py-4 rounded-lg text-cream text-sm font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
+                  className="w-full px-5 py-4 rounded-lg text-cream text-base font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
                   style={inputStyle}
                 />
                 <input
@@ -150,7 +150,7 @@ export function Contact() {
                   name="phone"
                   placeholder="Phone Number"
                   disabled={status === "submitting"}
-                  className="w-full px-5 py-4 rounded-lg text-cream text-sm font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
+                  className="w-full px-5 py-4 rounded-lg text-cream text-base font-light focus:outline-none transition-colors placeholder:text-[rgba(250,249,246,0.3)] disabled:opacity-50"
                   style={inputStyle}
                 />
               </div>
