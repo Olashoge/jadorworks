@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 // =============================================
 
 const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const ANTHROPIC_MODEL = process.env.ASSISTANT_MODEL || "claude-sonnet-4-20250514";
+const ANTHROPIC_MODEL = process.env.ASSISTANT_MODEL || "claude-3-5-sonnet-20241022";
 const MAX_TOKENS = 300;
 const TEMPERATURE = 0.3;
 
