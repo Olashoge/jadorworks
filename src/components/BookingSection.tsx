@@ -422,7 +422,7 @@ export function BookingSection() {
                 Complete the intake form now
               </div>
               <Link
-                href="/onboarding"
+                href="/intake"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
