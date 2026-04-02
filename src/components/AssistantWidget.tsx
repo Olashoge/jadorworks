@@ -22,13 +22,13 @@ const EXCLUDED_ROUTES = ["/book", "/intake"];
 // Starter chips
 // ------------------------------------
 const STARTER_CHIPS = [
-  "What does JadorWorks do?",
-  "Is this only for demo industries?",
-  "I already have a website",
-  "What does pricing look like?",
+  "Can JadorWorks help my business?",
+  "I already have a website. Do I need a new one?",
+  "What does pricing usually look like?",
+  "Do you only work with the demo industries?",
 ];
 
-const BOOKING_CHIP = "Book a consultation \u2192";
+const BOOKING_CHIP = "Book a free consultation \u2192";
 
 // ------------------------------------
 // Component
@@ -248,7 +248,7 @@ export function AssistantWidget() {
                     marginBottom: 16,
                   }}
                 >
-                  Questions about services, pricing, or whether JadorWorks is the right fit?
+                  Questions about your website, pricing, or whether JadorWorks is the right fit?
                 </p>
 
                 {/* Starter chips - 2x2 grid */}
