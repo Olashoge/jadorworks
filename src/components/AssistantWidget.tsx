@@ -228,7 +228,7 @@ export function AssistantWidget() {
                 lineHeight: 1,
               }}
             >
-              \u00d7
+              {"\u00d7"}
             </button>
           </div>
 
@@ -374,7 +374,7 @@ export function AssistantWidget() {
                           lineHeight: 1,
                         }}
                       >
-                        Book a free consultation \u2192
+                        {"Book a free consultation \u2192"}
                       </a>
                     ) : (
                       // Route chip
@@ -392,7 +392,7 @@ export function AssistantWidget() {
                           lineHeight: 1.4,
                         }}
                       >
-                        \u2192 {msg.routeLabel || msg.route}
+                        {"\u2192"} {msg.routeLabel || msg.route}
                       </a>
                     )}
                   </div>
