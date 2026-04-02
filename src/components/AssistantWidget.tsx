@@ -153,7 +153,7 @@ export function AssistantWidget() {
             cursor: "pointer",
           }}
         >
-          Any questions?
+          Ask our AI Assistant ✦
         </button>
       )}
 
@@ -213,7 +213,7 @@ export function AssistantWidget() {
                   marginLeft: 6,
                 }}
               >
-                Assistant
+                AI Assistant ✦
               </span>
             </div>
             <button
@@ -248,7 +248,7 @@ export function AssistantWidget() {
                     marginBottom: 16,
                   }}
                 >
-                  What brings you here today?
+                  Questions about services, pricing, or whether JadorWorks is the right fit?
                 </p>
 
                 {/* Starter chips - 2x2 grid */}
