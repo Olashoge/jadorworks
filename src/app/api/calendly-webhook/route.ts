@@ -13,7 +13,16 @@ const HUBSPOT_API = "https://api.hubapi.com";
 // Pipeline and stage IDs (from HubSpot portal 245754448)
 const PIPELINE_ID = "default";
 const NEW_BOOKING_STAGE_ID = "appointmentscheduled";
-const LOST_STAGE_ID = "3441360616";
+
+// Only deals in active sales-cycle stages count as "open"
+// Post-sale stages (Won, Active Build, Hosting) should NOT block new deal creation
+// for returning clients starting a new project.
+const ACTIVE_SALES_STAGES = new Set([
+  "appointmentscheduled",  // New Booking
+  "contractsent",          // Intake Received
+  "qualifiedtobuy",        // Discovery Completed
+  "presentationscheduled", // Proposal / Quote Sent
+]);
 
 // ------------------------------------
 // Calendly webhook signature verification
@@ -117,7 +126,9 @@ async function findOpenDealForContact(
 
   if (!data.results || data.results.length === 0) return null;
 
-  // Check each associated deal to find one that isn't Lost or Closed
+  // Only match deals in active sales-cycle stages.
+  // Won / Active Build / Hosting / Lost are all terminal — a returning
+  // client booking a new consultation should get a fresh deal.
   for (const assoc of data.results) {
     const dealRes = await hubspotFetch(
       `/crm/v3/objects/deals/${assoc.id}?properties=dealstage,pipeline`
@@ -127,8 +138,7 @@ async function findOpenDealForContact(
     const deal = await dealRes.json();
     const stage = deal.properties?.dealstage;
 
-    // Skip deals in "Lost" stage — those are closed
-    if (stage !== LOST_STAGE_ID) {
+    if (ACTIVE_SALES_STAGES.has(stage)) {
       return { id: deal.id };
     }
   }

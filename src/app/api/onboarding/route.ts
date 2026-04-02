@@ -17,7 +17,16 @@ const HUBSPOT_API = "https://api.hubapi.com";
 // Pipeline and stage IDs (from HubSpot portal 245754448)
 const PIPELINE_ID = "default";
 const INTAKE_STAGE_ID = "contractsent"; // Intake Received
-const LOST_STAGE_ID = "3441360616";
+
+// Only deals in active sales-cycle stages count as "open"
+// Post-sale stages (Won, Active Build, Hosting) should NOT block new deal creation
+// for returning clients starting a new project.
+const ACTIVE_SALES_STAGES = new Set([
+  "appointmentscheduled",  // New Booking
+  "contractsent",          // Intake Received
+  "qualifiedtobuy",        // Discovery Completed
+  "presentationscheduled", // Proposal / Quote Sent
+]);
 
 // ------------------------------------
 // Rate limiting (same pattern as contact)
@@ -254,14 +263,16 @@ async function syncToHubSpot(data: IntakeFormData): Promise<void> {
     if (assocRes.ok) {
       const assocData = await assocRes.json();
       if (assocData.results && assocData.results.length > 0) {
-        // Find the first non-lost deal
+        // Find a deal in active sales-cycle stages only.
+        // Won / Active Build / Hosting / Lost are terminal — intake for
+        // a returning client should create a new deal, not update an old one.
         for (const assoc of assocData.results) {
           const dealRes = await hubspotFetch(
             `/crm/v3/objects/deals/${assoc.id}?properties=dealstage`
           );
           if (dealRes.ok) {
             const deal = await dealRes.json();
-            if (deal.properties?.dealstage !== LOST_STAGE_ID) {
+            if (ACTIVE_SALES_STAGES.has(deal.properties?.dealstage)) {
               dealId = deal.id;
               break;
             }
