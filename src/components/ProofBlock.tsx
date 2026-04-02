@@ -33,7 +33,7 @@ export function ProofBlock() {
                   className="w-6 h-px shrink-0"
                   style={{ backgroundColor: "rgba(250,249,246,0.25)" }}
                 />
-                A real example — HVAC & Plumbing
+                A representative example — HVAC & Plumbing
               </p>
               <h2 className="text-3xl md:text-5xl lg:text-[52px] font-extrabold tracking-[-0.035em] leading-[1.05] text-cream max-w-[560px]">
                 From easy to overlook
@@ -93,8 +93,8 @@ export function ProofBlock() {
               >
                 Many local HVAC and plumbing businesses do good work but look
                 unclear online. No clear service list. No obvious service area.
-                Hard to trust quickly on a phone screen. Visitors land and leave
-                without calling.
+                Hard to trust quickly on a phone screen. Without a clear next
+                step, visitors may leave without calling.
               </p>
             </div>
 
@@ -170,7 +170,7 @@ export function ProofBlock() {
               >
                 A clearer first impression. Faster trust at the moment a
                 customer is deciding who to call. A stronger foundation for
-                local lead generation.
+                local visibility and lead-readiness.
               </p>
             </div>
           </div>
