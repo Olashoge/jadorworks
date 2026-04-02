@@ -6,6 +6,7 @@ import { DemoSites } from "@/components/DemoSites";
 import { ServicesPathway } from "@/components/ServicesPathway";
 import { Included } from "@/components/Included";
 import { Packages } from "@/components/Packages";
+import { ProofBlock } from "@/components/ProofBlock";
 import { WhoItsFor } from "@/components/WhoItsFor";
 import { Process } from "@/components/Process";
 import { Contact } from "@/components/Contact";
@@ -21,6 +22,7 @@ export default function Home() {
       <ServicesPathway />
       <Included />
       <Packages />
+      <ProofBlock />
       <WhoItsFor />
       <Process />
       <Contact />
