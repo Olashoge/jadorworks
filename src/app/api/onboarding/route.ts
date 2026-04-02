@@ -288,8 +288,8 @@ async function syncToHubSpot(data: IntakeFormData): Promise<void> {
   const dealProperties: Record<string, string> = {
     // Move deal to Intake Received stage
     dealstage: INTAKE_STAGE_ID,
-    onboarding_status: "Submitted", // HubSpot property name kept for compatibility
-    onboarding_submitted_date: new Date().toISOString().split("T")[0],
+    intake_status: "Submitted",
+    intake_submitted_date: new Date().toISOString().split("T")[0],
     service_area: data.serviceArea || "",
     main_goals: data.mainGoal || "",
     business_type: data.businessType || "",
