@@ -204,3 +204,22 @@
   border-radius: 50%;
   background: rgba(13,27,42,0.25);
 }
+
+/* Assistant widget mobile */
+@media (max-width: 768px) {
+  .assistant-panel {
+    width: 100vw !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    height: 65vh !important;
+    border-radius: 8px 8px 0 0 !important;
+  }
+
+  .assistant-launcher {
+    height: 40px !important;
+  }
+
+  .assistant-chips-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
