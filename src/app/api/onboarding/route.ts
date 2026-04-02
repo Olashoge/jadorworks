@@ -522,12 +522,14 @@ export async function POST(req: NextRequest) {
 
     const result = await response.json();
 
-    // Non-blocking HubSpot CRM sync — fire and forget
-    // Email is the safety net; HubSpot sync is additive
+    // HubSpot CRM sync — awaited so Vercel doesn't kill the function
+    // Email is the safety net; HubSpot failure does NOT block the response
     if (HUBSPOT_ACCESS_TOKEN) {
-      syncToHubSpot(body).catch((err) =>
-        console.error("HubSpot sync error (non-blocking):", err)
-      );
+      try {
+        await syncToHubSpot(body);
+      } catch (err) {
+        console.error("HubSpot sync error (non-blocking):", err);
+      }
     }
 
     return NextResponse.json({ success: true, id: result.id });
