@@ -282,11 +282,20 @@ export async function POST(req: NextRequest) {
     const rawText = result.content?.[0]?.text || "";
 
     // Parse the JSON response from the model
+    // Strip markdown code fences if the model wraps its response
+    let cleanText = rawText.trim();
+    if (cleanText.startsWith("```")) {
+      cleanText = cleanText
+        .replace(/^```(?:json)?\s*\n?/, "")
+        .replace(/\n?```\s*$/, "")
+        .trim();
+    }
+
     let reply = "";
     let route: string | null = null;
 
     try {
-      const parsed = JSON.parse(rawText);
+      const parsed = JSON.parse(cleanText);
       reply = parsed.reply || rawText;
       route = parsed.route || null;
     } catch {
