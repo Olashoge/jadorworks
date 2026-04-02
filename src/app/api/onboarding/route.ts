@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 
 // =============================================
-// Onboarding Intake Form API Route
+// Pre-Discovery Intake Form API Route
 // Sends structured intake email via Resend
-// Then syncs data to HubSpot CRM (non-blocking)
+// Then syncs data to HubSpot CRM (awaited)
 // =============================================
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
@@ -16,7 +16,7 @@ const HUBSPOT_API = "https://api.hubapi.com";
 
 // Pipeline and stage IDs (from HubSpot portal 245754448)
 const PIPELINE_ID = "default";
-const ONBOARDING_STAGE_ID = "contractsent"; // Onboarding / Intake Received
+const INTAKE_STAGE_ID = "contractsent"; // Intake Received
 const LOST_STAGE_ID = "3441360616";
 
 // ------------------------------------
@@ -286,9 +286,9 @@ async function syncToHubSpot(data: IntakeFormData): Promise<void> {
   }
 
   const dealProperties: Record<string, string> = {
-    // Onboarding / Intake Received stage
-    dealstage: ONBOARDING_STAGE_ID,
-    onboarding_status: "Submitted",
+    // Move deal to Intake Received stage
+    dealstage: INTAKE_STAGE_ID,
+    onboarding_status: "Submitted", // HubSpot property name kept for compatibility
     onboarding_submitted_date: new Date().toISOString().split("T")[0],
     service_area: data.serviceArea || "",
     main_goals: data.mainGoal || "",
@@ -304,9 +304,9 @@ async function syncToHubSpot(data: IntakeFormData): Promise<void> {
       method: "PATCH",
       body: JSON.stringify({ properties: dealProperties }),
     });
-    console.log(`HubSpot: Updated deal ${dealId} with onboarding data for ${data.email}`);
+    console.log(`HubSpot: Updated deal ${dealId} with intake data for ${data.email}`);
   } else {
-    // 5b. Fallback: Create deal if none exists (edge case — onboarding before booking)
+    // 5b. Fallback: Create deal if none exists (edge case — intake before booking)
     dealProperties.dealname = `${data.contactName} — JadorWorks Project`;
     dealProperties.pipeline = PIPELINE_ID;
 

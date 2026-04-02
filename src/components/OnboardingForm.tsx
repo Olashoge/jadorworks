@@ -234,7 +234,7 @@ export function OnboardingForm() {
         <div className="bg-navy px-6 md:px-14 py-16 md:py-20">
           <div className="text-[11px] font-semibold tracking-[0.26em] uppercase text-cream/35 flex items-center gap-3 mb-4">
             <span className="w-6 h-[1.5px] bg-cream/35 shrink-0" />
-            New Client Onboarding
+            Pre-Discovery Intake
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-[60px] font-extrabold tracking-tight text-cream leading-none">
             Project Intake Form
@@ -250,15 +250,15 @@ export function OnboardingForm() {
             You&apos;re all set.
           </h2>
           <p className="text-base font-light text-navy/45 leading-relaxed max-w-[480px] mx-auto mb-9">
-            We&apos;ve received your intake and will review it within one business day.
+            We&apos;ve received your intake and will review it before your discovery call.
             Here&apos;s what happens next:
           </p>
           <div className="text-left max-w-[440px] mx-auto">
             {[
-              "We review your intake and confirm we have everything we need to begin.",
-              "We send a follow-up email requesting any additional assets — logo, photos, content.",
-              "We schedule a short kickoff call to align on scope, timeline, and expectations.",
-              "We get to work. You'll see a first draft within the agreed timeframe.",
+              "We review your intake so we come prepared for your discovery call.",
+              "During the call, we discuss your goals, scope, and answer any questions.",
+              "After the call, we send a tailored proposal with scope, timeline, and pricing.",
+              "Once you approve, we kick off your project and get to work.",
             ].map((text, i) => (
               <div
                 key={i}
@@ -284,16 +284,16 @@ export function OnboardingForm() {
       <div className="bg-navy px-6 md:px-14 py-16 md:py-20">
         <div className="text-[11px] font-semibold tracking-[0.26em] uppercase text-cream/35 flex items-center gap-3 mb-4">
           <span className="w-6 h-[1.5px] bg-cream/35 shrink-0" />
-          New Client Onboarding
+          Pre-Discovery Intake
         </div>
         <h1 className="text-4xl md:text-5xl lg:text-[60px] font-extrabold tracking-tight text-cream leading-none mb-5">
           Project Intake Form
         </h1>
         <p className="text-[17px] font-light text-cream/60 leading-relaxed max-w-[600px] mb-10">
-          This form helps us understand your business, gather the right assets, and start
-          your project without delays.{" "}
+          This form helps us understand your business so we can prepare for your
+          discovery call.{" "}
           <strong className="text-cream/85 font-medium">
-            Most clients complete it in 10-15 minutes.
+            Most people complete it in under 10 minutes.
           </strong>
         </p>
         <div className="flex gap-8 flex-wrap">
@@ -857,7 +857,7 @@ export function OnboardingForm() {
               third parties.
             </p>
             <p className="text-[10px] font-light text-navy/25 text-center mt-6 leading-relaxed">
-              This form is provided for active JadorWorks clients and project onboarding.
+              This form is provided to help us prepare for your consultation.
             </p>
           </div>
         </form>
