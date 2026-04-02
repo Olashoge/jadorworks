@@ -3,12 +3,21 @@ import { NextRequest, NextResponse } from "next/server";
 // =============================================
 // Onboarding Intake Form API Route
 // Sends structured intake email via Resend
+// Then syncs data to HubSpot CRM (non-blocking)
 // =============================================
 
 const RESEND_API_KEY = process.env.RESEND_API_KEY;
 const TO_EMAIL = process.env.CONTACT_EMAIL || "hello@jadorworks.com";
 const FROM_EMAIL =
   process.env.FROM_EMAIL || "JadorWorks Web Studio <noreply@jadorworks.com>";
+
+const HUBSPOT_ACCESS_TOKEN = process.env.HUBSPOT_ACCESS_TOKEN;
+const HUBSPOT_API = "https://api.hubapi.com";
+
+// Pipeline and stage IDs (from HubSpot portal 245754448)
+const PIPELINE_ID = "default";
+const ONBOARDING_STAGE_ID = "contractsent"; // Onboarding / Intake Received
+const LOST_STAGE_ID = "3441360616";
 
 // ------------------------------------
 // Rate limiting (same pattern as contact)
@@ -156,6 +165,172 @@ function buildEmailHTML(data: IntakeFormData): string {
   </div>
 </body>
 </html>`;
+}
+
+// ------------------------------------
+// HubSpot CRM Sync (non-blocking)
+// ------------------------------------
+async function hubspotFetch(
+  endpoint: string,
+  options: RequestInit = {}
+): Promise<Response> {
+  return fetch(`${HUBSPOT_API}${endpoint}`, {
+    ...options,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${HUBSPOT_ACCESS_TOKEN}`,
+      ...options.headers,
+    },
+  });
+}
+
+async function syncToHubSpot(data: IntakeFormData): Promise<void> {
+  // 1. Search for existing contact by email
+  const searchRes = await hubspotFetch("/crm/v3/objects/contacts/search", {
+    method: "POST",
+    body: JSON.stringify({
+      filterGroups: [
+        {
+          filters: [
+            { propertyName: "email", operator: "EQ", value: data.email },
+          ],
+        },
+      ],
+      properties: ["email"],
+      limit: 1,
+    }),
+  });
+
+  let contactId: string | null = null;
+
+  if (searchRes.ok) {
+    const searchData = await searchRes.json();
+    if (searchData.total > 0) {
+      contactId = searchData.results[0].id;
+    }
+  }
+
+  // 2. Update or create contact with onboarding data
+  const contactProperties: Record<string, string> = {
+    email: data.email,
+    phone: data.phone,
+    company: data.businessName,
+    preferred_contact_method: data.contactMethod || "",
+  };
+
+  // Split contact name into first/last
+  const nameParts = data.contactName.split(" ");
+  contactProperties.firstname = nameParts[0] || "";
+  contactProperties.lastname = nameParts.slice(1).join(" ") || "";
+
+  if (contactId) {
+    // Update existing contact
+    await hubspotFetch(`/crm/v3/objects/contacts/${contactId}`, {
+      method: "PATCH",
+      body: JSON.stringify({ properties: contactProperties }),
+    });
+  } else {
+    // Create new contact
+    const createRes = await hubspotFetch("/crm/v3/objects/contacts", {
+      method: "POST",
+      body: JSON.stringify({ properties: contactProperties }),
+    });
+    if (createRes.ok) {
+      const created = await createRes.json();
+      contactId = created.id;
+    } else {
+      console.error("Failed to create HubSpot contact for:", data.email);
+      return;
+    }
+  }
+
+  // 3. Find existing active deal for this contact
+  let dealId: string | null = null;
+
+  if (contactId) {
+    const assocRes = await hubspotFetch(
+      `/crm/v3/objects/contacts/${contactId}/associations/deals`
+    );
+    if (assocRes.ok) {
+      const assocData = await assocRes.json();
+      if (assocData.results && assocData.results.length > 0) {
+        // Find the first non-lost deal
+        for (const assoc of assocData.results) {
+          const dealRes = await hubspotFetch(
+            `/crm/v3/objects/deals/${assoc.id}?properties=dealstage`
+          );
+          if (dealRes.ok) {
+            const deal = await dealRes.json();
+            if (deal.properties?.dealstage !== LOST_STAGE_ID) {
+              dealId = deal.id;
+              break;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 4. Build deal properties from onboarding data
+  // Build Description field with overflow properties
+  const descriptionParts: string[] = [];
+  if (data.existingGBP) descriptionParts.push(`Existing GBP: ${data.existingGBP}`);
+  if (data.visualStyle) descriptionParts.push(`Visual Style: ${data.visualStyle}`);
+  if (data.brandColors) descriptionParts.push(`Brand Colors: ${data.brandColors}`);
+  if (data.inspirationUrls) descriptionParts.push(`Inspiration URLs: ${data.inspirationUrls}`);
+  if (data.idealCustomer) descriptionParts.push(`Ideal Customer: ${data.idealCustomer}`);
+  if (data.services) descriptionParts.push(`Services Offered: ${data.services}`);
+  if (data.businessStory) descriptionParts.push(`Business Story: ${data.businessStory}`);
+  if (data.featuresWanted && data.featuresWanted.length > 0) {
+    descriptionParts.push(`Features Wanted: ${data.featuresWanted.join(", ")}`);
+  }
+
+  const dealProperties: Record<string, string> = {
+    // Onboarding / Intake Received stage
+    dealstage: ONBOARDING_STAGE_ID,
+    onboarding_status: "Submitted",
+    onboarding_submitted_date: new Date().toISOString().split("T")[0],
+    service_area: data.serviceArea || "",
+    main_goals: data.mainGoal || "",
+    business_type: data.businessType || "",
+    existing_website: data.existingWebsite || "",
+    timeline: data.timeline || "",
+    description: descriptionParts.join("\n"),
+  };
+
+  if (dealId) {
+    // 5a. Update existing deal
+    await hubspotFetch(`/crm/v3/objects/deals/${dealId}`, {
+      method: "PATCH",
+      body: JSON.stringify({ properties: dealProperties }),
+    });
+    console.log(`HubSpot: Updated deal ${dealId} with onboarding data for ${data.email}`);
+  } else {
+    // 5b. Fallback: Create deal if none exists (edge case — onboarding before booking)
+    dealProperties.dealname = `${data.contactName} — JadorWorks Project`;
+    dealProperties.pipeline = PIPELINE_ID;
+
+    const createDealRes = await hubspotFetch("/crm/v3/objects/deals", {
+      method: "POST",
+      body: JSON.stringify({ properties: dealProperties }),
+    });
+
+    if (createDealRes.ok && contactId) {
+      const newDeal = await createDealRes.json();
+      dealId = newDeal.id;
+
+      // Associate deal with contact
+      await hubspotFetch(
+        `/crm/v3/objects/deals/${newDeal.id}/associations/contacts/${contactId}/deal_to_contact`,
+        { method: "PUT" }
+      );
+      console.log(
+        `HubSpot: Created fallback deal ${newDeal.id} for ${data.email} (no prior booking deal found)`
+      );
+    } else {
+      console.error("HubSpot: Failed to create fallback deal for:", data.email);
+    }
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -346,6 +521,15 @@ export async function POST(req: NextRequest) {
     }
 
     const result = await response.json();
+
+    // Non-blocking HubSpot CRM sync — fire and forget
+    // Email is the safety net; HubSpot sync is additive
+    if (HUBSPOT_ACCESS_TOKEN) {
+      syncToHubSpot(body).catch((err) =>
+        console.error("HubSpot sync error (non-blocking):", err)
+      );
+    }
+
     return NextResponse.json({ success: true, id: result.id });
   } catch (error) {
     console.error("Onboarding form error:", error);
