@@ -11,12 +11,11 @@ const serviceLinks = [
   { label: "Google Business Profile Setup", href: "/services/gbp-setup" },
   { label: "Local SEO & Search Visibility", href: "/services/local-seo" },
   { label: "Ongoing Maintenance & Support", href: "/services/ongoing-support" },
+  { label: "AI Services", href: "/services/ai" },
+  { label: "Reporting & Analytics", href: "/services/analytics" },
 ];
 
-const comingSoonLinks = [
-  { label: "AI Integrations" },
-  { label: "Reporting & Analytics" },
-];
+const comingSoonLinks: { label: string }[] = [];
 
 const demoLinks = [
   { label: "HVAC & Plumbing", href: "/demos/hvac" },
@@ -182,23 +181,27 @@ export function Navbar() {
                   </Link>
                 ))}
 
-                {/* Divider */}
-                <div
-                  className="mx-4 my-2"
-                  style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }}
-                />
+                {comingSoonLinks.length > 0 && (
+                  <>
+                    {/* Divider */}
+                    <div
+                      className="mx-4 my-2"
+                      style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }}
+                    />
 
-                {/* Coming Soon items — not clickable */}
-                {comingSoonLinks.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center justify-between px-5 py-2.5 text-[13px] font-normal select-none"
-                    style={{ color: "rgba(13,27,42,0.35)", cursor: "default" }}
-                  >
-                    <span>{item.label}</span>
-                    <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
-                  </div>
-                ))}
+                    {/* Coming Soon items — not clickable */}
+                    {comingSoonLinks.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between px-5 py-2.5 text-[13px] font-normal select-none"
+                        style={{ color: "rgba(13,27,42,0.35)", cursor: "default" }}
+                      >
+                        <span>{item.label}</span>
+                        <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
+                      </div>
+                    ))}
+                  </>
+                )}
 
                 {/* Divider */}
                 <div
@@ -397,19 +400,23 @@ export function Navbar() {
                     {link.label}
                   </Link>
                 ))}
-                {/* Divider */}
-                <div className="my-1.5" style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }} />
-                {/* Coming Soon */}
-                {comingSoonLinks.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex items-center justify-between py-2 text-[13px] font-light"
-                    style={{ color: "rgba(13,27,42,0.35)" }}
-                  >
-                    <span>{item.label}</span>
-                    <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
-                  </div>
-                ))}
+                {comingSoonLinks.length > 0 && (
+                  <>
+                    {/* Divider */}
+                    <div className="my-1.5" style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }} />
+                    {/* Coming Soon */}
+                    {comingSoonLinks.map((item) => (
+                      <div
+                        key={item.label}
+                        className="flex items-center justify-between py-2 text-[13px] font-light"
+                        style={{ color: "rgba(13,27,42,0.35)" }}
+                      >
+                        <span>{item.label}</span>
+                        <span className="text-[10px] font-medium tracking-[0.06em] uppercase" style={{ color: "rgba(13,27,42,0.28)" }}>Soon</span>
+                      </div>
+                    ))}
+                  </>
+                )}
                 {/* Divider */}
                 <div className="my-1.5" style={{ borderTop: "1px solid rgba(13,27,42,0.08)" }} />
                 <Link

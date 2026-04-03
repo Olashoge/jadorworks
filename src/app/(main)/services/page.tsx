@@ -95,20 +95,22 @@ const standardServices = [
       </svg>
     ),
   },
-];
-
-const comingSoonServices = [
   {
-    title: "AI Integrations",
-    cat: "Future Capability",
-    body: "Intelligent features built into your website — appointment booking, lead qualification, customer chat, and automated follow-up. Built specifically for local service businesses.",
+    num: "06",
+    cat: "AI & Automation",
+    title: "AI Services",
+    body: "Focused AI assistants for websites, lead handling, customer questions, intake, and business operations — designed to be useful now, not theoretical later. Built around real business friction for local service businesses.",
+    href: "/services/ai",
     icon: (
-      <svg viewBox="0 0 36 36" fill="none" stroke="#0D1B2A" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9 opacity-40">
+      <svg viewBox="0 0 36 36" fill="none" stroke="#0D1B2A" strokeWidth="1.5" strokeLinecap="round" className="w-9 h-9">
         <rect x="4" y="8" width="28" height="20" rx="3" />
         <path d="M12 18h12M12 13h6M12 23h8" />
       </svg>
     ),
   },
+];
+
+const comingSoonServices = [
   {
     title: "Reporting & Analytics",
     cat: "Future Capability",
