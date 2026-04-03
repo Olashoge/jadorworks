@@ -4,13 +4,13 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { PixelJMark } from "@/components/PixelJMark";
 
 export const metadata: Metadata = {
-  title: "AI Services for Local Businesses | JadorWorks Web Studio",
+  title: "AI Services for Businesses | JadorWorks Web Studio",
   description:
-    "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for local service businesses.",
+    "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for businesses across the USA.",
   openGraph: {
-    title: "AI Services for Local Businesses | JadorWorks Web Studio",
+    title: "AI Services for Businesses | JadorWorks Web Studio",
     description:
-      "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for local service businesses.",
+      "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for businesses across the USA.",
     url: "https://jadorworks.com/services/ai",
     siteName: "JadorWorks Web Studio",
     images: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "AI Services for Local Businesses — JadorWorks Web Studio",
+        alt: "AI Services for Businesses — JadorWorks Web Studio",
       },
     ],
     locale: "en_US",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Services for Local Businesses | JadorWorks Web Studio",
+    title: "AI Services for Businesses | JadorWorks Web Studio",
     description:
-      "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for local service businesses.",
+      "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for businesses across the USA.",
     images: ["/og-image.png"],
   },
 };
@@ -61,7 +61,7 @@ const breadcrumbJsonLd = {
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "AI Services for Local Businesses",
+  name: "AI Services for Businesses",
   provider: {
     "@type": "ProfessionalService",
     name: "JadorWorks Web Studio",
@@ -70,7 +70,7 @@ const serviceJsonLd = {
     email: "hello@jadorworks.com",
   },
   description:
-    "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for local service businesses.",
+    "JadorWorks builds focused AI assistants for websites, lead handling, customer questions, intake, and operations. Practical AI tools for businesses across the USA.",
   serviceType: "AI Services",
 };
 
@@ -305,7 +305,7 @@ const faqs = [
   {
     question: "Is this only for certain types of businesses?",
     answer:
-      "No. The six public AI offers work for any local service business — HVAC, cleaning, landscaping, home care, remodeling, personal services, trades, and others. The setup is specific to the business, not a generic template applied to every client.",
+      "No. The eight AI services listed on this page work for any business — HVAC, cleaning, landscaping, home care, remodeling, personal services, trades, and others. The setup is specific to the business, not a generic template applied to every client.",
   },
   {
     question: "Can the assistant match my business tone?",
@@ -561,7 +561,7 @@ export default function AIServicesPage() {
               style={{ color: "rgba(250,249,246,0.55)" }}
             >
               Not a generic chatbot. Not an AI experiment. Each tool is designed
-              around a specific problem that costs local service businesses time,
+              around a specific problem that costs businesses time,
               leads, or credibility.
             </p>
           </ScrollReveal>
@@ -701,7 +701,7 @@ export default function AIServicesPage() {
               className="font-extrabold leading-[1.05] tracking-[-0.03em] mb-3.5"
               style={{ fontSize: "clamp(28px, 3.5vw, 44px)" }}
             >
-              Built for local service businesses
+              Built for businesses
               <br />
               that want to operate with more clarity.
             </h2>
